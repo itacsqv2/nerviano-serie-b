@@ -1,0 +1,211 @@
+[
+ {
+  "id": "1",
+  "tipo": "giocatore",
+  "nome": "Daniele Bonacci",
+  "ruolo": "Ala piccola",
+  "tag": "Confermato · Vivaio",
+  "profilo": "Ala piccola di 18 anni del vivaio di Nerviano; gioca anche con la Libertas Vanzago in Divisione Regionale 2.",
+  "percorso": "Dopo Urania Milano (Under 15) e Basket Lodi (Under 17), nel 2024/25 a Nerviano ha segnato 19,2 punti di media in Under 17 Eccellenza, con un massimo di 26. Nel 2025/26 ha esordito in B Interregionale con 3 presenze.",
+  "lettura": "Quest'anno non è ancora entrato a referto in B Interregionale.",
+  "da_guardare": "Tra i giovani del vivaio è quello con i numeri giovanili migliori."
+ },
+ {
+  "id": "2",
+  "tipo": "giocatore",
+  "nome": "Marco Azzolini",
+  "ruolo": "Guardia",
+  "tag": "Nuovo arrivo",
+  "profilo": "Guardia di 191 cm e 20 anni, alla prima stagione senior registrata da PlayBasket.",
+  "percorso": "Formato nelle giovanili di Cantù (12,7 punti di media in Under 17 Eccellenza nel 2022/23) e poi nell'Under 19 dell'Urania Milano. PlayBasket non ha dati su di lui per il 2024/25 e il 2025/26.",
+  "lettura": "In campo in entrambe le prime gare con tabellino, con 3 punti a partita: si sta inserendo nelle rotazioni.",
+  "da_guardare": "A livello giovanile ha toccato i 23 punti in una gara: un potenziale offensivo da verificare in B."
+ },
+ {
+  "id": "3",
+  "tipo": "giocatore",
+  "nome": "Carloluca Malattia",
+  "ruolo": "Ala piccola",
+  "tag": "Nuovo arrivo · Under 20",
+  "profilo": "Ala piccola di 19 anni dal vivaio dell'Urania Milano, con due presenze in Serie A2 già in carriera.",
+  "percorso": "All'Urania ha fatto la trafila giovanile: 16,6 punti di media in Under 17 Eccellenza e 11,8 in Under 19 Eccellenza nel 2025/26. Nel 2024/25 ha fatto esperienza senior in Divisione Regionale 1 con Ars Rovagnate (8,8 punti).",
+  "lettura": "È al primo anno pieno in un campionato nazionale senior: zero punti a Saronno, 4 contro Bocconi.",
+  "da_guardare": "Nel 2024/25 ha fatto lo stesso percorso di Di Franco (Urania e Ars Rovagnate): due ali giovani che si conoscono bene."
+ },
+ {
+  "id": "4",
+  "tipo": "giocatore",
+  "nome": "Tommaso Giacomelli",
+  "ruolo": "Guardia",
+  "tag": "Nuovo arrivo",
+  "profilo": "Guardia di 20 anni al debutto in B Interregionale dopo tre campionati di Serie C.",
+  "percorso": "Cresciuto nel College Novara (12,1 punti di media in Under 17 Eccellenza), ha giocato in Serie C con Basket College Novara, Arona e Varese Academy, sempre tra 4,6 e 7,5 punti di media. Nel 2025/26 a Varese ha giocato anche l'Under 19 Eccellenza (8,3 punti).",
+  "lettura": "Inizio in crescendo: 4 punti a Saronno e 6 contro Bocconi. Tre campionati di Serie C gli hanno già dato abitudine alle partite senior.",
+  "da_guardare": "Le sfide con Varese Academy, la sua squadra della scorsa stagione: il 6 dicembre a Nerviano e il 13 marzo ad Arcisate."
+ },
+ {
+  "id": "5",
+  "tipo": "giocatore",
+  "nome": "Davide Cislaghi",
+  "ruolo": "Ala piccola",
+  "tag": "Dal vivaio · Under 19",
+  "profilo": "Ala piccola Under 19 del vivaio di Nerviano, aggregata alla prima squadra.",
+  "percorso": "Nel 2024/25 ha giocato l'Under 17 Eccellenza con Nerviano: 8,3 punti di media, massimo 17. Quest'anno è tesserato anche con la Libertas Vanzago in Divisione Regionale 2.",
+  "lettura": "Non è ancora entrato a referto in B Interregionale.",
+  "da_guardare": "Un nome per il futuro, da seguire anche nelle partite della Libertas Vanzago."
+ },
+ {
+  "id": "7",
+  "tipo": "giocatore",
+  "nome": "Francesco Maria Villa",
+  "ruolo": "Play",
+  "tag": "Nuovo arrivo · Regista",
+  "profilo": "Playmaker di 29 anni con oltre 450 partite in carriera, cresciuto nel vivaio dell'Olimpia Milano.",
+  "percorso": "Con l'Olimpia ha raccolto tre presenze in Serie A tra il 2014 e il 2016. Poi otto stagioni nella terza serie nazionale (Omegna, Desio, Salerno, Montegranaro, Empoli, Molfetta, Taranto e Luiss Roma) e una in A2 con la Luiss. Nel 2025/26 ha segnato 16,1 punti di media con SocialOSA Milano.",
+  "lettura": "Porta in regia esperienza e punti: 13 e 12 nelle prime due gare con tabellino. Arriva con Maspero e Di Franco da SocialOSA Milano, quindi conosce già compagni e categoria.",
+  "da_guardare": "Come gestisce i finali punto a punto, come quello della vittoria di un punto contro Bocconi."
+ },
+ {
+  "id": "8",
+  "tipo": "giocatore",
+  "nome": "Gregorio Meroni",
+  "ruolo": "Play",
+  "tag": "Confermato · Scuola Cantù",
+  "profilo": "Playmaker di 21 anni alla terza stagione a Nerviano, formato nelle giovanili di Cantù.",
+  "percorso": "A Cantù ha segnato 16,8 punti di media in Under 17 Eccellenza e 17,8 in Under 19, con sette presenze in A2 in prima squadra tra il 2022 e il 2024. Nel 2023/24 ha chiuso a 19,9 punti di media in Serie C con Team Abc Cantù, poi a Nerviano 12,8 punti nel 2024/25.",
+  "lettura": "PlayBasket non riporta sue presenze nel 2025/26; quest'anno è tornato subito protagonista con 12 e 10 punti. Con Villa forma una coppia di registi, uno giovane e uno esperto.",
+  "da_guardare": "Il suo massimo in carriera è di 36 punti in una partita giovanile: quando trova il ritmo può segnare a raffica."
+ },
+ {
+  "id": "11",
+  "tipo": "giocatore",
+  "nome": "Luca Sironi",
+  "ruolo": "Ala piccola",
+  "tag": "Confermato · Vivaio",
+  "profilo": "Ala piccola di 18 anni cresciuta a Nerviano, al secondo anno nel gruppo della prima squadra.",
+  "percorso": "Nel 2024/25 ha segnato 9,3 punti di media in Under 17 Eccellenza, con un massimo di 20. Nel 2025/26 ha raccolto 5 presenze in B Interregionale, giocando anche con la Libertas Vanzago.",
+  "lettura": "Quest'anno non è ancora entrato a referto in B Interregionale.",
+  "da_guardare": "Da seguire anche con la Libertas Vanzago in Divisione Regionale 2."
+ },
+ {
+  "id": "12",
+  "tipo": "giocatore",
+  "nome": "Matteo Tagliabue",
+  "ruolo": "Ala piccola",
+  "tag": "Confermato · Under 19",
+  "profilo": "Ala piccola Under 19 del vivaio, che lo scorso anno ha già assaggiato la B Interregionale.",
+  "percorso": "Nel 2024/25 ha giocato l'Under 17 Eccellenza con Nerviano (6,4 punti di media, massimo 14). Nel 2025/26 ha totalizzato 8 presenze e 6 punti in B Interregionale.",
+  "lettura": "Quest'anno non è ancora entrato a referto; gioca anche con la Libertas Vanzago.",
+  "da_guardare": "Nella scorsa stagione il suo massimo in B è stato di 5 punti: un primo assaggio della categoria."
+ },
+ {
+  "id": "13",
+  "tipo": "giocatore",
+  "nome": "Filippo Viceconti",
+  "ruolo": "",
+  "tag": "Nuovo arrivo · Under 19",
+  "profilo": "Under 19 aggregato alla prima squadra.",
+  "percorso": "PlayBasket lo registra nelle giovanili dell'Ayers Rock Gallarate (Under 15 Eccellenza, 2023/24) e quest'anno anche con la Libertas Vanzago in Divisione Regionale 2, senza statistiche disponibili.",
+  "lettura": "Non è ancora entrato a referto in B Interregionale.",
+  "da_guardare": "Dati ancora troppo scarsi per un giudizio: un profilo da scoprire."
+ },
+ {
+  "id": "17",
+  "tipo": "giocatore",
+  "nome": "Guglielmo Youssef",
+  "ruolo": "Guardia",
+  "tag": "Nuovo arrivo · Scuola Olimpia",
+  "profilo": "Guardia di 19 anni cresciuta nell'Olimpia Milano, con già una presenza in Serie A.",
+  "percorso": "Ha fatto tutta la trafila giovanile all'Olimpia, dall'Under 15 all'Under 19 Eccellenza (10,7 punti di media nel 2025/26), con l'esordio in Serie A nella stessa stagione. In parallelo ha giocato due anni in B Interregionale con Oleggio Magic Basket, chiudendo l'ultimo a 8,2 punti di media.",
+  "lettura": "Parte con 9 e 8 punti, in linea con l'ultima stagione a Oleggio: un esterno giovane che conosce già bene la categoria.",
+  "da_guardare": "Le due sfide con la sua ex Oleggio: il 19 dicembre a Boffalora sopra Ticino e il 4 aprile a Nerviano."
+ },
+ {
+  "id": "19",
+  "tipo": "giocatore",
+  "nome": "Giacomo Maspero",
+  "ruolo": "Centro",
+  "tag": "Nuovo arrivo · Veterano",
+  "profilo": "Centro di 202 cm e 34 anni, è il giocatore più esperto del roster: 19 stagioni censite da PlayBasket.",
+  "percorso": "Cresciuto nella Pallacanestro Cantù, ha esordito in Serie A nel 2009/10 segnando 15 punti nella sua unica partita di quella stagione. Poi sei stagioni in A2 (Brescia, Recanati, Jesi, Verona, San Severo, Ravenna) e quattro tra Serie B e B Nazionale con Olginate, Desio e Saronno. Nel 2025/26 ha chiuso a 17,3 punti di media con SocialOSA Milano in B Interregionale.",
+  "lettura": "È il punto di riferimento offensivo: miglior realizzatore di Nerviano dopo due tabellini, con 14 punti in entrambe le gare. Negli ultimi cinque campionati non è mai sceso sotto i 9 punti di media: garantisce continuità più che exploit.",
+  "da_guardare": "La sfida con Saronno, la sua squadra nel 2024/25 (13,4 punti di media in B Nazionale): il ritorno si gioca il 10 gennaio a Nerviano."
+ },
+ {
+  "id": "22",
+  "tipo": "giocatore",
+  "nome": "Fabrizio Di Franco",
+  "ruolo": "Ala piccola",
+  "tag": "Nuovo arrivo · In crescita",
+  "profilo": "Ala piccola di 20 anni, la sorpresa di inizio stagione.",
+  "percorso": "Cresciuto tra Leone XIII Milano e Urania Milano (due presenze in Serie A2 nel 2024/25), ha giocato in Divisione Regionale 1 con Ars Rovagnate a quasi 10 punti di media. Nel 2025/26 era a SocialOSA Milano in B Interregionale, con 7,6 punti di media.",
+  "lettura": "Dopo due tabellini viaggia a 13,5 punti, quasi il doppio della scorsa stagione: è il secondo realizzatore della squadra, con il massimo di 15 contro Bocconi.",
+  "da_guardare": "Se tiene questo passo, è il candidato a fare coppia con Maspero come terminale offensivo."
+ },
+ {
+  "id": "24",
+  "tipo": "giocatore",
+  "nome": "Fabio Bigarella",
+  "ruolo": "Centro",
+  "tag": "Confermato · Bandiera",
+  "profilo": "Centro di 22 anni cresciuto a Nerviano: è alla sesta stagione in prima squadra.",
+  "percorso": "Ha vissuto con Nerviano il passaggio dalla C Gold alla B Interregionale. La sua stagione migliore è il 2024/25, con 5,1 punti di media in 31 partite. In Under 19 ha toccato i 32 punti in una gara.",
+  "lettura": "Nel 2025/26 ha giocato solo 4 partite; quest'anno è a referto in entrambe le prime gare con tabellino, come lungo di rotazione.",
+  "da_guardare": "È il giocatore con più stagioni in prima squadra a Nerviano: la memoria storica dello spogliatoio."
+ },
+ {
+  "id": "34",
+  "tipo": "giocatore",
+  "nome": "Mathias Padoan",
+  "ruolo": "Ala piccola",
+  "tag": "Nuovo arrivo · Under 19",
+  "profilo": "Ala piccola Under 19 arrivata dall'Ayers Rock Gallarate.",
+  "percorso": "Quattro stagioni di giovanili all'Ayers Rock Gallarate tra Under 15 e Under 17 Eccellenza (4,3 punti di media nel 2025/26). Quest'anno è tesserato anche con la Libertas Vanzago in Divisione Regionale 2.",
+  "lettura": "Non è ancora entrato a referto in B Interregionale: è al primo anno nel giro della prima squadra.",
+  "da_guardare": "Un investimento del vivaio sul medio periodo."
+ },
+ {
+  "id": "35",
+  "tipo": "giocatore",
+  "nome": "Simone Canepa",
+  "ruolo": "Ala piccola",
+  "tag": "Dal vivaio · Under 19",
+  "profilo": "Ala piccola Under 19 di 190 cm, cresciuta a Nerviano.",
+  "percorso": "Nel 2024/25 ha giocato 17 partite di Under 17 Eccellenza con Nerviano (3,1 punti di media, massimo 11). Quest'anno è tesserato anche con la Libertas Vanzago in Divisione Regionale 2.",
+  "lettura": "Non è ancora entrato a referto in B Interregionale.",
+  "da_guardare": "Da seguire nella crescita con la Libertas Vanzago."
+ },
+ {
+  "id": "74",
+  "tipo": "giocatore",
+  "nome": "Vittorio Balconi",
+  "ruolo": "",
+  "tag": "Confermato · Under 20",
+  "profilo": "Diciottenne al secondo anno nel gruppo della prima squadra; gioca anche con la Libertas Vanzago in Divisione Regionale 2.",
+  "percorso": "Cresciuto nell'Ayers Rock Gallarate (Under 15 Eccellenza), nel 2025/26 ha esordito in B Interregionale con 8 presenze e 2 punti.",
+  "lettura": "Quest'anno ha già segnato 8 punti in due gare, 6 dei quali a Saronno: più di tutta la stagione scorsa.",
+  "da_guardare": "Uno dei giovani che stanno trovando spazio: da seguire partita per partita."
+ },
+ {
+  "id": "coach",
+  "tipo": "staff",
+  "nome": "Davide Viceconti",
+  "ruolo": "Allenatore",
+  "tag": "Allenatore · Ritorno",
+  "profilo": "Torna sulla panchina di Nerviano, che aveva già guidato nel 2024/25. Lo affiancano gli assistenti Simone Occa e Simone Vizzini.",
+  "percorso": "Ha allenato la Motrix Cavaria in Serie D (2015-2018), il G.S. Casorate in C Silver (2018-2020) e BasketBall Gallarate in C Gold (2021/22) e in B Interregionale (2023/24).",
+  "lettura": "Conosce la categoria da allenatore: è alla terza stagione in B Interregionale.",
+  "da_guardare": "Le sfide con la sua ex Gallarate: il 29 novembre a Nerviano e il 7 marzo a Gallarate."
+ },
+ {
+  "id": "mercato",
+  "tipo": "squadra",
+  "nome": "Com'è cambiata la squadra",
+  "ruolo": "",
+  "tag": "Mercato",
+  "profilo": "Rispetto al 2025/26 il gruppo è molto rinnovato.",
+  "percorso": "Da SocialOSA Milano sono arrivati Maspero, Villa e Di Franco; con loro i giovani Youssef, Giacomelli, Azzolini e Malattia. Restano Meroni, Bigarella e un gruppo di Under 19 del vivaio che gioca anche con la Libertas Vanzago in Divisione Regionale 2.",
+  "lettura": "Il miglior marcatore della scorsa stagione, Giacomo Bonavida (21 punti di media), ora gioca a Gallarate; Matteo Airaghi e Matteo Tapparo sono passati a 7 Laghi e Davide Peri a Cermenate.",
+  "da_guardare": "Il nuovo nucleo arriva in gran parte dalla stessa squadra: l'intesa tra Villa, Maspero e Di Franco è la prima cosa da guardare."
+ }
+]
