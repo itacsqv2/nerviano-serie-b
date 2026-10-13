@@ -4,7 +4,7 @@
  */
 type Voce = [string, string, string, string];
 
-const piega = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const piega = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
 export function attivaCerca(): void {
   const input = document.querySelector<HTMLInputElement>('#cerca-giocatore');
@@ -12,7 +12,13 @@ export function attivaCerca(): void {
   if (!input || !lista) return;
   let indice: Promise<Voce[]> | null = null;
   let attivo = -1;
-  const carica = () => (indice ??= fetch(input.dataset.indice!).then((r) => r.json() as Promise<Voce[]>).catch(() => []));
+  const carica = () =>
+    (indice ??= fetch(input.dataset.indice!)
+      .then((r) => (r.ok ? (r.json() as Promise<Voce[]>) : Promise.reject(new Error(String(r.status)))))
+      .catch(() => {
+        indice = null; // al prossimo tentativo si riprova a scaricare l'indice
+        return [];
+      }));
   const chiudi = () => {
     lista.hidden = true;
     input.setAttribute('aria-expanded', 'false');
@@ -51,7 +57,7 @@ export function attivaCerca(): void {
             li.append(a);
             return li;
           })
-        : [Object.assign(document.createElement('li'), { textContent: 'Nessun giocatore trovato', className: 'nota' })]),
+        : [Object.assign(document.createElement('li'), { textContent: 'Nessun giocatore trovato', className: 'nota', role: 'option' })]),
     );
     lista.hidden = false;
     input.setAttribute('aria-expanded', 'true');

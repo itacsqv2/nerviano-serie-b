@@ -10,6 +10,10 @@ import { statoTabellino } from '../src/lib/tabellini.ts';
 import { pulisciNome } from '../src/lib/nomi.ts';
 
 const LEGACY = path.join(RADICE, 'legacy');
+if (fs.existsSync(path.join(RADICE, 'data', 'manuale', 'scouting.json')) && !process.argv.includes('--force')) {
+  console.error('data/manuale/ esiste già: la migrazione sovrascriverebbe schede, correzioni e foto scritte a mano.\nSe vuoi davvero ripartire dal legacy lancia: npm run migra -- --force');
+  process.exit(1);
+}
 const DATA_DATI = '2026-10-12'; // data di raccolta dei dati legacy (AGGIORNATO in build_data.py)
 
 const leggi = <T>(f: string): T => JSON.parse(fs.readFileSync(path.join(LEGACY, 'data', f), 'utf8')) as T;
@@ -122,8 +126,6 @@ const correzioni = {
 const STATI: Record<string, Partita['stato']> = { ufficiale: 'omologata', ufficioso: 'ufficioso', 'da giocare': 'da_giocare' };
 const pLegacy = leggi<R[]>('partite.json');
 const partiteBase = pLegacy.map((p) => {
-  const corr = correzioni.partite.find((c) => c.partita === p.gara);
-  const casa = SQ.get(p.casa)!;
   return {
     id: p.gara as string,
     giornata: p.g as number,
@@ -136,9 +138,8 @@ const partiteBase = pLegacy.map((p) => {
     pt_casa: p.pt_casa as number | null,
     pt_ospite: p.pt_ospite as number | null,
     stato: STATI[p.stato]!,
-    // la palestra della 000535 viene da correzioni.json: qui resta quella della squadra di casa
-    palestra: corr?.palestra ? casa.palestra : (p.palestra as string),
-    citta: corr?.citta ? casa.citta : (p.citta as string),
+    palestra: p.palestra as string,
+    citta: p.citta as string,
     pb: null,
     tabellino: null as Partita['tabellino'],
   };

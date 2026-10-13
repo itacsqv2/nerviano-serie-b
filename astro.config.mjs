@@ -1,6 +1,7 @@
 // @ts-check
 import { readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 const sito = JSON.parse(readFileSync(new URL('./data/config/sito.json', import.meta.url), 'utf8'));
 
@@ -23,5 +24,7 @@ export default defineConfig({
       assetsInlineLimit: 0,
     },
   },
+  // la sitemap si pubblica solo quando il sito è indicizzabile (data/config/sito.json)
+  integrations: sito.indicizzabile ? [sitemap()] : [],
   devToolbar: { enabled: false },
 });

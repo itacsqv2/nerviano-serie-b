@@ -64,8 +64,8 @@ const href = (s: string) => (s === d.rif ? url('/nerviano/') : urlSquadra(s));
       const e = etichette.get(r.squadra);
       const s = d.sq(r.squadra);
       return (
-        <a href={href(r.squadra)} aria-label={`${s.breve}: ${f1(r.pf_media)} punti segnati e ${f1(r.ps_media)} subiti a partita`}>
-          <title>{`${ordinale(r.posizione)} · ${s.nome}\n${f1(r.pf_media)} punti segnati a partita\n${f1(r.ps_media)} punti subiti a partita\nVinte ${r.v}, perse ${r.p}`}</title>
+        <a href={href(r.squadra)}>
+          <title>{`${s.breve}: ${f1(r.pf_media)} punti segnati e ${f1(r.ps_media)} subiti a partita\n${ordinale(r.posizione)} in classifica, vinte ${r.v} e perse ${r.p}`}</title>
           <circle class:list={['punto', { noi }]} cx={x(r.pf_media!)} cy={y(r.ps_media!)} r={noi ? 8 : 5.5} />
           {e && <text class:list={{ 'etichetta-dato': noi }} x={e.x} y={e.y} text-anchor={e.anchor}>{s.breve}</text>}
         </a>

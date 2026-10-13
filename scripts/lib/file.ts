@@ -39,6 +39,19 @@ export function scriviTutti(files: Record<string, unknown>): string[] {
     fs.writeFileSync(t, testo, 'utf8');
     return [t, dest] as const;
   });
-  for (const [t, dest] of tmp) fs.renameSync(t, dest);
+  const fatti: string[] = [];
+  try {
+    for (const [t, dest] of tmp) {
+      fs.renameSync(t, dest);
+      fatti.push(dest);
+    }
+  } catch (e) {
+    for (const [t] of tmp) fs.rmSync(t, { force: true });
+    const mancanti = tmp.map(([, d]) => d).filter((d) => !fatti.includes(d)).map((d) => path.relative(RADICE, d));
+    throw new Error(
+      `Scrittura interrotta (${(e as Error).message}). File già aggiornati: ${fatti.length}; non aggiornati: ${mancanti.join(', ')}.\n`
+      +'Chiudi i programmi che tengono aperti i file in data/ e rilancia: con git restore data/ torni alla versione precedente.',
+    );
+  }
   return daScrivere.map(([dest]) => path.relative(DATI, dest).split(path.sep).join('/'));
 }

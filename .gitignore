@@ -1,7 +1,8 @@
-node_modules/
-dist/
 .astro/
 .cache/
-legacy/
 brand/riferimenti/
+data/**/*.tmp-*
+dist/
 foto/da-elaborare/
+legacy/
+node_modules/

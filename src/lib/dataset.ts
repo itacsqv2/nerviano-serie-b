@@ -186,7 +186,8 @@ export function costruisciDataset(d: DatiGrezzi) {
     const totG = righe.reduce((x, r) => x + (r.presenze ?? 0), 0);
     const calc = statoEProvenienza(righe, nomiPb, s.breve, stagionePrec);
     const ex = extra.get(g.id);
-    const vsRif = rosa.squadra === rif ? undefined : presenze.find((x) => x.avversaria === rif);
+    // punti in tutte le sfide con la squadra di riferimento (andata e ritorno), null se non l'ha mai affrontata a referto
+    const vsRif = rosa.squadra === rif ? [] : presenze.filter((x) => x.avversaria === rif);
     const minorenne = g.eta == null || g.eta < 18 || (foto.get(g.id)?.minorenne ?? false);
     persone.push({
       id: g.id,
@@ -223,7 +224,7 @@ export function costruisciDataset(d: DatiGrezzi) {
       exNerviano: rosa.squadra === rif ? null : exNerviano(righe),
       livello: livello(righe),
       rango: null,
-      ptsVsNerviano: vsRif ? vsRif.punti : null,
+      ptsVsNerviano: vsRif.length ? vsRif.reduce((s, x) => s + x.punti, 0) : null,
       presenzePartite: presenze,
       scouting: scouting.get(g.id) ?? null,
       sintesi: '',
@@ -295,6 +296,8 @@ export function costruisciDataset(d: DatiGrezzi) {
     personaPerId,
     calendarioRif,
     tabellini: d.tabellini.filter((t) => !nascosti.has(t.giocatore)),
+    /** tutti i tabellini, giocatori nascosti compresi: solo per totali di squadra, mai mostrati */
+    tabelliniTutti: d.tabellini,
     fotoTutte: d.foto,
   };
 }

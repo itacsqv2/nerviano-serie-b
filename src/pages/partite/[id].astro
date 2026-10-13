@@ -59,7 +59,7 @@ const titolo = `${casa.breve}–${ospite.breve} ${p.pt_casa}-${p.pt_ospite}`;
                   : <tr><td colspan="2" class="nota">Tabellino non disponibile.</td></tr>}
               </tbody>
               {righe.length > 0 && (
-                <tfoot><tr><th scope="row">Totale tabellino</th><td class="num"><strong>{righe.reduce((s, r) => s + r.t.punti, 0)}</strong></td></tr></tfoot>
+                <tfoot><tr><th scope="row">Totale tabellino</th><td class="num"><strong>{d.tabelliniTutti.filter((t) => t.partita === p.id && t.squadra === sq).reduce((s, t) => s + t.punti, 0)}</strong></td></tr></tfoot>
               )}
             </table>
           </div>

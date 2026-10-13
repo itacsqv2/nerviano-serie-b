@@ -22,6 +22,9 @@ function main(): number {
   for (const f of fileFoto) if (!voci.has(f)) errori.push(`foto ${f} senza voce in data/manuale/foto.json`);
   for (const f of dati.foto) if (!f.nascosta && !fileFoto.includes(f.file)) errori.push(`foto.json: manca il file src/assets/giocatori/${f.file} (lancia npm run foto)`);
 
+  if (/\.invalid/.test(`${dati.sito.url} ${dati.sito.email}`)) {
+    avvisi.push('data/config/sito.json: url ed email sono ancora segnaposto; compilali prima di pubblicare il sito e di lanciare la pipeline');
+  }
   for (const a of avvisi) console.log(`avviso: ${a}`);
   if (errori.length) {
     for (const e of errori) console.error(`ERRORE: ${e}`);

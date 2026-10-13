@@ -54,7 +54,8 @@ export function perMedia(a: Persona, b: Persona): number {
 
 /** Miglior realizzatore di una squadra in una partita (dai tabellini). */
 export function migliorRealizzatore(d: Dataset, partita: string, squadra: string): { persona: Persona; punti: number } | null {
-  const t = d.tabellini.filter((x) => x.partita === partita && x.squadra === squadra).sort((a, b) => b.punti - a.punti)[0];
+  // si guarda tra tutti i tabellini: se il migliore è un giocatore nascosto non si indica nessun altro al suo posto
+  const t = d.tabelliniTutti.filter((x) => x.partita === partita && x.squadra === squadra).sort((a, b) => b.punti - a.punti)[0];
   const persona = t && d.personaPerId.get(t.giocatore);
   return persona && t ? { persona, punti: t.punti } : null;
 }
