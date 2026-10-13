@@ -120,7 +120,7 @@ async function main(): Promise<number> {
           if (vecchia && (vecchia.giornata !== g || vecchia.casa !== casa || vecchia.ospite !== ospite)) {
             throw new ErroreFonte(`FIP: la gara ${f.id} risulta ${casa}–${ospite} in giornata ${g}, ma nei dati è ${vecchia.casa}–${vecchia.ospite} in giornata ${vecchia.giornata}`);
           }
-          if (f.stato.startsWith('fip:')) avviso(`FIP: stato sconosciuto «${f.stato.slice(4)}» per la gara ${f.id} (${f.stato_testo ?? ''})`);
+          // gli stati sconosciuti li segnala controlla() (una volta sola)
           const nuova: Partita = {
             id: f.id,
             giornata: g,
@@ -373,7 +373,7 @@ async function main(): Promise<number> {
     'manuale/storia.json': nuoviDati.storia, 'manuale/guida.json': nuoviDati.guida, 'manuale/correzioni.json': nuoviDati.correzioni, 'manuale/foto.json': nuoviDati.foto,
   })) as never);
   const esito = controlla(nuoviDati, oggi);
-  report.avvisi.push(...esito.avvisi.filter((a) => !a.startsWith('scheda di scouting')));
+  report.avvisi = [...new Set([...report.avvisi, ...esito.avvisi.filter((a) => !a.startsWith('scheda di scouting'))])];
   report.scouting = esito.avvisi.filter((a) => a.startsWith('scheda di scouting'));
   report.classifica = variazioniClassifica(prima.classifica_fip, nuoviDati.classifica_fip, prima.stagione.squadra_riferimento, perSlug);
   report.richieste = http.riepilogo();

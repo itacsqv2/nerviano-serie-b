@@ -38,6 +38,7 @@ export interface RigaClassificaFip {
 const STATI_NOTI: Record<string, string> = {
   omologata: 'omologata',
   ufficioso: 'ufficioso',
+  designata: 'da_giocare',
   'designata-nonvisibile': 'da_giocare',
   'non-designata': 'da_giocare',
 };
