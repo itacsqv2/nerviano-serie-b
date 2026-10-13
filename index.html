@@ -275,8 +275,15 @@ div.dash-skeleton{display:block;min-height:240px}
 .nb-gloss dd{color:var(--color-fg-muted)}
 .nb-sources{display:grid;gap:var(--cds-gap-sm)}
 #formula-body,#storia-body,#roster-body{display:grid;gap:var(--cds-gap-lg)}
+.nb-unofficial{max-width:64ch}
+.nb-pp li.me{font-weight:var(--cds-font-weight-medium);background:color-mix(in srgb,var(--color-fg) 5%,transparent);padding-inline:var(--cds-pad-xs);border-radius:4px}
+.nb-pp .nb-chip{min-width:1.35rem;height:1.35rem;vertical-align:middle}
+#schede-avversari{scroll-margin-top:var(--cds-gap-xl)}
+#avv-roster-body{display:grid;gap:var(--cds-gap-lg)}
+.nb-top3 .nb-link,.nb-ex .nb-link{font-size:inherit;text-align:left;overflow-wrap:anywhere}
+.nb-pname .nb-tag{margin-left:.35rem;font-weight:400}
 </style>
-<script>window.NB_DATA_FILES = {"partite": "data/partite.json?v=2026-10-12", "squadre": "data/squadre.json?v=2026-10-12", "giocatori": "data/giocatori.json?v=2026-10-12", "carriere": "data/carriere.json?v=2026-10-12", "punti_partita": "data/punti_partita.json?v=2026-10-12", "giocatori_girone": "data/giocatori_girone.json?v=2026-10-12", "scouting": "data/scouting.json?v=2026-10-12", "storia": "data/storia.json?v=2026-10-12", "guida": "data/guida.json?v=2026-10-12"};</script>
+<script>window.NB_DATA_FILES = {"partite": "data/partite.json?v=2026-10-12", "squadre": "data/squadre.json?v=2026-10-12", "giocatori": "data/giocatori.json?v=2026-10-12", "carriere": "data/carriere.json?v=2026-10-12", "punti_partita": "data/punti_partita.json?v=2026-10-12", "giocatori_girone": "data/giocatori_girone.json?v=2026-10-12", "scouting": "data/scouting.json?v=2026-10-12", "storia": "data/storia.json?v=2026-10-12", "guida": "data/guida.json?v=2026-10-12", "avversari": "data/avversari.json?v=2026-10-12", "carriere_avversari": "data/carriere_avversari.json?v=2026-10-12", "partite_avversari": "data/partite_avversari.json?v=2026-10-12", "scouting_avversari": "data/scouting_avversari.json?v=2026-10-12"};</script>
 <script src="assets/d3.min.js"></script>
 <script src="assets/dash-runtime.js"></script>
 </head>
@@ -295,6 +302,7 @@ div.dash-skeleton{display:block;min-height:240px}
       <p class="nb-updated" id="aggiornamento"><span class="dash-skeleton">—</span></p>
     </div>
     <p class="nb-takeaway" id="sintesi"><span class="dash-skeleton">—</span></p>
+    <p class="nb-note nb-unofficial">Pagina non ufficiale curata da un tifoso: non è collegata alla società né alla FIP.</p>
   </header>
 
   <nav class="nb-tabs" role="tablist" aria-label="Sezioni">
@@ -397,16 +405,28 @@ div.dash-skeleton{display:block;min-height:240px}
   <section class="nb-page" id="avversarie" role="tabpanel" aria-labelledby="tab-avversarie" hidden>
     <article class="nb-card" id="avversarie-intro">
       <div class="nb-card-head row">
-        <div class="nb-card-head"><h2>Le avversarie</h2><p class="nb-note">Per ogni squadra: classifica, sfide con Nerviano, migliori realizzatori ed ex di turno.</p></div>
+        <div class="nb-card-head"><h2>Le avversarie</h2><p class="nb-note">Per ogni squadra: classifica, sfide con Nerviano, migliori realizzatori, ex di turno e la rosa con le schede dei giocatori.</p></div>
         <div class="nb-seg" role="group" aria-label="Ordina le squadre" id="ordine-avv">
           <button type="button" data-o="prossima" aria-pressed="true">Prossima sfida</button>
           <button type="button" data-o="classifica" aria-pressed="false">Classifica</button>
         </div>
       </div>
     </article>
+    <article class="nb-card nb-scheda" id="schede-avversari">
+      <div class="nb-card-head row">
+        <div class="nb-card-head"><h2>Le schede dei giocatori avversari</h2><p class="nb-note">Scegli una squadra e tocca un giocatore. Per i giocatori chiave c'è la scheda di scouting, per gli altri una sintesi dei numeri.</p></div>
+        <div class="nb-stepper">
+          <button type="button" id="avv-prev" aria-label="Squadra precedente">‹</button>
+          <select id="avv-team" aria-label="Squadra"></select>
+          <button type="button" id="avv-next" aria-label="Squadra successiva">›</button>
+        </div>
+      </div>
+      <div id="avv-scheda-body"><span class="dash-skeleton">—</span></div>
+      <div class="nb-sub"><h3 id="avv-roster-title">La rosa</h3><div id="avv-roster-body"><span class="dash-skeleton">—</span></div></div>
+    </article>
     <div class="nb-teams" id="squadre-avversarie"><span class="dash-skeleton">—</span></div>
     <article class="nb-card" id="marcatori-girone">
-      <div class="nb-card-head"><h2>Migliori realizzatori del girone</h2><p class="nb-note">Media punti, con almeno due partite a tabellino su PlayBasket. I giocatori di Nerviano sono evidenziati.</p></div>
+      <div class="nb-card-head"><h2>Migliori realizzatori del girone</h2><p class="nb-note">Media punti, con almeno due partite a tabellino su PlayBasket. I giocatori di Nerviano sono evidenziati. Tocca un nome per la sua scheda.</p></div>
       <div class="nb-tablewrap" id="marcatori-body"><span class="dash-skeleton">—</span></div>
     </article>
   </section>
@@ -430,6 +450,7 @@ div.dash-skeleton{display:block;min-height:240px}
           <dt>Ala forte</dt><dd>Lungo mobile che gioca vicino a canestro ma sa anche aprirsi per tirare.</dd>
           <dt>Centro</dt><dd>Di solito il più alto: protegge il canestro, prende rimbalzi e gioca spalle a canestro.</dd>
           <dt>U19</dt><dd>Giocatore Under 19, cioè sotto i 19 anni.</dd>
+          <dt>U17</dt><dd>Giocatore Under 17, cioè sotto i 17 anni.</dd>
           <dt>Doppio tesseramento</dt><dd>Un giovane gioca con la prima squadra e, in parallelo, con una società di categoria inferiore per fare minuti. Per diversi giovani di Nerviano è la Libertas Vanzago.</dd>
           <dt>Tabellino</dt><dd>Il foglio con i punti di ogni giocatore in una partita.</dd>
           <dt>Omologazione</dt><dd>La convalida ufficiale del risultato da parte della FIP: fino ad allora il risultato è ufficioso.</dd>
@@ -441,8 +462,7 @@ div.dash-skeleton{display:block;min-height:240px}
           <p><b>Calendario, risultati e campi</b>: <a href="https://fip.it/risultati/" target="_blank" rel="noopener">Federazione Italiana Pallacanestro</a>. Il Girone A è organizzato dal Comitato Regionale Piemonte.</p>
           <p><b>Roster, punti e carriere dei giocatori</b>: <a href="https://www.playbasket.it/lombardia/club.php?obj=2574&amp;action=view&amp;eid=4" target="_blank" rel="noopener">PlayBasket</a>, dai tabellini caricati dalle società. Arrivano con qualche giorno di ritardo e riportano solo i punti.</p>
           <p><b>Classifica</b>: calcolata qui dai risultati, compresi quelli non ancora omologati. A pari punti contano gli scontri diretti, poi la differenza canestri.</p>
-          <p><b>Schede di scouting</b>: scritte da Claude a partire da questi dati, senza aver visto le partite dal vivo.</p>
-          <p class="nb-note">Per aggiornare la dashboard dopo una giornata, chiedilo a Claude.</p>
+          <p><b>Schede di scouting</b>: scritte da Claude a partire da questi dati, senza aver visto le partite dal vivo. Per le avversarie ci sono solo per i giocatori chiave; per gli altri c'è una sintesi automatica dei numeri.</p>
         </div>
       </article>
     </div>
@@ -563,7 +583,8 @@ dash.calc('riepilogo', {
 <script>
 const NERV = 'nerviano';
 const TABS = ['panoramica', 'partite', 'classifica', 'giocatori', 'avversarie', 'guida'];
-const S = { tab: 'panoramica', player: null, giornata: null, filtro: 'tutte', ordine: 'prossima', team: null };
+const S = { tab: 'panoramica', player: null, giornata: null, filtro: 'tutte', ordine: 'prossima', team: null, avvTeam: null, avvPlayer: null };
+const NOTA_AI = 'Scheda scritta da Claude a partire dai dati PlayBasket, senza aver visto le partite dal vivo.';
 
 const D = (id) => dash.data(id);
 const ok = (...ids) => ids.every((id) => D(id).status === 'ok');
@@ -930,16 +951,17 @@ const groupColor = (g) => (g === 'Giovanili' ? 'var(--cds-chart-muted)' : (dash.
 function scoutBlock(s, id, opts) {
   const w = W('id', id);
   const o = opts || {};
+  const src = o.src || 'scouting';
   return [
-    V('p', 'nb-label', 'scouting', 'tag', w, s.tag),
-    o.title ? V('h2', null, 'scouting', 'nome', w, s.nome) : null,
-    V('p', 'nb-lead', 'scouting', 'profilo', w, s.profilo),
+    V('p', 'nb-label', src, 'tag', w, s.tag),
+    o.title ? V('h2', null, src, 'nome', w, s.nome) : null,
+    V('p', 'nb-lead', src, 'profilo', w, s.profilo),
     o.plain
-      ? [V('p', null, 'scouting', 'percorso', w, s.percorso), V('p', null, 'scouting', 'lettura', w, s.lettura), el('p', { class: 'nb-note' }, el('b', null, 'Da guardare: '), V('span', null, 'scouting', 'da_guardare', w, s.da_guardare))]
+      ? [V('p', null, src, 'percorso', w, s.percorso), V('p', null, src, 'lettura', w, s.lettura), el('p', { class: 'nb-note' }, el('b', null, 'Da guardare: '), V('span', null, src, 'da_guardare', w, s.da_guardare))]
       : [
-        el('div', { class: 'nb-block' }, el('h3', null, 'Il percorso'), V('p', null, 'scouting', 'percorso', w, s.percorso)),
-        el('div', { class: 'nb-block' }, el('h3', null, 'La lettura'), V('p', null, 'scouting', 'lettura', w, s.lettura)),
-        el('div', { class: 'nb-block' }, el('h3', null, "Da tenere d'occhio"), V('p', null, 'scouting', 'da_guardare', w, s.da_guardare)),
+        el('div', { class: 'nb-block' }, el('h3', null, 'Il percorso'), V('p', null, src, 'percorso', w, s.percorso)),
+        el('div', { class: 'nb-block' }, el('h3', null, 'La lettura'), V('p', null, src, 'lettura', w, s.lettura)),
+        el('div', { class: 'nb-block' }, el('h3', null, "Da tenere d'occhio"), V('p', null, src, 'da_guardare', w, s.da_guardare)),
       ],
   ];
 }
@@ -1025,7 +1047,7 @@ function renderScheda(g, ordered, sc) {
         el('div', { class: 'nb-stats-box' }, el('p', { class: 'nb-label' }, 'In carriera'),
           g.partite_carriera != null ? el('div', { class: 'nb-stats' }, stat('stagioni', f0(g.stagioni), 'stagioni', g.stagioni), stat('partite', f0(g.partite_carriera), 'partite_carriera', g.partite_carriera), stat('punti', f0(g.pts_carriera), 'pts_carriera', g.pts_carriera), stat('punti a partita', f1(g.media_carriera), 'media_carriera', g.media_carriera))
             : el('p', { class: 'nb-empty' }, 'Nessuna statistica di carriera su PlayBasket.')),
-        s ? el('div', { class: 'nb-prose' }, scoutBlock(s, g.id).slice(2)) : null,
+        s ? el('div', { class: 'nb-prose' }, scoutBlock(s, g.id).slice(2), el('p', { class: 'nb-note' }, NOTA_AI)) : null,
         g.doppio_tesseramento ? el('p', { class: 'nb-note' }, 'Gioca anche con ', V('span', null, 'giocatori', 'doppio_tesseramento', w, g.doppio_tesseramento), '.') : null),
       el('div', { class: 'nb-s-col' },
         el('div', { class: 'nb-sub' }, el('h3', null, 'Media punti stagione per stagione'), el('p', { class: 'nb-note' }, 'Una barra per squadra e stagione, colorata per livello del campionato.'), chart),
@@ -1112,17 +1134,18 @@ function renderSquadre() {
       el('div', { class: 'nb-sub nb-top3' }, el('p', { class: 'nb-label' }, 'Migliori realizzatori'),
         top.length ? el('ol', null, top.map((r) => {
           const w = W('id', r.id);
-          return el('li', null, el('span', { class: 'who' }, V('span', null, 'giocatori_girone', 'giocatore', w, r.giocatore), r.ruolo ? [' · ', V('span', 'nb-muted', 'giocatori_girone', 'ruolo', w, r.ruolo)] : null),
+          return el('li', null, el('span', { class: 'who' }, el('button', { class: 'nb-link', type: 'button', 'data-avv': r.scheda, 'aria-label': 'Apri la scheda di ' + r.giocatore }, V('span', null, 'giocatori_girone', 'giocatore', w, r.giocatore)), r.ruolo ? [' · ', V('span', 'nb-muted', 'giocatori_girone', 'ruolo', w, r.ruolo)] : null),
             el('span', { class: 'tnum' }, V('b', null, 'giocatori_girone', 'media', w, r.media, f1(r.media)), el('span', { class: 'nb-muted' }, ' a partita')));
         })) : el('p', { class: 'nb-empty' }, 'Tabellini non ancora disponibili.')),
       ex.length ? el('div', { class: 'nb-sub nb-ex' }, el('p', { class: 'nb-label' }, 'Ex di turno'), el('ul', null, ex.map((r) => {
         const w = W('id', r.id);
-        return el('li', null, V('b', null, 'giocatori_girone', 'giocatore', w, r.giocatore), ' · ', V('span', 'nb-muted', 'giocatori_girone', 'ex_nerviano', w, r.ex_nerviano));
+        return el('li', null, el('button', { class: 'nb-link', type: 'button', 'data-avv': r.scheda, 'aria-label': 'Apri la scheda di ' + r.giocatore }, V('b', null, 'giocatori_girone', 'giocatore', w, r.giocatore)), ' · ', V('span', 'nb-muted', 'giocatori_girone', 'ex_nerviano', w, r.ex_nerviano));
       }))) : null,
       el('dl', { class: 'nb-kv' },
         el('dt', null, 'Da sapere'), V('dd', null, 'squadre', 'nota', wq, s.nota),
         s.stagione_2526 ? [el('dt', null, 'Stagione 2025/26'), V('dd', null, 'squadre', 'stagione_2526', wq, s.stagione_2526)] : null,
-        el('dt', null, 'Campo'), el('dd', null, V('span', null, 'squadre', 'palestra', wq, s.palestra), ', ', V('span', null, 'squadre', 'indirizzo', wq, s.indirizzo))));
+        el('dt', null, 'Campo'), el('dd', null, V('span', null, 'squadre', 'palestra', wq, s.palestra), ', ', V('span', null, 'squadre', 'indirizzo', wq, s.indirizzo))),
+      el('button', { class: 'nb-link', type: 'button', 'data-avv-team': s.key }, 'Rosa completa e schede dei giocatori'));
   }));
 }
 function renderMarcatori() {
@@ -1132,11 +1155,122 @@ function renderMarcatori() {
   const cols = [['giocatore', 'Giocatore'], ['squadra_nome', 'Squadra'], ['ruolo', 'Ruolo'], ['eta', 'Età'], ['partite', 'Partite', 1], ['pts', 'Punti', 1], ['media', 'Media', 1]];
   box.replaceChildren(el('table', { class: 'nb-table', 'data-source': 'giocatori_girone', 'data-row-key': 'id' },
     el('thead', null, el('tr', null, cols.map(([f, l, n]) => el('th', { scope: 'col', 'data-field': f, class: n ? 'num' : null }, l)))),
-    el('tbody', null, data.map((r) => el('tr', { 'data-key': r.id, class: r.squadra === NERV ? 'me' : null },
+    el('tbody', null, data.map((r) => el('tr', r.squadra === NERV ? { 'data-key': r.id, class: 'me go', 'data-goto': 'giocatori', 'data-player': r.scheda } : { 'data-key': r.id, class: 'go', 'data-avv': r.scheda },
       el('td', null, r.giocatore), el('td', null, r.squadra_nome), el('td', null, r.ruolo || '—'), el('td', null, r.eta || '—'),
       el('td', { class: 'num' }, f0(r.partite)), el('td', { class: 'num' }, f0(r.pts)), el('td', { class: 'num' }, f1(r.media)))))));
 }
+function ordineAvversarie() {
+  const tm = teams();
+  const np = rows('nerviano_partite');
+  const nextG = (key) => { const r = np.find((x) => x.avversario === key && !x.esito); return r ? r.g : 99; };
+  return rows('squadre').filter((s) => s.key !== NERV).map((s) => s.key).sort((a, b) => nextG(a) - nextG(b) || tm[a].breve.localeCompare(tm[b].breve));
+}
+function renderSchedaAvv(g, ordered, s, tm) {
+  const box = document.getElementById('avv-scheda-body');
+  const w = W('id', g.id);
+  const i = ordered.findIndex((x) => x.id === g.id);
+  const prev = ordered[(i - 1 + ordered.length) % ordered.length];
+  const next = ordered[(i + 1) % ordered.length];
+  const stat = (label, text, field, value) => el('div', { class: 'nb-stat' }, V('b', null, 'avversari', field, w, value, text), el('span', null, label));
+  const team = tm[g.squadra] || { breve: g.squadra };
+  const meta = el('p', { class: 'nb-pmeta' }, g.ruolo ? V('span', null, 'avversari', 'ruolo', w, g.ruolo) : 'Ruolo non indicato', g.eta ? [' · ', etaParts(g, 'avversari', w)] : null,
+    ' · ', V('span', null, 'squadre', 'breve', W('key', g.squadra), team.breve),
+    g.stato ? [' · ', V('span', null, 'avversari', 'stato', w, g.stato)] : null,
+    g.stato === 'Nuovo arrivo' && g.provenienza ? [' da ', V('span', null, 'avversari', 'provenienza', w, g.provenienza)] : null);
+  const car = rows('carriere_avversari').filter((r) => r.giocatore === g.id);
+  const chart = el('div', { class: 'nb-chartbox small', 'data-source': 'carriere_avversari', id: 'grafico-carriera-avv' });
+  const carTable = car.length ? el('div', { class: 'nb-tablewrap tall' }, el('table', { class: 'nb-table', 'data-source': 'carriere_avversari', 'data-row-key': 'id' },
+    el('thead', null, el('tr', null, [['stagione', 'Stagione'], ['squadra', 'Squadra'], ['categoria', 'Campionato'], ['presenze', 'Partite', 1], ['pts', 'Punti', 1], ['media', 'Media', 1], ['best', 'Max', 1]].map(([f, l, n]) => el('th', { scope: 'col', 'data-field': f, class: n ? 'num' : null }, l)))),
+    el('tbody', null, [...car].sort((a, b) => (+b.anno - +a.anno) || ((b.senior === 'si' ? 1 : 0) - (a.senior === 'si' ? 1 : 0))).map((r) => el('tr', { 'data-key': r.id },
+      el('td', { class: 'nowrap' }, r.stagione), el('td', null, r.squadra), el('td', null, r.categoria),
+      el('td', { class: 'num' }, f0(r.presenze)), el('td', { class: 'num' }, f0(r.pts)),
+      el('td', { class: 'num' }, f1(r.media)), el('td', { class: 'num' }, f0(r.best))))))) : null;
+  const pp = rows('partite_avversari').filter((r) => r.giocatore === g.id).sort((a, b) => +a.g - +b.g);
+  const ppList = pp.length ? el('ul', { class: 'nb-pp' }, pp.map((r) => {
+    const ww = W('id', r.id);
+    return el('li', { class: r.avversario === NERV ? 'me' : null },
+      el('span', null, el('span', { class: 'nb-muted' }, 'G', V('span', null, 'partite_avversari', 'g', ww, r.g, String(r.g)), ' · ', V('span', null, 'partite_avversari', 'data', ww, r.data, dShort(r.data)), ' · '),
+        r.luogo === 'Casa' ? 'contro ' : 'a ', V('span', null, 'squadre', 'breve', W('key', r.avversario), tm[r.avversario] ? tm[r.avversario].breve : r.avversario), ' ',
+        esitoChip(r.esito, M('partite_avversari', 'esito', ww)), ' ', V('span', 'nb-muted', 'partite_avversari', 'risultato', ww, r.risultato)),
+      el('span', null, V('b', null, 'partite_avversari', 'punti', ww, r.punti, f0(r.punti)), ' punti'));
+  })) : el('p', { class: 'nb-empty' }, 'Nessun tabellino caricato per questo giocatore in questa stagione.');
+  const vsN = rows('nerviano_partite').filter((r) => r.avversario === g.squadra);
+  const vsBox = el('div', { class: 'nb-stats-box' }, el('p', { class: 'nb-label' }, 'Contro Nerviano'), el('ul', { class: 'nb-pp' }, vsN.map((r) => {
+    const wg = W('g', r.g);
+    const mine = pp.find((x) => +x.g === +r.g);
+    return el('li', null,
+      el('span', null, el('span', { class: 'nb-muted' }, 'G', V('span', null, 'nerviano_partite', 'g', wg, r.g, String(r.g)), ' · ', V('span', null, 'nerviano_partite', 'data', wg, r.data, dShort(r.data)), ' · '),
+        r.luogo === 'Casa' ? 'a Nerviano' : 'a ' + V('span', null, 'nerviano_partite', 'citta', wg, r.citta).textContent,
+        r.esito ? [el('span', { class: 'nb-muted' }, ' · Nerviano '), V('b', null, 'nerviano_partite', 'pt_nerviano', wg, r.pt_nerviano, f0(r.pt_nerviano)), '-', V('b', null, 'nerviano_partite', 'pt_avversario', wg, r.pt_avversario, f0(r.pt_avversario))] : [el('span', { class: 'nb-muted' }, ' · alle '), V('span', null, 'nerviano_partite', 'ora', wg, r.ora)]),
+      el('span', null, mine ? [V('b', null, 'partite_avversari', 'punti', W('id', mine.id), mine.punti, f0(mine.punti)), ' punti'] : el('span', { class: 'nb-muted' }, r.esito ? 'senza tabellino' : 'da giocare')));
+  })));
+  const testo = s
+    ? el('div', { class: 'nb-prose' }, scoutBlock(s, g.id, { src: 'scouting_avversari' }).slice(2), el('p', { class: 'nb-note' }, NOTA_AI))
+    : el('div', { class: 'nb-prose' }, el('div', { class: 'nb-block' }, el('h3', null, 'In breve'), V('p', null, 'avversari', 'sintesi', w, g.sintesi)), el('p', { class: 'nb-note' }, 'Sintesi automatica dei numeri PlayBasket.'));
+  box.replaceChildren(
+    el('div', { class: 'nb-s-head' },
+      V('span', 'nb-s-num', 'avversari', 'numero', w, g.numero, String(g.numero || '–')),
+      el('div', { class: 'nb-s-title' }, s ? V('p', 'nb-label', 'scouting_avversari', 'tag', w, s.tag) : null, V('h2', 'nb-s-name', 'avversari', 'nome_completo', w, g.nome_completo), meta),
+      el('div', { class: 'nb-s-nav' },
+        el('button', { type: 'button', 'data-avv': prev.id, 'aria-label': 'Scheda precedente: ' + prev.nome_completo }, '‹'),
+        el('button', { type: 'button', 'data-avv': next.id, 'aria-label': 'Scheda successiva: ' + next.nome_completo }, '›'))),
+    el('div', { class: 'nb-s-body' },
+      el('div', { class: 'nb-s-col' },
+        el('div', { class: 'nb-stats-box' }, el('p', { class: 'nb-label' }, 'Questa stagione'),
+          g.partite ? el('div', { class: 'nb-stats' }, stat('punti a partita', f1(g.media), 'media', g.media), stat('punti', f0(g.pts), 'pts', g.pts), stat('partite', f0(g.partite), 'partite', g.partite), stat('massimo', f0(g.best), 'best', g.best))
+            : el('p', { class: 'nb-empty' }, 'Non ancora a referto in B Interregionale.')),
+        el('div', { class: 'nb-stats-box' }, el('p', { class: 'nb-label' }, 'In carriera'),
+          g.partite_carriera != null ? el('div', { class: 'nb-stats' }, stat('stagioni', f0(g.stagioni), 'stagioni', g.stagioni), stat('partite', f0(g.partite_carriera), 'partite_carriera', g.partite_carriera), stat('punti', f0(g.pts_carriera), 'pts_carriera', g.pts_carriera), stat('punti a partita', f1(g.media_carriera), 'media_carriera', g.media_carriera))
+            : el('p', { class: 'nb-empty' }, 'Nessuna statistica di carriera su PlayBasket.')),
+        testo,
+        g.ex_nerviano ? el('p', { class: 'nb-note' }, el('b', null, 'Ex Nerviano: '), V('span', null, 'avversari', 'ex_nerviano', w, g.ex_nerviano), '.') : null,
+        g.doppio_tesseramento ? el('p', { class: 'nb-note' }, "Quest'anno gioca anche con ", V('span', null, 'avversari', 'doppio_tesseramento', w, g.doppio_tesseramento), '.') : null,
+        vsN.length ? vsBox : null),
+      el('div', { class: 'nb-s-col' },
+        el('div', { class: 'nb-sub' }, el('h3', null, 'Media punti stagione per stagione'), el('p', { class: 'nb-note' }, 'Una barra per squadra e stagione, colorata per livello del campionato.'), chart),
+        el('div', { class: 'nb-sub' }, el('h3', null, 'Carriera'), carTable || el('p', { class: 'nb-empty' }, 'Nessuna stagione su PlayBasket.')),
+        el('div', { class: 'nb-sub' }, el('h3', null, 'Partita per partita'), ppList))));
+  drawCareer(chart, car);
+}
+function renderRosterAvv(squad, teamName) {
+  const box = document.getElementById('avv-roster-body');
+  document.getElementById('avv-roster-title').textContent = 'La rosa di ' + teamName;
+  const card = (g) => {
+    const w = W('id', g.id);
+    return el('li', null, el('button', { class: 'nb-pcard', type: 'button', 'data-avv': g.id, 'aria-pressed': String(g.id === S.avvPlayer) },
+      V('span', 'nb-pnum', 'avversari', 'numero', w, g.numero, String(g.numero || '–')),
+      el('span', { class: 'nb-pinfo' },
+        el('span', { class: 'nb-pname' }, V('span', null, 'avversari', 'nome_completo', w, g.nome_completo), g.chiave === 'si' ? el('span', { class: 'nb-tag' }, 'scouting') : null),
+        el('span', { class: 'nb-pmeta' }, g.ruolo ? V('span', null, 'avversari', 'ruolo', w, g.ruolo) : 'Ruolo non indicato', g.eta ? [' · ', etaParts(g, 'avversari', w)] : null),
+        g.ex_nerviano ? el('span', { class: 'nb-pmeta' }, 'Ex Nerviano') : g.stato ? el('span', { class: 'nb-pmeta' }, V('span', null, 'avversari', 'stato', w, g.stato)) : null),
+      el('span', { class: 'nb-pstat' }, g.partite ? [V('b', null, 'avversari', 'media', w, g.media, f1(g.media)), el('small', null, 'punti a partita')] : el('small', null, 'non ancora a referto'))));
+  };
+  const inCampo = squad.filter((g) => num(g.partite) > 0).sort((a, b) => b.media - a.media || (b.pts || 0) - (a.pts || 0));
+  const altri = squad.filter((g) => !(num(g.partite) > 0)).sort((a, b) => String(a.cognome).localeCompare(b.cognome));
+  put(box,
+    inCampo.length ? el('div', { class: 'nb-roster-group' }, el('p', { class: 'nb-label' }, 'In campo in questa stagione'), el('ul', { class: 'nb-roster' }, inCampo.map(card))) : null,
+    altri.length ? el('div', { class: 'nb-roster-group' }, el('p', { class: 'nb-label' }, 'Non ancora a referto in B Interregionale'), el('ul', { class: 'nb-roster' }, altri.map(card))) : null);
+}
+function renderSchedeAvv() {
+  const sel = document.getElementById('avv-team');
+  const box = document.getElementById('avv-scheda-body');
+  const rbox = document.getElementById('avv-roster-body');
+  if (!ok('avversari', 'carriere_avversari', 'partite_avversari', 'scouting_avversari', 'squadre', 'nerviano_partite')) { box.replaceChildren(skel()); rbox.replaceChildren(skel()); return; }
+  const tm = teams();
+  const keys = ordineAvversarie();
+  if (!S.avvTeam || !keys.includes(S.avvTeam)) S.avvTeam = keys[0];
+  sel.replaceChildren(...keys.map((k) => el('option', { value: k }, tm[k].breve)));
+  sel.value = S.avvTeam;
+  const squad = rows('avversari').filter((a) => a.squadra === S.avvTeam);
+  const sc = Object.fromEntries(rows('scouting_avversari').map((r) => [r.id, r]));
+  const ordered = [...squad].sort((a, b) => (a.rango ?? 99) - (b.rango ?? 99) || String(a.cognome).localeCompare(b.cognome));
+  if (!S.avvPlayer || !squad.some((a) => a.id === S.avvPlayer)) S.avvPlayer = (ordered.find((a) => a.chiave === 'si') || ordered[0] || {}).id;
+  const g = squad.find((a) => a.id === S.avvPlayer);
+  guard('avv-scheda-body', () => { if (g) renderSchedaAvv(g, ordered, sc[g.id], tm); });
+  guard('avv-roster-body', () => renderRosterAvv(squad, tm[S.avvTeam].breve));
+}
 function renderAvversarie() {
+  guard('avv-scheda-body', renderSchedeAvv);
   guard('squadre-avversarie', renderSquadre);
   guard('marcatori-body', renderMarcatori);
   if (S.team) {
@@ -1245,6 +1379,14 @@ tabsEl.addEventListener('keydown', (e) => {
   document.getElementById('tab-' + n).focus();
 });
 document.getElementById('nb').addEventListener('click', (e) => {
+  const av = e.target.closest('[data-avv], [data-avv-team]');
+  if (av) {
+    if (av.dataset.avv) { S.avvPlayer = av.dataset.avv; S.avvTeam = av.dataset.avv.split('-')[0]; }
+    else { S.avvTeam = av.dataset.avvTeam; S.avvPlayer = null; }
+    if (S.tab !== 'avversarie') show('avversarie'); else render();
+    document.getElementById('schede-avversari').scrollIntoView({ block: 'start', behavior: smooth() });
+    return;
+  }
   const go = e.target.closest('[data-goto], tr[data-team]');
   if (go) {
     const team = go.dataset.team || null;
@@ -1263,6 +1405,10 @@ document.getElementById('nb').addEventListener('click', (e) => {
 });
 document.getElementById('filtro-partite').addEventListener('click', (e) => { const b = e.target.closest('[data-f]'); if (b) { S.filtro = b.dataset.f; render(); } });
 document.getElementById('ordine-avv').addEventListener('click', (e) => { const b = e.target.closest('[data-o]'); if (b) { S.ordine = b.dataset.o; render(); } });
+document.getElementById('avv-team').addEventListener('change', (e) => { S.avvTeam = e.target.value; S.avvPlayer = null; render(); });
+const stepAvv = (d) => { const k = ordineAvversarie(); if (!k.length) return; const i = Math.max(0, k.indexOf(S.avvTeam)); S.avvTeam = k[(i + d + k.length) % k.length]; S.avvPlayer = null; render(); };
+document.getElementById('avv-prev').addEventListener('click', () => stepAvv(-1));
+document.getElementById('avv-next').addEventListener('click', () => stepAvv(1));
 document.getElementById('g-select').addEventListener('change', (e) => { S.giornata = +e.target.value; render(); });
 document.getElementById('g-prev').addEventListener('click', () => { if (S.giornata > 1) { S.giornata -= 1; render(); } });
 document.getElementById('g-next').addEventListener('click', () => { if (S.giornata < 30) { S.giornata += 1; render(); } });
