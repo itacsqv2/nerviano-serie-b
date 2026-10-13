@@ -108,7 +108,7 @@ Per fermare il sito premi `Ctrl+C` nel terminale.
 | `npm run check` | Controlla i tipi del codice |
 | `npm run aggiorna` 🚧 | Legge FIP e PlayBasket e aggiorna `data/auto/` |
 | `npm run foto` ⏳ | Prepara le foto dei giocatori |
-| `npm run migra` | Una tantum: ricrea i dati dal vecchio progetto in `legacy/`. **Sovrascrive `data/`**: non serve più |
+| `npm run migra` | Una tantum, già fatto: ricreava i dati dal vecchio progetto in `legacy/`. Si rifiuta di partire se `data/manuale/` esiste (con `-- --force` lo sovrascrive: non farlo) |
 
 ### Che cosa controlla `npm run valida`
 
