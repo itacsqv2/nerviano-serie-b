@@ -1,0 +1,88 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Badge from '../../components/Badge.astro';
+import Squadra from '../../components/Squadra.astro';
+import { dati } from '../../lib/data.ts';
+import { giocata } from '../../lib/classifica.ts';
+import { dataEstesa, dataLunga } from '../../lib/formato.ts';
+import { urlGiocatore } from '../../lib/url.ts';
+import { urlFipPerGiornata, urlPbLega, urlPbPartita } from '../../lib/fonti.ts';
+import { campo } from '../../lib/viste.ts';
+
+export const getStaticPaths = (() => dati().partite.filter(giocata).map((p) => ({ params: { id: p.id } }))) satisfies GetStaticPaths;
+
+const d = dati();
+const p = d.partitaPerId.get(Astro.params.id!)!;
+const casa = d.sq(p.casa);
+const ospite = d.sq(p.ospite);
+const STATI: Record<string, string> = { omologata: 'Risultato omologato dalla FIP', ufficioso: 'Risultato ufficioso, in attesa di omologazione', da_giocare: 'Da giocare' };
+const TAB: Record<string, string> = {
+  completo: 'Tabellino completo su PlayBasket.',
+  incongruente: 'Su PlayBasket i punti del tabellino non tornano con il risultato ufficiale FIP.',
+  parziale: 'Su PlayBasket c’è il tabellino di una sola squadra.',
+  in_attesa: 'Il tabellino non è ancora su PlayBasket: di solito arriva qualche giorno dopo la partita.',
+  assente: 'Il tabellino non è disponibile su PlayBasket.',
+};
+const righe = (sq: string) =>
+  d.tabellini
+    .filter((t) => t.partita === p.id && t.squadra === sq)
+    .map((t) => ({ t, persona: d.personaPerId.get(t.giocatore)! }))
+    .sort((a, b) => b.t.punti - a.t.punti || a.persona.cognome.localeCompare(b.persona.cognome, 'it'));
+const lati = [p.casa, p.ospite].map((sq) => ({ sq, righe: d.playbasket ? righe(sq) : [] }));
+const titolo = `${casa.breve}–${ospite.breve} ${p.pt_casa}-${p.pt_ospite}`;
+---
+<Base titolo={titolo} descrizione={`${casa.nome}–${ospite.nome} ${p.pt_casa}-${p.pt_ospite}, ${p.giornata}ª giornata di Serie B Interregionale ${d.stagione.stagione}.`}>
+  <p class="etichetta">{p.giornata}ª giornata · {p.fase === 'andata' ? 'andata' : 'ritorno'} · gara n. {p.id}</p>
+  <h1 class="sr-only">{casa.nome} – {ospite.nome}, {p.pt_casa} a {p.pt_ospite}</h1>
+  <section class="tabellone card" aria-label="Risultato">
+    <div class="lato"><Badge squadra={p.casa} grande /><Squadra squadra={p.casa} link={true} /></div>
+    <p class="punteggio tabulare" aria-hidden="true">{p.pt_casa}<span>–</span>{p.pt_ospite}{p.stato === 'ufficioso' && '*'}</p>
+    <div class="lato"><Badge squadra={p.ospite} grande /><Squadra squadra={p.ospite} /></div>
+  </section>
+  <p class="info">{dataLunga(p.data)} {p.data.slice(0, 4)}{p.ora && `, ore ${p.ora}`} · {campo(p)}</p>
+  <p class="nota">{typeof p.stato === 'string' && (STATI[p.stato] ?? p.stato)}{p.nota && ` · ${p.nota}`}{p.escludi_medie && ' · esclusa dalle medie punti'}</p>
+
+  {d.playbasket && (
+    <section class="sezione" aria-labelledby="t-tabellino">
+      <h2 id="t-tabellino">Punti dei giocatori</h2>
+      {p.tabellino && <p class="intro">{TAB[p.tabellino]} In questo campionato PlayBasket riporta solo i punti.</p>}
+      <div class="griglia">
+        {lati.map(({ sq, righe }) => (
+          <div class="tabella-scorre">
+            <table>
+              <caption>{d.sq(sq).breve}</caption>
+              <thead><tr><th scope="col">Giocatore</th><th scope="col" class="num">Punti</th></tr></thead>
+              <tbody>
+                {righe.length
+                  ? righe.map(({ t, persona }) => <tr><th scope="row"><a href={urlGiocatore(persona.slug)}>{persona.cognome} {persona.nome}</a></th><td class="num">{t.punti}</td></tr>)
+                  : <tr><td colspan="2" class="nota">Tabellino non disponibile.</td></tr>}
+              </tbody>
+              {righe.length > 0 && (
+                <tfoot><tr><th scope="row">Totale tabellino</th><td class="num"><strong>{d.tabelliniTutti.filter((t) => t.partita === p.id && t.squadra === sq).reduce((s, t) => s + t.punti, 0)}</strong></td></tr></tfoot>
+              )}
+            </table>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <p class="nota fonti">
+    Fonti: <a href={urlFipPerGiornata(d.stagione, p.giornata)}>risultato su FIP</a>
+    {d.playbasket && <> · <a href={p.pb ? urlPbPartita(d.stagione, p.pb) : urlPbLega(d.stagione, 'cl')}>tabellino su PlayBasket</a></>},
+    dati al {dataEstesa(d.meta.fonti.fip.aggiornato)}.
+  </p>
+</Base>
+
+<style>
+  .tabellone { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0.75rem; margin-block: 0.5rem 0.75rem; text-align: center; }
+  .lato { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 1.05rem; }
+  .lato :global(.badge:not(.grande)) { display: none; }
+  .punteggio { font-family: var(--font-titoli); font-weight: 700; font-size: clamp(2.4rem, 10vw, 4rem); color: var(--inchiostro); margin: 0; white-space: nowrap; }
+  .punteggio span { color: var(--testo-2); margin-inline: 0.2em; }
+  .info { font-size: 1.05rem; color: var(--inchiostro); margin-bottom: 0.25rem; }
+  .info::first-letter { text-transform: uppercase; }
+  tfoot th, tfoot td { border-top: 2px solid var(--bordo-forte); }
+  .fonti { margin-top: 2rem; }
+</style>

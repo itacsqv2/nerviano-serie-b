@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import TabellaClassifica from '../components/TabellaClassifica.astro';
+import GraficoAttaccoDifesa from '../components/GraficoAttaccoDifesa.astro';
+import { dati } from '../lib/data.ts';
+import { dataEstesa } from '../lib/formato.ts';
+import { url } from '../lib/url.ts';
+import { urlFipPerGiornata } from '../lib/fonti.ts';
+import { ultimaGiornata } from '../lib/viste.ts';
+
+const d = dati();
+const ufficiosi = d.ufficiosi;
+const elencoUfficiosi = ufficiosi.map((p) => `${d.sq(p.casa).breve}–${d.sq(p.ospite).breve} ${p.pt_casa}-${p.pt_ospite}`).join(', ');
+const zone = d.guida.zone;
+const ug = Math.max(1, ultimaGiornata(d));
+---
+<Base titolo="Classifica" sezione="classifica" descrizione={`Classifica ufficiale FIP del Girone A di Serie B Interregionale ${d.stagione.stagione}, con zone playoff, salvezza e playout.`}>
+  <h1>Classifica</h1>
+
+  <section class="sezione" aria-labelledby="t-ufficiale">
+    <h2 id="t-ufficiale">Classifica ufficiale</h2>
+    <p class="intro">
+      La classifica pubblicata dalla FIP, che conta solo le gare omologate, aggiornata al {dataEstesa(d.meta.fonti.fip.aggiornato)}.
+      2 punti a vittoria; a pari punti contano gli scontri diretti, poi la differenza canestri.
+      <a href={urlFipPerGiornata(d.stagione, ug)}>Vedi la fonte FIP</a>
+    </p>
+    <TabellaClassifica righe={d.classificaUfficiale} titolo="Classifica ufficiale FIP" />
+    <ul class="legenda zone" aria-label="Zone di classifica">
+      {zone.map((z) => <li><span class:list={['zona', `zona-${z.zona.toLowerCase()}`]}>{z.zona}</span> {z.da === z.a ? `${z.da}ª` : `${z.da}ª–${z.a}ª`}</li>)}
+    </ul>
+    <p class="nota"><a href={url('/guida/#formula')}>Cosa succede a fine stagione in ogni zona</a></p>
+  </section>
+
+  {ufficiosi.length > 0 && (
+    <section class="sezione" aria-labelledby="t-provvisoria">
+      <h2 id="t-provvisoria">Classifica provvisoria</h2>
+      <p class="avviso">
+        <strong>Attenzione:</strong> questa classifica è calcolata qui e comprende {ufficiosi.length === 1 ? 'il risultato ufficioso' : 'i risultati ufficiosi'} di {elencoUfficiosi},
+        non ancora {ufficiosi.length === 1 ? 'omologato' : 'omologati'} dalla FIP. Può cambiare.
+      </p>
+      <TabellaClassifica righe={d.classificaProvvisoria} titolo="Classifica provvisoria, con i risultati non omologati" />
+    </section>
+  )}
+
+  <section class="sezione card" aria-labelledby="t-ad">
+    <h2 id="t-ad">Attacco e difesa</h2>
+    <p class="intro">Punti segnati e subiti a partita da ogni squadra, nelle gare giocate in campo (esclusi i risultati a tavolino{ufficiosi.length ? ', compresi quelli non ancora omologati' : ''}). Tocca un punto per la scheda della squadra.</p>
+    <GraficoAttaccoDifesa righe={ufficiosi.length ? d.classificaProvvisoria : d.classificaUfficiale} />
+  </section>
+</Base>
+
+<style>
+  .zone { margin-top: 0.75rem; }
+</style>

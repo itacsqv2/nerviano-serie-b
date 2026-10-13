@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url.ts';
+---
+<Base titolo="Pagina non trovata">
+  <h1>Pagina non trovata</h1>
+  <p class="intro">Questa pagina non esiste o è stata spostata. Può succedere con i giocatori che non sono più in rosa.</p>
+  <p class="riga">
+    <a href={url('/')}>Torna alla home</a>
+    <a href={url('/calendario/')}>Calendario</a>
+    <a href={url('/classifica/')}>Classifica</a>
+    <a href={url('/avversarie/')}>Avversarie</a>
+  </p>
+</Base>

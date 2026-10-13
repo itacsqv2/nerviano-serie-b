@@ -1,0 +1,152 @@
+[
+  {
+    "posizione": 1,
+    "squadra": "pavia",
+    "punti": 6,
+    "g": 3,
+    "v": 3,
+    "p": 0,
+    "pf": 292,
+    "ps": 208
+  },
+  {
+    "posizione": 2,
+    "squadra": "monferrato",
+    "punti": 6,
+    "g": 3,
+    "v": 3,
+    "p": 0,
+    "pf": 240,
+    "ps": 209
+  },
+  {
+    "posizione": 3,
+    "squadra": "academy",
+    "punti": 6,
+    "g": 3,
+    "v": 3,
+    "p": 0,
+    "pf": 235,
+    "ps": 211
+  },
+  {
+    "posizione": 4,
+    "squadra": "oleggio",
+    "punti": 4,
+    "g": 3,
+    "v": 2,
+    "p": 1,
+    "pf": 189,
+    "ps": 138
+  },
+  {
+    "posizione": 5,
+    "squadra": "7laghi",
+    "punti": 4,
+    "g": 3,
+    "v": 2,
+    "p": 1,
+    "pf": 232,
+    "ps": 195
+  },
+  {
+    "posizione": 6,
+    "squadra": "saronno",
+    "punti": 4,
+    "g": 3,
+    "v": 2,
+    "p": 1,
+    "pf": 230,
+    "ps": 252
+  },
+  {
+    "posizione": 7,
+    "squadra": "sennori",
+    "punti": 4,
+    "g": 3,
+    "v": 2,
+    "p": 1,
+    "pf": 224,
+    "ps": 259
+  },
+  {
+    "posizione": 8,
+    "squadra": "crocetta",
+    "punti": 2,
+    "g": 2,
+    "v": 1,
+    "p": 1,
+    "pf": 170,
+    "ps": 156
+  },
+  {
+    "posizione": 9,
+    "squadra": "nerviano",
+    "punti": 2,
+    "g": 3,
+    "v": 1,
+    "p": 2,
+    "pf": 215,
+    "ps": 243
+  },
+  {
+    "posizione": 10,
+    "squadra": "cagliari",
+    "punti": 2,
+    "g": 3,
+    "v": 1,
+    "p": 2,
+    "pf": 214,
+    "ps": 215
+  },
+  {
+    "posizione": 11,
+    "squadra": "bocconi",
+    "punti": 2,
+    "g": 3,
+    "v": 1,
+    "p": 2,
+    "pf": 212,
+    "ps": 225
+  },
+  {
+    "posizione": 12,
+    "squadra": "cermenate",
+    "punti": 0,
+    "g": 3,
+    "v": 0,
+    "p": 3,
+    "pf": 216,
+    "ps": 242
+  },
+  {
+    "posizione": 13,
+    "squadra": "college",
+    "punti": 0,
+    "g": 3,
+    "v": 0,
+    "p": 3,
+    "pf": 220,
+    "ps": 264
+  },
+  {
+    "posizione": 14,
+    "squadra": "campus",
+    "punti": 0,
+    "g": 2,
+    "v": 0,
+    "p": 2,
+    "pf": 148,
+    "ps": 180
+  },
+  {
+    "posizione": 15,
+    "squadra": "gallarate",
+    "punti": 0,
+    "g": 2,
+    "v": 0,
+    "p": 2,
+    "pf": 59,
+    "ps": 99
+  }
+]

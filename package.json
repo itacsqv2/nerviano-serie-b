@@ -1,0 +1,44 @@
+{
+  "name": "nerviano-basket",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sito non ufficiale di tifosi di Invalves PeB Nerviano, Serie B Interregionale",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
+    "valida": "tsx scripts/valida.ts",
+    "aggiorna": "tsx scripts/aggiorna/index.ts",
+    "foto": "tsx scripts/foto.ts",
+    "migra": "tsx scripts/migra-legacy.ts"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource/barlow": "^5.3.0",
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "astro": "^7.3.8",
+    "d3-array": "^3.2.4",
+    "d3-scale": "^4.0.2",
+    "d3-shape": "^3.2.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/d3-array": "^3.2.2",
+    "@types/d3-scale": "^4.0.9",
+    "@types/d3-shape": "^3.2.0",
+    "@types/node": "^26.6.5",
+    "cheerio": "^1.2.0",
+    "robots-parser": "^3.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.4"
+  }
+}

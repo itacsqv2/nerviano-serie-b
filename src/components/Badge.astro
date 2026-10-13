@@ -1,0 +1,31 @@
+---
+/** Badge SVG di una squadra: sigla nei colori della squadra (niente loghi, §5.2). Decorativo: il nome è sempre scritto accanto. */
+import { dati } from '../lib/data.ts';
+import { testoSu } from '../lib/colori.ts';
+
+interface Props { squadra: string; grande?: boolean }
+const { squadra, grande = false } = Astro.props;
+const s = dati().sq(squadra);
+const c = s.colori;
+---
+<svg class:list={['badge', { grande }]} viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+  {c ? (
+    <>
+      <circle cx="20" cy="20" r="19" fill={c.primario} stroke={c.secondario} stroke-width="2" />
+      <text x="20" y="25" text-anchor="middle" fill={testoSu(c.primario)}>{s.sigla}</text>
+    </>
+  ) : (
+    <>
+      <circle class="neutro" cx="20" cy="20" r="19" />
+      <text class="neutro-testo" x="20" y="25" text-anchor="middle">{s.sigla}</text>
+    </>
+  )}
+</svg>
+
+<style>
+  .badge { width: 1.75rem; height: 1.75rem; flex: none; vertical-align: middle; }
+  .badge.grande { width: 3.5rem; height: 3.5rem; }
+  text { font-family: var(--font-titoli); font-weight: 700; font-size: 13px; letter-spacing: 0.02em; }
+  .neutro { fill: var(--superficie-2); stroke: var(--bordo-forte); stroke-width: 1.5; }
+  .neutro-testo { fill: var(--inchiostro); }
+</style>

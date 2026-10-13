@@ -1,0 +1,33 @@
+---
+/** Contenuto della scheda «prossima partita» per una giornata di Nerviano. */
+import type { GiornataNerviano } from '../lib/dataset.ts';
+import { dataLunga } from '../lib/formato.ts';
+import { campo } from '../lib/viste.ts';
+import Squadra from './Squadra.astro';
+
+interface Props { g: GiornataNerviano | null }
+const { g } = Astro.props;
+---
+{g && g.partita && g.avversaria ? (
+  <>
+    <span class="etichetta">Prossima partita · {g.giornata}ª giornata</span>
+    <span class="data">{dataLunga(g.partita.data)}</span>
+    <span class="sotto">
+      {g.partita.ora && <>ore {g.partita.ora} · </>}{g.casa ? 'in casa contro' : 'in trasferta contro'} <Squadra squadra={g.avversaria} />
+    </span>
+    <span class="sotto">{campo(g.partita)}</span>
+    <span class="tra" data-tra={g.partita.data} hidden></span>
+  </>
+) : (
+  <>
+    <span class="etichetta">Prossima partita</span>
+    <span class="valore">—</span>
+    <span class="sotto">Prima fase conclusa</span>
+  </>
+)}
+
+<style>
+  .data { font-family: var(--font-titoli); font-weight: 700; font-size: 1.7rem; line-height: 1.05; color: var(--inchiostro); }
+  .data::first-letter { text-transform: uppercase; }
+  .tra { font-weight: 600; color: var(--accento-testo); }
+</style>

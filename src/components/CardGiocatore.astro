@@ -1,0 +1,45 @@
+---
+/** Card di un giocatore nel roster: avatar, numero, nome, ruolo, età e numeri della stagione. */
+import type { Persona } from '../lib/dataset.ts';
+import { dati } from '../lib/data.ts';
+import { f1 } from '../lib/formato.ts';
+import { urlGiocatore } from '../lib/url.ts';
+import Avatar from './Avatar.astro';
+
+interface Props { persona: Persona; mostraStato?: boolean }
+const { persona: p, mostraStato = true } = Astro.props;
+const d = dati();
+const eta = p.eta != null ? `${p.eta} anni` : p.etaFascia ? p.etaFascia.replace('U', 'Under ') : null;
+const dettagli = [p.ruolo ?? 'Ruolo non indicato', eta, p.altezza ? `${p.altezza} cm` : null].filter(Boolean).join(' · ');
+const stato = p.exNerviano ? 'Ex Nerviano' : p.stato;
+---
+<li class="card giocatore">
+  <Avatar persona={p} />
+  <div class="corpo">
+    <p class="nome">
+      {p.numero && <span class="maglia" aria-hidden="true">{p.numero}</span>}
+      {d.playbasket ? <a href={urlGiocatore(p.slug)}>{p.nomeCompleto}</a> : p.nomeCompleto}
+      {p.numero && <span class="sr-only">, numero {p.numero}</span>}
+    </p>
+    <p class="nota">{dettagli}</p>
+    {mostraStato && stato && <p class="nota">{stato}{p.provenienza && p.stato === 'Nuovo arrivo' && !p.exNerviano ? ` · da ${p.provenienza}` : p.provenienza && p.stato !== 'Nuovo arrivo' ? ` · ${p.provenienza}` : ''}</p>}
+    {p.scouting && <span class="tag accento">Scheda</span>}
+  </div>
+  <div class="numeri">
+    {p.stagione.partite
+      ? <><span class="media">{f1(p.stagione.media)}</span><span class="nota">punti a partita</span><span class="nota">{p.stagione.partite} {p.stagione.partite === 1 ? 'partita' : 'partite'}</span></>
+      : <span class="nota">non ancora a referto</span>}
+  </div>
+</li>
+
+<style>
+  .giocatore { display: grid; grid-template-columns: auto 1fr auto; gap: 0.75rem; align-items: center; padding: 0.75rem; }
+  .giocatore p { margin: 0; }
+  .corpo { min-width: 0; }
+  .nome { font-weight: 600; color: var(--inchiostro); display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap; }
+  .nome a { color: inherit; }
+  .maglia { font-family: var(--font-titoli); font-weight: 700; font-size: 1.35rem; color: var(--accento-testo); font-variant-numeric: tabular-nums; }
+  .numeri { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+  .media { font-family: var(--font-titoli); font-weight: 700; font-size: 1.6rem; line-height: 1; color: var(--inchiostro); }
+  .tag { margin-top: 0.3rem; }
+</style>

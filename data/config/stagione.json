@@ -1,0 +1,26 @@
+{
+  "stagione": "2026/27",
+  "squadra_riferimento": "nerviano",
+  "giornate": 30,
+  "turni_per_fase": 15,
+  "partite_per_giornata": 7,
+  "fip": {
+    "group": "campionati-regionali",
+    "regione_codice": "PI",
+    "comitato_codice": "RPI",
+    "sesso": "M",
+    "codice_campionato": "B2",
+    "codice_fase": "1",
+    "codice_girone": "85162"
+  },
+  "playbasket": {
+    "season": 2027,
+    "lt": 1,
+    "lf": "M",
+    "lr": "LA",
+    "lp": "RM",
+    "lc": "B/MR",
+    "lg": 1,
+    "prefisso": "lombardia"
+  }
+}

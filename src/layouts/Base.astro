@@ -1,0 +1,139 @@
+---
+import '@fontsource/barlow/latin-400.css';
+import '@fontsource/barlow/latin-600.css';
+import '@fontsource/barlow/latin-700.css';
+import '@fontsource/barlow-condensed/latin-600.css';
+import '@fontsource/barlow-condensed/latin-700.css';
+import '../styles/global.css';
+import { dati } from '../lib/data.ts';
+import { url } from '../lib/url.ts';
+import { dataEstesa } from '../lib/formato.ts';
+import Pallone from '../components/Pallone.astro';
+
+interface Props {
+  titolo: string;
+  descrizione?: string;
+  /** voce di menu attiva */
+  sezione?: 'home' | 'calendario' | 'classifica' | 'nerviano' | 'avversarie' | 'marcatori' | 'guida';
+}
+const { titolo, descrizione, sezione } = Astro.props;
+const d = dati();
+const titoloPagina = sezione === 'home' ? `${d.sito.titolo} · tifosi di Nerviano in Serie B Interregionale` : `${titolo} · ${d.sito.titolo}`;
+const desc = descrizione ?? `Calendario, classifica, giocatori e avversarie di Nerviano in Serie B Interregionale ${d.stagione.stagione}. Sito non ufficiale curato da un tifoso.`;
+const voci = [
+  { id: 'home', testo: 'Home', href: url('/') },
+  { id: 'calendario', testo: 'Calendario', href: url('/calendario/') },
+  { id: 'classifica', testo: 'Classifica', href: url('/classifica/') },
+  { id: 'nerviano', testo: 'Nerviano', href: url('/nerviano/') },
+  { id: 'avversarie', testo: 'Avversarie', href: url('/avversarie/') },
+  ...(d.playbasket ? [{ id: 'marcatori', testo: 'Marcatori', href: url('/marcatori/') }] : []),
+  { id: 'guida', testo: 'Guida', href: url('/guida/') },
+];
+const aggiornato = [d.meta.fonti.fip.aggiornato, d.meta.fonti.playbasket.aggiornato].sort().at(-1)!;
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titoloPagina}</title>
+    <meta name="description" content={desc} />
+    {!d.sito.indicizzabile && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#12203a" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+    {d.sito.indicizzabile && <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />}
+  </head>
+  <body>
+    <a class="salta" href="#contenuto">Vai al contenuto</a>
+    <header class="testata">
+      <div class="contenitore testata-riga">
+        <a class="marchio" href={url('/')}>
+          <Pallone />
+          <span class="marchio-testo">
+            <span class="marchio-nome">Nerviano Basket</span>
+            <span class="marchio-sotto">Serie B Interregionale · Girone A · {d.stagione.stagione}</span>
+          </span>
+        </a>
+        {d.playbasket && (
+          <div class="cerca solo-js" role="search">
+            <label class="sr-only" for="cerca-giocatore">Cerca un giocatore</label>
+            <input
+              id="cerca-giocatore"
+              type="search"
+              role="combobox"
+              aria-autocomplete="list"
+              placeholder="Cerca un giocatore"
+              autocomplete="off"
+              aria-controls="cerca-risultati"
+              aria-expanded="false"
+              data-indice={url('/cerca.json')}
+            />
+            <ul id="cerca-risultati" class="cerca-risultati" role="listbox" aria-label="Giocatori trovati" hidden></ul>
+          </div>
+        )}
+      </div>
+      <nav class="contenitore menu" aria-label="Sezioni del sito">
+        <ul>
+          {voci.map((v) => (
+            <li><a href={v.href} aria-current={v.id === sezione ? 'page' : undefined}>{v.testo}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="contenitore" tabindex="-1">
+      <slot />
+    </main>
+
+    <footer class="piede">
+      <div class="contenitore pila">
+        <p><strong>Pagina non ufficiale curata da un tifoso:</strong> non è collegata alla società, alla FIP né a PlayBasket.</p>
+        <p>
+          Dati da <a href="https://fip.it/risultati/">FIP</a> (calendario, risultati, classifica){d.playbasket && <> e <a href="https://www.playbasket.it/">PlayBasket</a> (rose, punti, carriere)</>},
+          aggiornati al <time datetime={aggiornato}>{dataEstesa(aggiornato)}</time>.
+        </p>
+        <p class="riga">
+          <a href={url('/guida/#fonti')}>Da dove vengono i dati</a>
+          <a href={url('/note-legali/')}>Note legali e privacy</a>
+          <a href={`mailto:${d.sito.email}`}>Segnala un errore</a>
+        </p>
+      </div>
+    </footer>
+    <script>
+      import '../client/base.ts';
+    </script>
+  </body>
+</html>
+
+<style>
+  .testata { background: var(--testata-sfondo); color: var(--testata-testo); border-bottom: 4px solid var(--accento); }
+  .testata-riga { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 1.5rem; padding-block: 0.9rem 0.5rem; }
+  .marchio { display: inline-flex; align-items: center; gap: 0.7rem; color: inherit; text-decoration: none; }
+  .marchio :global(svg) { width: 2.4rem; height: 2.4rem; flex: none; }
+  .marchio-testo { display: flex; flex-direction: column; }
+  .marchio-nome { font-family: var(--font-titoli); font-weight: 700; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1; }
+  .marchio-sotto { font-size: 0.8rem; color: var(--testata-testo-2); }
+  .menu ul { display: flex; gap: 0.25rem; list-style: none; margin: 0; padding: 0 0 0.25rem; overflow-x: auto; scrollbar-width: thin; }
+  .menu a {
+    display: block; padding: 0.55rem 0.7rem; color: var(--testata-testo); text-decoration: none; white-space: nowrap;
+    font-family: var(--font-titoli); font-size: 1.1rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+  }
+  .menu a:hover { border-bottom-color: var(--testata-testo-2); }
+  .menu a[aria-current='page'] { border-bottom-color: var(--accento); }
+  .menu a:focus-visible, .marchio:focus-visible { outline-color: var(--testata-testo); }
+  .cerca { position: relative; flex: 1 1 14rem; max-width: 22rem; }
+  .cerca input { width: 100%; background: var(--superficie); }
+  .cerca-risultati {
+    position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 0.25rem); margin: 0; padding: 0.25rem; list-style: none;
+    background: var(--superficie); border: 1px solid var(--bordo-forte); border-radius: var(--raggio); max-height: 20rem; overflow-y: auto;
+  }
+  .cerca-risultati :global(a) { display: block; padding: 0.45rem 0.6rem; color: var(--testo); text-decoration: none; border-radius: var(--raggio-piccolo); }
+  .cerca-risultati :global(a:hover), .cerca-risultati :global([aria-selected='true'] a) { background: var(--superficie-2); }
+  .cerca-risultati :global(.nota) { display: block; font-size: 0.8rem; }
+  main:focus { outline: none; }
+  .piede { background: var(--superficie-2); border-top: 1px solid var(--bordo); padding-block: 1.5rem; font-size: 0.92rem; color: var(--testo-2); }
+  .piede strong { color: var(--testo); }
+</style>

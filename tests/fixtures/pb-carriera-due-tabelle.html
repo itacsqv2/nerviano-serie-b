@@ -1,0 +1,174 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Giacomo Bonavida - BasketBall Gallarate [B Interregionale Maschile 2026/27] | GIOCATORE PALLACANESTRO LOMBARDIA @PLAYBASKET.IT</title></head><body>
+<table class="tabella_partita stats playerCV coached">
+    <thead>
+      <tr>
+        <th title="Clicca per ordinare per stagione sportiva" class="headerSortUp">AS</th>
+        <th title="Clicca per ordinare per formazione">Squadra</th>
+        <th title="Clicca per ordinare per categoria">Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>22/23</td>
+        <td><a href="profile.php?exteid=4&amp;subj=2&amp;season=2023&amp;extobj=14716&amp;obj=98191&amp;action=view&amp;eid=5">BPBZ Bolzano</a></td>
+        <td><a href="profile.php?exteid=4&amp;subj=2&amp;season=2023&amp;extobj=14716&amp;obj=98191&amp;action=view&amp;eid=5">Under 14</a></td>
+      </tr>
+    </tbody>
+  </table>
+<table class="tabella_partita stats playerCV">
+    <thead>
+      <tr>
+        <th title="Clicca per ordinare per Anno Sportivo" class="headerSortUp">AS</th><th title="Clicca per ordinare per formazione di militanza">Squadra</th>
+        <th title="Clicca per ordinare per Categoria">Categoria</th>
+        <th title="Clicca per ordinare per punti totali registrati in stagione">PTS&nbsp;</th>
+        <th title="Clicca per ordinare per presenze registrate in stagione">PRES</th>
+        <th title="Clicca per ordinare per media punti in stagione">AVG&nbsp;</th>
+        <th title="Clicca per ordinare per miglior score in stagione">BEST</th>
+      </tr>
+    </thead>
+    <thead class="recap">
+      <tr>
+        <th>14</th>
+        <th>11 senior / 3 giovanile</th><th>9
+        </th>
+        <th alt="pts">4459</th>
+        <th alt="pres">276</th>
+        <th alt="avg">16.2</th>
+        <th alt="best">41</th>
+      </tr>
+    </thead>  <script>
+    function calculateTotals() {
+      let pts = 0;
+      let pres = 0;
+      let best = 0;
+      $('table.playerCV tbody tr').each(function() {
+        if (!isNaN(parseInt($(this).find('td[alt="pts"]').text()))) {
+          pts += parseInt($(this).find('td[alt="pts"]').text());
+        }
+        if (!isNaN(parseInt($(this).find('td[alt="pres"]').text()))) {
+          pres += parseInt($(this).find('td[alt="pres"]').text());
+        }
+        if (!isNaN(parseInt($(this).find('td[alt="best"]').text())) && parseInt($(this).find('td[alt="best"]').text()>best)) {
+          best = parseInt($(this).find('td[alt="best"]').text());
+        }
+      });
+      $('table.playerCV thead.recap th[alt="pts"]').text(pts);
+      $('table.playerCV thead.recap th[alt="pres"]').text(pres);
+      let avg= pts/pres;
+      $('table.playerCV thead.recap th[alt="avg"]').text(avg.toFixed(1));
+      $('table.playerCV thead.recap th[alt="best"]').text(best);
+    }
+
+  </script>
+
+      <tbody>
+
+        <tr>
+          <td title="2026/27">26/27</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2027&amp;extobj=2563&amp;obj=98191&amp;action=view&amp;eid=5">BasketBall Gallarate</a></td><td>B Interregionale</td>
+          <td alt="pts">50</td>
+          <td alt="pres">2</td>
+          <td alt="avg">25.0</td>
+          <td alt="best">29</td>
+        </tr>
+        <tr>
+          <td title="2025/26">25/26</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2026&amp;extobj=2574&amp;obj=98191&amp;action=view&amp;eid=5">Pallacanestro Nervianese 1919</a></td><td>B Interregionale</td>
+          <td alt="pts">713</td>
+          <td alt="pres">34</td>
+          <td alt="avg">21.0</td>
+          <td alt="best">40</td>
+        </tr>
+        <tr>
+          <td title="2024/25">24/25</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2025&amp;extobj=4984&amp;obj=98191&amp;action=view&amp;eid=5">Basket Iseo</a></td><td>B Interregionale</td>
+          <td alt="pts">657</td>
+          <td alt="pres">36</td>
+          <td alt="avg">18.3</td>
+          <td alt="best">30</td>
+        </tr>
+        <tr>
+          <td title="2023/24">23/24</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2024&amp;extobj=866&amp;obj=98191&amp;action=view&amp;eid=5">Piani Bolzano-Bozen</a></td><td>Serie C</td>
+          <td alt="pts">629</td>
+          <td alt="pres">32</td>
+          <td alt="avg">19.7</td>
+          <td alt="best">33</td>
+        </tr>
+        <tr>
+          <td title="2022/23">22/23</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2023&amp;extobj=866&amp;obj=98191&amp;action=view&amp;eid=5">Piani Bolzano-Bozen</a></td><td>C Gold</td>
+          <td alt="pts">442</td>
+          <td alt="pres">27</td>
+          <td alt="avg">16.4</td>
+          <td alt="best">32</td>
+        </tr>
+        <tr>
+          <td title="2021/22">21/22</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2022&amp;extobj=866&amp;obj=98191&amp;action=view&amp;eid=5">Piani Bolzano-Bozen</a></td><td>C Gold</td>
+          <td alt="pts">468</td>
+          <td alt="pres">31</td>
+          <td alt="avg">15.1</td>
+          <td alt="best">29</td>
+        </tr>
+        <tr>
+          <td title="2020/21">20/21</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2021&amp;extobj=2821&amp;obj=98191&amp;action=view&amp;eid=5">Manerbio Basket</a></td><td>C Silver</td>
+          <td alt="pts">175</td>
+          <td alt="pres">15</td>
+          <td alt="avg">11.7</td>
+          <td alt="best">19</td>
+        </tr>
+        <tr>
+          <td title="2020/21">20/21</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2021&amp;extobj=7357&amp;obj=98191&amp;action=view&amp;eid=5">Ju.vi. Cremona</a></td><td>Serie B</td>
+          <td alt="pts">21</td>
+          <td alt="pres">7</td>
+          <td alt="avg">3.0</td>
+          <td alt="best">5</td>
+        </tr>
+        <tr>
+          <td title="2019/20">19/20</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2020&amp;extobj=6209&amp;obj=98191&amp;action=view&amp;eid=5">Piani Junior Bolzano</a></td><td>C Silver</td>
+          <td alt="pts">294</td>
+          <td alt="pres">19</td>
+          <td alt="avg">15.5</td>
+          <td alt="best">26</td>
+        </tr>
+        <tr>
+          <td title="2018/19">18/19</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2019&amp;extobj=8479&amp;obj=98191&amp;action=view&amp;eid=5">Piani Jr Bolzano</a></td><td>Under 18 Gold</td>
+          <td alt="pts">330</td>
+          <td alt="pres">17</td>
+          <td alt="avg">19.4</td>
+          <td alt="best">41</td>
+        </tr>
+        <tr>
+          <td title="2018/19">18/19</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2019&amp;extobj=6209&amp;obj=98191&amp;action=view&amp;eid=5">Piani Junior Bolzano</a></td><td>Serie D</td>
+          <td alt="pts">369</td>
+          <td alt="pres">27</td>
+          <td alt="avg">13.7</td>
+          <td alt="best">34</td>
+        </tr>
+        <tr>
+          <td title="2017/18">17/18</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2018&amp;extobj=6209&amp;obj=98191&amp;action=view&amp;eid=5">Piani Junior Bolzano</a></td><td>Serie D</td>
+          <td alt="pts">215</td>
+          <td alt="pres">21</td>
+          <td alt="avg">10.2</td>
+          <td alt="best">17</td>
+        </tr>
+        <tr>
+          <td title="2017/18">17/18</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2018&amp;extobj=8479&amp;obj=98191&amp;action=view&amp;eid=5">Piani Jr Bolzano</a></td><td>Under 18</td>
+          <td alt="pts">83</td>
+          <td alt="pres">5</td>
+          <td alt="avg">16.6</td>
+          <td alt="best">20</td>
+        </tr>
+        <tr>
+          <td title="2016/17">16/17</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2017&amp;extobj=6209&amp;obj=98191&amp;action=view&amp;eid=5">Piani Junior Bolzano</a></td><td>Serie D</td>
+          <td alt="pts">0</td>
+          <td alt="pres">2</td>
+          <td alt="avg">0.0</td>
+          <td alt="best">0</td>
+        </tr>
+        <tr>
+          <td title="2014/15">14/15</td><td><a href="profile.php?exteid=4&amp;subj=1&amp;season=2015&amp;extobj=6245&amp;obj=98191&amp;action=view&amp;eid=5">Piani Bolzano A</a></td><td>Under 14</td>
+          <td alt="pts">13</td>
+          <td alt="pres">1</td>
+          <td alt="avg">13.0</td>
+          <td alt="best">13</td>
+        </tr>
+      </tbody>
+    </table>
+</body></html>

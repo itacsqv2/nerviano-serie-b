@@ -1,0 +1,65 @@
+name: Aggiorna dati
+
+# Solo avvio manuale: Actions → «Aggiorna dati» → Run workflow.
+on:
+  workflow_dispatch:
+    inputs:
+      completo:
+        description: Rileggi tutta la stagione (più lento, da usare a inizio stagione o se la classifica non torna)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: aggiorna-dati
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    name: Aggiorna i dati da FIP e PlayBasket
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+
+      - name: Aggiornamento
+        run: npm run aggiorna -- ${{ inputs.completo && '--completo' || '' }}
+
+      # La pull request creata con GITHUB_TOKEN non avvia la CI: i controlli si fanno qui.
+      - name: Validazione
+        run: npm run valida
+      - name: Build di prova
+        run: npm run build
+
+      - name: Ci sono novità?
+        id: novita
+        run: |
+          if [ -n "$(git status --porcelain data/auto)" ]; then echo "si=true" >> "$GITHUB_OUTPUT"; else echo "si=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Pull request con i nuovi dati
+        if: steps.novita.outputs.si == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: dati/aggiornamento
+          add-paths: data/auto/**
+          commit-message: 'Aggiorna i dati da FIP e PlayBasket'
+          title: 'Aggiornamento dati'
+          body-path: .cache/report.md
+          delete-branch: true
+
+      - name: Nessuna novità
+        if: steps.novita.outputs.si == 'false'
+        run: echo "Nessuna novità nei dati." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report nel riepilogo
+        if: always()
+        run: |
+          if [ -f .cache/report.md ]; then cat .cache/report.md >> "$GITHUB_STEP_SUMMARY"; else echo "L'aggiornamento si è fermato prima di scrivere il report: guarda il log del passo «Aggiornamento»." >> "$GITHUB_STEP_SUMMARY"; fi

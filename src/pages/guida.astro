@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import { dati } from '../lib/data.ts';
+import { dataEstesa, ordinale } from '../lib/formato.ts';
+import { urlPbRosa } from '../lib/fonti.ts';
+import { classificaCorrente } from '../lib/viste.ts';
+import { url } from '../lib/url.ts';
+
+const d = dati();
+const g = d.guida;
+const info = (id: string) => g.info.find((x) => x.id === id);
+const livello = info('livello');
+const struttura = info('struttura');
+const nomeRif = d.sq(d.rif).breve;
+const pos = classificaCorrente(d).find((r) => r.squadra === d.rif)!.posizione;
+const n = Math.max(...g.zone.map((z) => z.a));
+const zonaDi = (i: number) => g.zone.find((z) => z.da <= i && i <= z.a)?.zona ?? null;
+const sintesi = d.storia.sintesi;
+const GLOSSARIO: [string, string][] = [
+  ['Play', 'Porta palla e organizza il gioco: chiama gli schemi e decide i ritmi.'],
+  ['Guardia', 'Esterno che tira da fuori e attacca il canestro.'],
+  ['Ala piccola', 'Il ruolo più versatile: tira, entra in area e difende su avversari diversi.'],
+  ['Ala forte', 'Lungo mobile che gioca vicino a canestro ma sa anche aprirsi per tirare.'],
+  ['Centro', 'Di solito il più alto: protegge il canestro, prende rimbalzi e gioca spalle a canestro.'],
+  ['U19', 'Giocatore Under 19, cioè sotto i 19 anni.'],
+  ['U17', 'Giocatore Under 17, cioè sotto i 17 anni.'],
+  ['Doppio tesseramento', `Un giovane gioca con la prima squadra e, in parallelo, con una società di categoria inferiore per fare minuti. Per diversi giovani di ${nomeRif} è la Libertas Vanzago.`],
+  ['Tabellino', 'Il foglio con i punti di ogni giocatore in una partita.'],
+  ['Omologazione', 'La convalida ufficiale del risultato da parte della FIP: fino ad allora il risultato è ufficioso.'],
+  ['Risultato a tavolino', 'Un risultato deciso dal giudice sportivo e non sul campo: conta in classifica, ma qui non entra nelle medie punti.'],
+];
+---
+<Base titolo="Guida" sezione="guida" descrizione="Come funziona la Serie B Interregionale: formula, zone di classifica, date da segnare, glossario e fonti dei dati.">
+  <h1>Guida al campionato</h1>
+
+  <section class="sezione card" id="formula" aria-labelledby="t-formula">
+    <h2 id="t-formula">Come funziona la Serie B Interregionale</h2>
+    {livello && struttura && <p class="intro">È la {livello.valore} italiana: {livello.nota}. {struttura.valore}: {struttura.nota}.</p>}
+    <h3>Le posizioni a fine prima fase</h3>
+    <ol class="scala" aria-label="Zone di classifica">
+      {Array.from({ length: n }, (_, i) => i + 1).map((i) => {
+        const z = zonaDi(i);
+        return (
+          <li class:list={['gradino', z ? `zona-${z.toLowerCase()}` : '', { qui: i === pos }]} title={`${ordinale(i)}${z ? ` · ${z}` : ''}${i === pos ? ` · qui c'è ${nomeRif}` : ''}`}>
+            <span>{i}</span>{i === pos && <span class="sr-only">: qui c'è {nomeRif}</span>}
+          </li>
+        );
+      })}
+    </ol>
+    <p class="nota">Il riquadro bordato è la posizione attuale di {nomeRif} ({ordinale(pos)}).</p>
+    <ul class="zone">
+      {g.zone.map((z) => (
+        <li><span class:list={['zona', `zona-${z.zona.toLowerCase()}`]}>{z.zona}</span> <strong>{z.da === z.a ? ordinale(z.da) : `${ordinale(z.da)}–${ordinale(z.a)}`}</strong> · {z.descrizione}</li>
+      ))}
+    </ul>
+    <h3>La strada verso la promozione</h3>
+    <ol class="tappe">
+      {[...g.tappe].sort((a, b) => a.ordine - b.ordine).map((t) => (
+        <li class="card"><span class="ordine" aria-hidden="true">{t.ordine}</span><strong>{t.titolo}</strong><p>{t.descrizione}</p></li>
+      ))}
+    </ol>
+  </section>
+
+  <div class="griglia-larga">
+    <section class="card" aria-labelledby="t-date">
+      <h2 id="t-date">Date da segnare</h2>
+      <ul class="date">
+        {[...g.date].sort((a, b) => a.data.localeCompare(b.data)).map((x) => (
+          <li><time datetime={x.data}>{dataEstesa(x.data)}</time><strong>{x.titolo}</strong><span class="nota">{x.nota}</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="t-storia">
+      <h2 id="t-storia">Com'è andata la stagione scorsa</h2>
+      <p class="nota">{nomeRif} nel {d.storia.stagione}.</p>
+      <dl class="kv">
+        {sintesi.map((s) => <><dt>{s.etichetta}</dt><dd><strong>{s.valore}</strong> · {s.nota}</dd></>)}
+      </dl>
+      {d.storia.playoff.length > 0 && (
+        <div class="tabella-scorre">
+          <table>
+            <caption>Le partite dei playoff</caption>
+            <thead><tr><th scope="col">Turno</th><th scope="col">Data</th><th scope="col">Casa</th><th scope="col" class="num">Punti casa</th><th scope="col" class="num">Punti ospite</th><th scope="col">Ospite</th></tr></thead>
+            <tbody>
+              {d.storia.playoff.map((x) => (
+                <tr>
+                  <th scope="row">{x.turno}, {x.gara.toLowerCase()}</th>
+                  <td class="nowrap">{dataEstesa(x.data)}</td>
+                  <td>{x.casa}</td>
+                  <td class="num">{x.pt_casa}</td>
+                  <td class="num">{x.pt_ospite}</td>
+                  <td>{x.ospite}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  </div>
+
+  <section class="sezione card" aria-labelledby="t-glossario">
+    <h2 id="t-glossario">Piccolo glossario</h2>
+    <p class="nota">Le parole che trovi nelle schede.</p>
+    <dl class="glossario">
+      {GLOSSARIO.map(([t, def]) => <div><dt>{t}</dt><dd>{def}</dd></div>)}
+    </dl>
+  </section>
+
+  <section class="sezione card" id="fonti" aria-labelledby="t-fonti">
+    <h2 id="t-fonti">Da dove vengono i dati</h2>
+    <ul class="fonti">
+      <li><strong>Calendario, risultati, campi e classifica ufficiale</strong>: <a href="https://fip.it/risultati/">Federazione Italiana Pallacanestro</a>. Il Girone A è organizzato dal Comitato Regionale Piemonte. Dati al {dataEstesa(d.meta.fonti.fip.aggiornato)}.</li>
+      {d.playbasket && <li><strong>Rose, punti e carriere dei giocatori</strong>: <a href={urlPbRosa(d.stagione, d.sq(d.rif).pb_obj)}>PlayBasket</a>, dai tabellini caricati dalle società. Arrivano con qualche giorno di ritardo e in questo campionato riportano solo i punti. Dati al {dataEstesa(d.meta.fonti.playbasket.aggiornato)}.</li>}
+      <li><strong>Classifica provvisoria</strong>: calcolata qui dai risultati, compresi quelli non ancora omologati. A pari punti contano gli scontri diretti, poi la differenza canestri.</li>
+      {d.playbasket && <li><strong>Schede di scouting</strong>: scritte con AI (Claude) a partire da questi dati, senza aver visto le partite dal vivo. Ci sono per i giocatori di {nomeRif} e per i giocatori chiave delle avversarie; per gli altri c'è una sintesi automatica dei numeri.</li>}
+      <li>I dati si aggiornano a richiesta, non in tempo reale. <a href={url('/note-legali/')}>Note legali e privacy</a>.</li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .scala { list-style: none; margin: 0.5rem 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(2.4rem, 1fr)); gap: 0.25rem; max-width: 46rem; }
+  .gradino { border-top: 6px solid currentColor; background: var(--superficie-2); text-align: center; padding: 0.3rem 0; border-radius: var(--raggio-piccolo); }
+  .gradino span:first-child { color: var(--inchiostro); font-family: var(--font-titoli); font-weight: 700; font-size: 1.1rem; }
+  .gradino.qui { outline: 3px solid var(--inchiostro); outline-offset: 1px; }
+  .zone { list-style: none; padding: 0; margin: 0.75rem 0 1rem; display: grid; gap: 0.4rem; }
+  .tappe { list-style: none; padding: 0; margin: 0.5rem 0 0; display: grid; gap: 0.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); }
+  .tappe .card { background: var(--superficie-2); }
+  .tappe p { margin: 0.3rem 0 0; font-size: 0.95rem; }
+  .ordine { display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--inchiostro); color: var(--sfondo); font-family: var(--font-titoli); font-weight: 700; margin-right: 0.5rem; }
+  .date { list-style: none; margin: 0; padding: 0; }
+  .date li { display: flex; flex-direction: column; padding-block: 0.5rem; border-top: 1px solid var(--bordo); }
+  .date li:first-child { border-top: 0; }
+  .date time { font-size: 0.85rem; color: var(--testo-2); }
+  .kv { margin: 0 0 1rem; display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; }
+  .kv dt { font-weight: 600; color: var(--testo-2); }
+  .kv dd { margin: 0; }
+  @media (max-width: 30rem) { .kv { grid-template-columns: 1fr; } .kv dd { margin-bottom: 0.4rem; } }
+  .glossario { margin: 0; display: grid; gap: 0.75rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+  .glossario dt { font-weight: 700; color: var(--inchiostro); }
+  .glossario dd { margin: 0; }
+  .fonti { padding-left: 1.2rem; margin: 0; display: grid; gap: 0.5rem; }
+  .nowrap { white-space: nowrap; }
+</style>

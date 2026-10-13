@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import Badge from '../../components/Badge.astro';
+import Esito from '../../components/Esito.astro';
+import { dati } from '../../lib/data.ts';
+import { dataBreve, f1, ordinale } from '../../lib/formato.ts';
+import { urlGiocatore, urlPartita, urlSquadra } from '../../lib/url.ts';
+import { classificaCorrente, marcatori, prossimaSfida, sfideConRif } from '../../lib/viste.ts';
+
+const d = dati();
+const cl = classificaCorrente(d);
+const nomeRif = d.sq(d.rif).breve;
+const avversarie = d.squadre
+  .filter((s) => s.slug !== d.rif)
+  .map((s) => ({ s, riga: cl.find((r) => r.squadra === s.slug)!, prossima: prossimaSfida(d, s.slug) }))
+  .sort((a, b) => a.prossima - b.prossima || a.s.breve.localeCompare(b.s.breve, 'it'));
+const tutti = d.playbasket ? marcatori(d) : [];
+---
+<Base titolo="Avversarie" sezione="avversarie" descrizione={`Le 14 avversarie di ${nomeRif} nel Girone A: classifica, sfide, migliori realizzatori ed ex di turno.`}>
+  <h1>Le avversarie</h1>
+  <p class="intro">Per ogni squadra: classifica, sfide con {nomeRif}, migliori realizzatori ed ex di turno. Tocca una squadra per la rosa completa e le schede dei giocatori.</p>
+  <div class="segmenti filtri solo-js" role="group" aria-label="Ordina le squadre" id="ordina-avversarie">
+    <button type="button" data-ordine="prossima" aria-pressed="true">Prossima sfida</button>
+    <button type="button" data-ordine="classifica" aria-pressed="false">Classifica</button>
+  </div>
+
+  <ul class="squadre" id="elenco-avversarie">
+    {avversarie.map(({ s, riga, prossima }) => {
+      const sfide = sfideConRif(d, s.slug);
+      const top = tutti.filter((p) => p.squadra === s.slug).slice(0, 3);
+      const ex = d.playbasket ? d.persone.filter((p) => p.squadra === s.slug && p.inRosa && p.exNerviano) : [];
+      return (
+        <li class="card squadra" data-prossima={prossima} data-classifica={riga.posizione} id={`squadra-${s.slug}`}>
+          <header class="testa">
+            <Badge squadra={s.slug} grande />
+            <div>
+              <h2><a href={urlSquadra(s.slug)}>{s.breve}</a></h2>
+              <p class="nota">{s.nome} · {s.citta} ({s.provincia})</p>
+            </div>
+          </header>
+          <p class="riga">
+            <span class:list={['zona', riga.zona ? `zona-${riga.zona.toLowerCase()}` : '']}>{ordinale(riga.posizione)} in classifica</span>
+            <span class="tabulare">{riga.v}-{riga.p}</span>
+            <span class="forma" role="img" aria-label={riga.forma ? `Ultime partite: ${riga.forma.split('').map((x) => (x === 'V' ? 'vinta' : 'persa')).join(', ')}` : 'Nessuna partita'}>{riga.forma.split('').map((x) => <span class:list={['esito', x === 'V' ? 'v' : 'p']} aria-hidden="true">{x}</span>)}</span>
+          </p>
+          <h3>Contro {nomeRif}</h3>
+          <ul class="sfide">
+            {sfide.map((g) => (
+              <li>
+                <span class="nota">{g.fase === 'andata' ? 'Andata' : 'Ritorno'} · {g.casa ? `a ${d.sq(d.rif).citta}` : `a ${s.citta}`} · {dataBreve(g.partita!.data)}{!g.esito && g.partita!.ora && ` · ${g.partita!.ora}`}</span>
+                {g.esito ? <span><Esito esito={g.esito} /> <a href={urlPartita(g.partita!.id)}>{nomeRif} {g.fatti}-{g.subiti}</a></span> : <span class="nota">da giocare</span>}
+              </li>
+            ))}
+          </ul>
+          {d.playbasket && (
+            <>
+              <h3>Migliori realizzatori</h3>
+              {top.length ? (
+                <ol class="top">
+                  {top.map((p) => <li><a href={urlGiocatore(p.slug)}>{p.nomeCompleto}</a>{p.ruolo && <span class="nota"> · {p.ruolo}</span>} <span class="tabulare">{f1(p.stagione.media)}</span></li>)}
+                </ol>
+              ) : <p class="nota">Tabellini non ancora disponibili.</p>}
+              {ex.length > 0 && <p class="nota"><strong>Ex di turno:</strong> {ex.map((p, i) => <>{i > 0 && ', '}<a href={urlGiocatore(p.slug)}>{p.nomeCompleto}</a></>)}</p>}
+            </>
+          )}
+          <p class="link"><a href={urlSquadra(s.slug)}>Rosa completa e schede dei giocatori</a></p>
+        </li>
+      );
+    })}
+  </ul>
+  <script>
+    import '../../client/ordina-card.ts';
+  </script>
+</Base>
+
+<style>
+  .segmenti { margin-bottom: 1rem; }
+  .squadre { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); }
+  .squadra { display: flex; flex-direction: column; gap: 0.5rem; }
+  .squadra p, .squadra h2, .squadra h3 { margin: 0; }
+  .testa { display: flex; gap: 0.75rem; align-items: center; }
+  h2 a { color: inherit; text-decoration: none; }
+  h2 a:hover { text-decoration: underline; }
+  h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--testo-2); margin-top: 0.4rem !important; }
+  .sfide { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; grid-template-columns: 1fr 1fr; }
+  .sfide li { display: flex; flex-direction: column; gap: 0.2rem; padding: 0.4rem 0.5rem; border: 1px solid var(--bordo); border-radius: var(--raggio-piccolo); }
+  .sfide .esito { width: 1.3rem; height: 1.3rem; font-size: 0.8rem; }
+  .top { margin: 0; padding-left: 1.2rem; }
+  .top .tabulare { float: right; font-weight: 700; }
+  .link { margin-top: auto !important; padding-top: 0.5rem; }
+</style>

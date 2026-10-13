@@ -1,0 +1,121 @@
+[
+  {
+    "giocatore": 14016,
+    "altezza": 202,
+    "stato": "Nuovo arrivo",
+    "provenienza": "SocialOSA Milano",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 48343,
+    "altezza": null,
+    "stato": "Nuovo arrivo",
+    "provenienza": "SocialOSA Milano",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 144077,
+    "altezza": null,
+    "stato": "Confermato",
+    "provenienza": "Già a Nerviano",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 149193,
+    "altezza": 191,
+    "stato": "Nuovo arrivo",
+    "provenienza": "Giovanili di Cantù e Urania Milano",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 151965,
+    "altezza": null,
+    "stato": "Confermato",
+    "provenienza": "Già a Nerviano",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 153281,
+    "altezza": null,
+    "stato": "Nuovo arrivo",
+    "provenienza": "Olimpia Milano e Oleggio",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 153410,
+    "altezza": null,
+    "stato": "Nuovo arrivo",
+    "provenienza": "Varese Academy",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 175210,
+    "altezza": null,
+    "stato": "Nuovo arrivo",
+    "provenienza": "SocialOSA Milano",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 175524,
+    "altezza": null,
+    "stato": "Confermato",
+    "provenienza": "Vivaio di Nerviano",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  },
+  {
+    "giocatore": 176147,
+    "altezza": null,
+    "stato": "Confermato",
+    "provenienza": "Già a Nerviano",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  },
+  {
+    "giocatore": 187485,
+    "altezza": null,
+    "stato": "Nuovo arrivo",
+    "provenienza": "Giovanili Ayers Rock Gallarate",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  },
+  {
+    "giocatore": 191406,
+    "altezza": null,
+    "stato": "Nuovo arrivo",
+    "provenienza": "Urania Milano",
+    "doppio_tesseramento": null
+  },
+  {
+    "giocatore": 193991,
+    "altezza": null,
+    "stato": "Nuovo arrivo",
+    "provenienza": "Giovanili Ayers Rock Gallarate",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  },
+  {
+    "giocatore": 212657,
+    "altezza": null,
+    "stato": "Confermato",
+    "provenienza": "Vivaio di Nerviano",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  },
+  {
+    "giocatore": 212658,
+    "altezza": null,
+    "stato": "Confermato",
+    "provenienza": "Vivaio di Nerviano",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  },
+  {
+    "giocatore": 212659,
+    "altezza": 190,
+    "stato": "Dal vivaio",
+    "provenienza": "Vivaio di Nerviano",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  },
+  {
+    "giocatore": 212686,
+    "altezza": null,
+    "stato": "Dal vivaio",
+    "provenienza": "Vivaio di Nerviano",
+    "doppio_tesseramento": "Libertas Vanzago (Divisione Regionale 2)"
+  }
+]

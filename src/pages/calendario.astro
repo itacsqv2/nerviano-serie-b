@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import Squadra from '../components/Squadra.astro';
+import Esito from '../components/Esito.astro';
+import CardPartita from '../components/CardPartita.astro';
+import { dati } from '../lib/data.ts';
+import { dataBreve, dataGiorno } from '../lib/formato.ts';
+import { urlPartita } from '../lib/url.ts';
+import { campo, partiteGiornata, riepilogoRif, riposa, ultimaGiornata } from '../lib/viste.ts';
+import { urlFipPerGiornata } from '../lib/fonti.ts';
+
+const d = dati();
+const r = riepilogoRif(d);
+const nomeRif = d.sq(d.rif).breve;
+const ufficiosi = d.calendarioRif.some((g) => g.partita?.stato === 'ufficioso' && g.esito);
+const giornataIniziale = Math.max(1, ultimaGiornata(d));
+const nGiornate = d.stagione.giornate;
+const perFase = d.stagione.turni_per_fase;
+const nomeGiornata = (g: number) => (g <= perFase ? `${g}ª andata` : `${g - perFase}ª ritorno`);
+const squadreOrdinate = [...d.squadre].sort((a, b) => a.breve.localeCompare(b.breve, 'it'));
+const tag = (g: (typeof d.calendarioRif)[number]) =>
+  ['tutte', g.riposo ? 'riposo' : g.casa ? 'casa' : 'trasferta', g.esito ? 'giocate' : g.riposo ? '' : 'da-giocare'].filter(Boolean).join(' ');
+---
+<Base titolo="Calendario" sezione="calendario" descrizione={`Calendario e risultati di ${nomeRif} e di tutte le partite del Girone A di Serie B Interregionale ${d.stagione.stagione}.`}>
+  <h1>Calendario</h1>
+
+  <section class="sezione" aria-labelledby="t-nerviano">
+    <h2 id="t-nerviano">Calendario di {nomeRif}</h2>
+    <p class="intro">Orari, campi e risultati di tutte le giornate. Il punteggio è quello di {nomeRif} prima dell'avversario. Date e orari sono quelli ufficiali FIP e possono cambiare.</p>
+    <div class="segmenti filtri solo-js" data-filtro="cal" data-campo="tipo" role="group" aria-label="Filtra le partite">
+      <button type="button" data-valore="tutte" aria-pressed="true">Tutte</button>
+      <button type="button" data-valore="casa" aria-pressed="false">In casa</button>
+      <button type="button" data-valore="trasferta" aria-pressed="false">In trasferta</button>
+      <button type="button" data-valore="giocate" aria-pressed="false">Giocate</button>
+      <button type="button" data-valore="da-giocare" aria-pressed="false">Da giocare</button>
+    </div>
+    <div class="tabella-scorre" tabindex="0" role="region" aria-label={`Calendario di ${nomeRif}`}>
+      <table data-evidenzia-prossima>
+        <caption class="sr-only">Calendario di {nomeRif}, giornata per giornata</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="num">G</th>
+            <th scope="col">Data</th>
+            <th scope="col">Ora</th>
+            <th scope="col">Dove</th>
+            <th scope="col">Avversaria</th>
+            <th scope="col">Campo</th>
+            <th scope="col" class="num">Risultato</th>
+            <th scope="col">Esito</th>
+          </tr>
+        </thead>
+        <tbody>
+          {d.calendarioRif.map((g) => (
+            <tr
+              class:list={{ attenuata: g.riposo, prossima: g === r.prossima }}
+              data-gruppo="cal"
+              data-tipo={tag(g)}
+              data-data={g.riposo ? undefined : g.partita!.data}
+              data-giocata={g.esito ? '1' : undefined}
+            >
+              <td class="num">{g.giornata}</td>
+              <td class="nowrap">{g.riposo ? `${dataGiorno(g.dal)}–${dataGiorno(g.al)}` : dataBreve(g.partita!.data)}</td>
+              <td>{g.partita?.ora ?? ''}</td>
+              <td>{g.riposo ? 'Riposo' : g.casa ? 'Casa' : 'Trasferta'}</td>
+              <th scope="row">{g.riposo ? 'Turno di riposo' : <Squadra squadra={g.avversaria!} />}</th>
+              <td>{g.partita ? campo(g.partita) : ''}</td>
+              <td class="num">{g.esito && g.partita ? <a href={urlPartita(g.partita.id)}>{g.fatti}-{g.subiti}{g.partita.stato === 'ufficioso' && ' *'}</a> : ''}</td>
+              <td>{!g.riposo && <Esito esito={g.esito} />}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="nota" data-vuoto="cal" hidden>Nessuna partita con questo filtro.</p>
+    {ufficiosi && <p class="nota">* Risultato ufficioso, in attesa di omologazione.</p>}
+  </section>
+
+  <section class="sezione" id="giornate" aria-labelledby="t-giornate">
+    <h2 id="t-giornate">Tutte le partite del girone</h2>
+    <p class="intro">Scegli una giornata per vedere risultati, orari e campi delle altre squadre, oppure filtra per squadra.</p>
+    <div class="filtri solo-js">
+      <button type="button" class="passo" data-filtro="gir" data-campo="giornata" data-passo="-1" aria-label="Giornata precedente">‹</button>
+      <label class="sr-only" for="sel-giornata">Giornata</label>
+      <select id="sel-giornata" data-filtro="gir" data-campo="giornata">
+        <option value="tutte">Tutte le giornate</option>
+        {Array.from({ length: nGiornate }, (_, i) => i + 1).map((g) => (
+          <option value={String(g)} selected={g === giornataIniziale}>{nomeGiornata(g)} · {dataGiorno(partiteGiornata(d, g)[0]!.data)}</option>
+        ))}
+      </select>
+      <button type="button" class="passo" data-filtro="gir" data-campo="giornata" data-passo="1" aria-label="Giornata successiva">›</button>
+      <label class="sr-only" for="sel-squadra">Squadra</label>
+      <select id="sel-squadra" data-filtro="gir" data-campo="squadre">
+        <option value="tutte">Tutte le squadre</option>
+        {squadreOrdinate.map((s) => <option value={s.slug}>{s.breve}</option>)}
+      </select>
+    </div>
+    {Array.from({ length: nGiornate }, (_, i) => i + 1).map((g) => {
+      const partite = partiteGiornata(d, g);
+      const riposano = riposa(d, g);
+      return (
+        <section class="giornata" data-gruppo="gir" data-giornata={`tutte ${g}`} data-squadre={['tutte', ...partite.flatMap((p) => [p.casa, p.ospite]), ...riposano].join(' ')} aria-labelledby={`g-${g}`}>
+          <h3 id={`g-${g}`}>Giornata {g} · {nomeGiornata(g)} <a class="fonte" href={urlFipPerGiornata(d.stagione, g)}>fonte FIP</a></h3>
+          <ul class="partite">
+            {partite.map((p) => <CardPartita p={p} />)}
+          </ul>
+          {riposano.length > 0 && <p class="nota">Riposa: {riposano.map((s) => d.sq(s).breve).join(', ')}.</p>}
+        </section>
+      );
+    })}
+    <p class="nota" data-vuoto="gir" hidden>Nessuna partita con questi filtri.</p>
+  </section>
+</Base>
+
+<style>
+  .nowrap { white-space: nowrap; }
+  tr.prossima { box-shadow: inset 4px 0 0 var(--accento); }
+  tr.prossima th, tr.prossima td { font-weight: 600; }
+  .passo { font: inherit; font-size: 1.2rem; min-width: 2.5rem; min-height: 2.5rem; border: 1px solid var(--bordo-forte); background: var(--superficie); color: var(--testo); border-radius: var(--raggio); cursor: pointer; }
+  .passo:disabled { opacity: 0.4; cursor: default; }
+  .giornata { margin-block: 1.25rem; }
+  .giornata h3 { display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; align-items: baseline; }
+  .fonte { font-family: var(--font-testo); font-size: 0.85rem; font-weight: 400; }
+</style>

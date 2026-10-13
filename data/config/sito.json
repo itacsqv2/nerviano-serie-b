@@ -1,0 +1,10 @@
+{
+  "titolo": "Nerviano Basket",
+  "url": "https://nerviano-serie-b.vercel.app",
+  "email": "armando.pimpa@gmail.com",
+  "indicizzabile": false,
+  "fonti": {
+    "playbasket": true
+  },
+  "user_agent": "NervianoBasketFan/1.0 (+{url}/note-legali/; {email})"
+}

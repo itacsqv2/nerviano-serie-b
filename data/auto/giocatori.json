@@ -1,0 +1,2126 @@
+[
+  {
+    "id": 11863,
+    "cognome": "Manca",
+    "nome": "Federico",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 14016,
+    "cognome": "Maspero",
+    "nome": "Giacomo",
+    "ruolo": "Centro",
+    "eta": 34,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 14053,
+    "cognome": "Quarisa",
+    "nome": "Andrea",
+    "ruolo": "Ala forte",
+    "eta": 34,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 14324,
+    "cognome": "Allegretti",
+    "nome": "Marco",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 14399,
+    "cognome": "Portannese",
+    "nome": "Marco",
+    "ruolo": "Guardia",
+    "eta": 37,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 14416,
+    "cognome": "Passera",
+    "nome": "Marco",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 14509,
+    "cognome": "Ammannato",
+    "nome": "Marco",
+    "ruolo": "Ala forte",
+    "eta": 38,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 14962,
+    "cognome": "Benzoni",
+    "nome": "Daniele Mario",
+    "ruolo": "Ala forte",
+    "eta": 46,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 15299,
+    "cognome": "Musso",
+    "nome": "Victorio Gustavo",
+    "ruolo": "Play",
+    "eta": 42,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 16157,
+    "cognome": "Longano",
+    "nome": "Fabrizio",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 18719,
+    "cognome": "Locci",
+    "nome": "Daniele",
+    "ruolo": "Ala piccola",
+    "eta": 32,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 22313,
+    "cognome": "Hidalgo Quiroz",
+    "nome": "Shaquille",
+    "ruolo": "Guardia",
+    "eta": 32,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 22445,
+    "cognome": "Potì",
+    "nome": "Alessandro Giuseppe",
+    "ruolo": "Guardia",
+    "eta": 35,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 24913,
+    "cognome": "Martinoni",
+    "nome": "Niccolò",
+    "ruolo": "Ala forte",
+    "eta": 37,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 27525,
+    "cognome": "Favero",
+    "nome": "Carlo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 28480,
+    "cognome": "Gardini",
+    "nome": "Andrea",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 29130,
+    "cognome": "Antonietti",
+    "nome": "Luca",
+    "ruolo": "Ala forte",
+    "eta": 32,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 30115,
+    "cognome": "Di",
+    "nome": "Cerbo Stefano",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 30873,
+    "cognome": "Airaghi",
+    "nome": "Matteo",
+    "ruolo": "Ala forte",
+    "eta": 30,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 34538,
+    "cognome": "Catalani",
+    "nome": "Michele",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 37782,
+    "cognome": "Merella",
+    "nome": "Enrico",
+    "ruolo": "Play",
+    "eta": 30,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 41531,
+    "cognome": "Fontana",
+    "nome": "Edoardo",
+    "ruolo": "Guardia",
+    "eta": 28,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 42656,
+    "cognome": "Antelli",
+    "nome": "Michele",
+    "ruolo": "Play",
+    "eta": 28,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 43605,
+    "cognome": "Bonassi",
+    "nome": "Matteo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 45050,
+    "cognome": "Rossi",
+    "nome": "Riccardo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 45474,
+    "cognome": "Fumagalli",
+    "nome": "Carlo",
+    "ruolo": "Play",
+    "eta": 30,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 48343,
+    "cognome": "Villa",
+    "nome": "Francesco Maria",
+    "ruolo": "Play",
+    "eta": 29,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 51615,
+    "cognome": "Torriani",
+    "nome": "Luca Maria",
+    "ruolo": "Ala forte",
+    "eta": 29,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 52091,
+    "cognome": "Perez",
+    "nome": "Daniel Alexander",
+    "ruolo": "Guardia",
+    "eta": 29,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 52147,
+    "cognome": "Bianchi",
+    "nome": "Bruno",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 52324,
+    "cognome": "De Gregori",
+    "nome": "Tommaso",
+    "ruolo": "Centro",
+    "eta": 28,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 54933,
+    "cognome": "Albique",
+    "nome": "Luca",
+    "ruolo": "Centro",
+    "eta": 29,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 59584,
+    "cognome": "Ghezzi",
+    "nome": "Jacopo",
+    "ruolo": "Centro",
+    "eta": 28,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 67177,
+    "cognome": "Cabriolu",
+    "nome": "Luigi",
+    "ruolo": "Ala piccola",
+    "eta": 27,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 67882,
+    "cognome": "Peri",
+    "nome": "Davide",
+    "ruolo": "Guardia",
+    "eta": 26,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 68302,
+    "cognome": "Campeggi",
+    "nome": "Riccardo Walter",
+    "ruolo": "Ala forte",
+    "eta": 29,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 69187,
+    "cognome": "Gallizzi",
+    "nome": "Ezio",
+    "ruolo": "Ala piccola",
+    "eta": 26,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 69713,
+    "cognome": "Sacco",
+    "nome": "Luca",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 69716,
+    "cognome": "Zappi",
+    "nome": "Mauro",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 70487,
+    "cognome": "Imarisio",
+    "nome": "Simone",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 74431,
+    "cognome": "Romanò",
+    "nome": "Giovanni",
+    "ruolo": "Ala piccola",
+    "eta": 28,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 76478,
+    "cognome": "Viceconti",
+    "nome": "Davide",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 78555,
+    "cognome": "Ranitovic",
+    "nome": "Dusan",
+    "ruolo": "Ala forte",
+    "eta": 31,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 80854,
+    "cognome": "Gaye",
+    "nome": "Khadim",
+    "ruolo": "Centro",
+    "eta": 29,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 82425,
+    "cognome": "Manca",
+    "nome": "Nicola",
+    "ruolo": "Ala forte",
+    "eta": 26,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 83321,
+    "cognome": "Neri",
+    "nome": "Lorenzo",
+    "ruolo": "Ala forte",
+    "eta": 25,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 88896,
+    "cognome": "Tresso",
+    "nome": "Davide",
+    "ruolo": "Ala piccola",
+    "eta": 26,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 89978,
+    "cognome": "Andreutti",
+    "nome": "Elia",
+    "ruolo": "Ala piccola",
+    "eta": 27,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 90211,
+    "cognome": "Zanetti",
+    "nome": "Matteo",
+    "ruolo": "Ala piccola",
+    "eta": 25,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 91147,
+    "cognome": "Nasini",
+    "nome": "Pietro",
+    "ruolo": "Play",
+    "eta": 26,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 97696,
+    "cognome": "Fazzi",
+    "nome": "Luca",
+    "ruolo": "Play",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 98021,
+    "cognome": "Mina",
+    "nome": "Matteo",
+    "ruolo": "Ala piccola",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 98191,
+    "cognome": "Bonavida",
+    "nome": "Giacomo",
+    "ruolo": "Guardia",
+    "eta": 25,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 98379,
+    "cognome": "Guarise",
+    "nome": "Edoardo",
+    "ruolo": "Guardia",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 98403,
+    "cognome": "Castellino",
+    "nome": "Nicolò",
+    "ruolo": "Guardia",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 98405,
+    "cognome": "Rosso",
+    "nome": "Emanuele",
+    "ruolo": "Ala piccola",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 98748,
+    "cognome": "Triassi",
+    "nome": "Alberto",
+    "ruolo": "Guardia",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 100039,
+    "cognome": "Valentini",
+    "nome": "Antonio",
+    "ruolo": "Play",
+    "eta": 27,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 102222,
+    "cognome": "Lucchini",
+    "nome": "Andrea Maria",
+    "ruolo": "Ala piccola",
+    "eta": 26,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 108238,
+    "cognome": "Buzzone",
+    "nome": "Niccolò",
+    "ruolo": "Guardia",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 113105,
+    "cognome": "Cortese",
+    "nome": "Eugenio Fabrizio P.",
+    "ruolo": "Centro",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 114507,
+    "cognome": "Sanna",
+    "nome": "Luca",
+    "ruolo": "Play",
+    "eta": 23,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 114682,
+    "cognome": "Ballarin Chinellato",
+    "nome": "Pietro",
+    "ruolo": "Centro",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 114718,
+    "cognome": "Cassinerio",
+    "nome": "Matteo",
+    "ruolo": "Ala piccola",
+    "eta": 23,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 115827,
+    "cognome": "Torreggiani",
+    "nome": "Leonardo",
+    "ruolo": "Play",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 115864,
+    "cognome": "Moscatelli",
+    "nome": "Tommaso",
+    "ruolo": "Play",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 115867,
+    "cognome": "Redaelli",
+    "nome": "Paolo",
+    "ruolo": "Ala forte",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 115869,
+    "cognome": "Borsani",
+    "nome": "Guglielmo",
+    "ruolo": "Ala forte",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 116017,
+    "cognome": "Biaggini",
+    "nome": "Alessandro",
+    "ruolo": "Ala forte",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 119706,
+    "cognome": "Biolchini",
+    "nome": "Yuri",
+    "ruolo": "Guardia",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 119867,
+    "cognome": "Tapparo",
+    "nome": "Matteo",
+    "ruolo": "Ala piccola",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 120439,
+    "cognome": "Macchi",
+    "nome": "Matteo",
+    "ruolo": "Guardia",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 120523,
+    "cognome": "Ciccarelli",
+    "nome": "Romeo",
+    "ruolo": "Guardia",
+    "eta": 23,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 120532,
+    "cognome": "Marchetti",
+    "nome": "Filippo",
+    "ruolo": "Guardia",
+    "eta": 23,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 125335,
+    "cognome": "Perrotta",
+    "nome": "Eduardo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 127345,
+    "cognome": "Pellegrini",
+    "nome": "Gabriele",
+    "ruolo": "Ala piccola",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 130824,
+    "cognome": "Fabris",
+    "nome": "Alessio",
+    "ruolo": "Ala piccola",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 131031,
+    "cognome": "Malaventura",
+    "nome": "Niccolò",
+    "ruolo": "Ala piccola",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 131124,
+    "cognome": "Casu",
+    "nome": "Enrico",
+    "ruolo": "Play",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 132525,
+    "cognome": "Molin",
+    "nome": "Leonardo Ettore",
+    "ruolo": "Ala forte",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 132976,
+    "cognome": "Verga",
+    "nome": "Phuwin Simone",
+    "ruolo": "Guardia",
+    "eta": 23,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 136101,
+    "cognome": "Fetah",
+    "nome": "Avdiu",
+    "ruolo": "Centro",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 137132,
+    "cognome": "Clerici",
+    "nome": "Filippo",
+    "ruolo": "Guardia",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 144058,
+    "cognome": "Meier",
+    "nome": "Mattia",
+    "ruolo": "Play",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 144077,
+    "cognome": "Meroni",
+    "nome": "Gregorio",
+    "ruolo": "Play",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 144482,
+    "cognome": "Carioni",
+    "nome": "Matteo",
+    "ruolo": "Ala forte",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 145099,
+    "cognome": "Villa",
+    "nome": "Mauro Joaquin",
+    "ruolo": "Guardia",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 146697,
+    "cognome": "Stentardo",
+    "nome": "Francesco",
+    "ruolo": "Ala forte",
+    "eta": 23,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 146921,
+    "cognome": "Cabras",
+    "nome": "Matteo",
+    "ruolo": "Centro",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 146973,
+    "cognome": "Corsi",
+    "nome": "Jacopo",
+    "ruolo": "Guardia",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 146974,
+    "cognome": "Pili",
+    "nome": "Simone",
+    "ruolo": "Ala piccola",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 147271,
+    "cognome": "Bellinaso",
+    "nome": "Remigio",
+    "ruolo": "Guardia",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 147524,
+    "cognome": "Granai",
+    "nome": "Giovanni",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 147634,
+    "cognome": "Romagnoli",
+    "nome": "Davide Francesco M.",
+    "ruolo": "Ala piccola",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 148104,
+    "cognome": "Kamate",
+    "nome": "Youssouf",
+    "ruolo": "Centro",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 148561,
+    "cognome": "Curatola",
+    "nome": "Alessandro",
+    "ruolo": "Ala piccola",
+    "eta": 23,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 149161,
+    "cognome": "Pinzi",
+    "nome": "Alessandro",
+    "ruolo": "Guardia",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 149165,
+    "cognome": "Poloni",
+    "nome": "Giulio",
+    "ruolo": "Play",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 149167,
+    "cognome": "Lunardi",
+    "nome": "Matteo",
+    "ruolo": "Ala piccola",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 149193,
+    "cognome": "Azzolini",
+    "nome": "Marco",
+    "ruolo": "Guardia",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 149897,
+    "cognome": "Vandini",
+    "nome": "Riccardo",
+    "ruolo": "Play",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 150037,
+    "cognome": "Rossi Bellora",
+    "nome": "Leon",
+    "ruolo": "Guardia",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 150087,
+    "cognome": "Puggioni",
+    "nome": "Stefano",
+    "ruolo": "Play",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 150411,
+    "cognome": "Iacorossi",
+    "nome": "Vittorio",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 150437,
+    "cognome": "Papale",
+    "nome": "Filippo",
+    "ruolo": "Play",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 150443,
+    "cognome": "Acciari",
+    "nome": "Kevin",
+    "ruolo": "Centro",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 151236,
+    "cognome": "Fonio Fracchia",
+    "nome": "Gabriele Renato",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 151878,
+    "cognome": "Romussi",
+    "nome": "Giulio",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 151965,
+    "cognome": "Bigarella",
+    "nome": "Fabio",
+    "ruolo": "Centro",
+    "eta": 22,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 152888,
+    "cognome": "Bosio",
+    "nome": "Stefano",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153062,
+    "cognome": "De Giorgi",
+    "nome": "Filippo",
+    "ruolo": "Play",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153104,
+    "cognome": "Panceri",
+    "nome": "Andrea",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153107,
+    "cognome": "Zimonjic",
+    "nome": "Bogdan",
+    "ruolo": "Guardia",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153108,
+    "cognome": "Colombo",
+    "nome": "Daniele Philip",
+    "ruolo": "Play",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153116,
+    "cognome": "Redaelli",
+    "nome": "Pietro",
+    "ruolo": "Guardia",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153130,
+    "cognome": "Paparella",
+    "nome": "Alessio",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153146,
+    "cognome": "Slimani Virgilio",
+    "nome": "Samuele",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153281,
+    "cognome": "Youssef",
+    "nome": "Guglielmo",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153318,
+    "cognome": "Minnucci",
+    "nome": "Alessandro",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153408,
+    "cognome": "Pellegrino",
+    "nome": "Nicolò",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153410,
+    "cognome": "Giacomelli",
+    "nome": "Tommaso",
+    "ruolo": "Guardia",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153674,
+    "cognome": "Dagri",
+    "nome": "Matteo",
+    "ruolo": "Guardia",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 153941,
+    "cognome": "Karem",
+    "nome": "Omar",
+    "ruolo": "Play",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 154632,
+    "cognome": "Cellino",
+    "nome": "Francesco",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 155064,
+    "cognome": "Scola Rocchetti",
+    "nome": "Tomas",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 155392,
+    "cognome": "Savio",
+    "nome": "Filippo",
+    "ruolo": "Ala piccola",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 155880,
+    "cognome": "Pisati",
+    "nome": "Edoardo",
+    "ruolo": "Centro",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 157833,
+    "cognome": "Badiane",
+    "nome": "Laurent Youssouph",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 158911,
+    "cognome": "Guiducci",
+    "nome": "Alberto",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 162139,
+    "cognome": "Verona",
+    "nome": "Mattia",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 163062,
+    "cognome": "Flueras",
+    "nome": "Andrei Ioan",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 163063,
+    "cognome": "Pavese",
+    "nome": "Riccardo",
+    "ruolo": "Centro",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 164981,
+    "cognome": "Demezzi",
+    "nome": "Riccardo",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 165362,
+    "cognome": "Bargna",
+    "nome": "Giacomo",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 166855,
+    "cognome": "Lastella",
+    "nome": "Gabriele",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 170363,
+    "cognome": "Cellerini",
+    "nome": "Jacopo",
+    "ruolo": "Ala piccola",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 170964,
+    "cognome": "Sapiega",
+    "nome": "Karolis",
+    "ruolo": "Ala forte",
+    "eta": 27,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 171402,
+    "cognome": "Pacitto",
+    "nome": "Mattia",
+    "ruolo": "Play",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 172846,
+    "cognome": "Pirovano",
+    "nome": "Edoardo",
+    "ruolo": "Ala forte",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 174319,
+    "cognome": "Barbotti",
+    "nome": "Francisco",
+    "ruolo": "Ala forte",
+    "eta": 28,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 175210,
+    "cognome": "Di Franco",
+    "nome": "Fabrizio",
+    "ruolo": "Ala piccola",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 175388,
+    "cognome": "Molteni",
+    "nome": "Matteo",
+    "ruolo": "Play",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 175494,
+    "cognome": "Ferazzi",
+    "nome": "Mattia",
+    "ruolo": "Ala forte",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 175517,
+    "cognome": "Gualdi",
+    "nome": "Nicolò",
+    "ruolo": "Guardia",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 175521,
+    "cognome": "Chauveau",
+    "nome": "Baptiste Henri Frans",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 175524,
+    "cognome": "Bonacci",
+    "nome": "Daniele",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 176079,
+    "cognome": "Bertero",
+    "nome": "Francesco",
+    "ruolo": "Guardia",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 176147,
+    "cognome": "Balconi",
+    "nome": "Vittorio",
+    "ruolo": null,
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 176606,
+    "cognome": "Moia",
+    "nome": "Arvid Bartolomeo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 176661,
+    "cognome": "Costamagna",
+    "nome": "Giulio",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 178673,
+    "cognome": "Modanese",
+    "nome": "Angelo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 178698,
+    "cognome": "Alexa",
+    "nome": "Teodor Casian",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 178855,
+    "cognome": "Costaglione",
+    "nome": "Federico",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 181313,
+    "cognome": "Scrazzolo",
+    "nome": "Filippo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 181332,
+    "cognome": "Bagordo",
+    "nome": "Federico",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 181588,
+    "cognome": "Sahud",
+    "nome": "Juan Diego",
+    "ruolo": "Ala piccola",
+    "eta": 32,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 182043,
+    "cognome": "Ghidini",
+    "nome": "Mirko",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 183677,
+    "cognome": "Lachello",
+    "nome": "Leone",
+    "ruolo": "Play",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 184249,
+    "cognome": "Acunzo",
+    "nome": "Thomas",
+    "ruolo": "Centro",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 185392,
+    "cognome": "Rossi",
+    "nome": "Gianmarco",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 185766,
+    "cognome": "Chouenkam",
+    "nome": "Andrea",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 185885,
+    "cognome": "Alberti",
+    "nome": "Paolo",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 187328,
+    "cognome": "Nantah",
+    "nome": "Benjamen",
+    "ruolo": "Play",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 187485,
+    "cognome": "Padoan",
+    "nome": "Mathias",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 187589,
+    "cognome": "Dozio",
+    "nome": "Riccardo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 190099,
+    "cognome": "Lazzati",
+    "nome": "Pietro",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 191091,
+    "cognome": "Ewanke",
+    "nome": "Ronny Brad",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191094,
+    "cognome": "Veronesi",
+    "nome": "Matteo",
+    "ruolo": "Play",
+    "eta": 20,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191257,
+    "cognome": "Guizzardi",
+    "nome": "Alessandro",
+    "ruolo": "Ala forte",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191286,
+    "cognome": "Bandirali",
+    "nome": "Luca Franco",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191406,
+    "cognome": "Malattia",
+    "nome": "Carloluca",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191416,
+    "cognome": "Risi",
+    "nome": "Martino",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191417,
+    "cognome": "Reghenzani",
+    "nome": "Mattia",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191504,
+    "cognome": "Zotti Pavlovic",
+    "nome": "Lorenzo",
+    "ruolo": "Play",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 191917,
+    "cognome": "Randazzo",
+    "nome": "Klim",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 191926,
+    "cognome": "Charfi",
+    "nome": "Amir",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 192748,
+    "cognome": "Prato",
+    "nome": "Ivan Santino",
+    "ruolo": "Ala piccola",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 192931,
+    "cognome": "Tyrtyshnyk",
+    "nome": "Illia",
+    "ruolo": "Guardia",
+    "eta": 28,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 193991,
+    "cognome": "Viceconti",
+    "nome": "Filippo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194023,
+    "cognome": "Alabiso",
+    "nome": "Riccardo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194032,
+    "cognome": "Vanoni",
+    "nome": "Giacomo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194063,
+    "cognome": "Sironi",
+    "nome": "Federico",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194077,
+    "cognome": "Finazzer Flory",
+    "nome": "Filippo Tommaso",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194082,
+    "cognome": "Lasalandra",
+    "nome": "Luca",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194083,
+    "cognome": "Compaore",
+    "nome": "Farid",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U17",
+    "allenatore": false
+  },
+  {
+    "id": 194084,
+    "cognome": "Firpo",
+    "nome": "Virgilio",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194085,
+    "cognome": "Nicolodi",
+    "nome": "Leonardo",
+    "ruolo": "Guardia",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194172,
+    "cognome": "Vogogna",
+    "nome": "Jacopo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 194596,
+    "cognome": "Gresta",
+    "nome": "Giorgio",
+    "ruolo": "Guardia",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 194782,
+    "cognome": "Okoro",
+    "nome": "Ebosetale Wisdom",
+    "ruolo": "Centro",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 194973,
+    "cognome": "Nochovnyi",
+    "nome": "Kostyantin",
+    "ruolo": "Play",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 195591,
+    "cognome": "Busi",
+    "nome": "Gioele",
+    "ruolo": "Ala forte",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 196737,
+    "cognome": "Maccari",
+    "nome": "Alberto",
+    "ruolo": "Play",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 202086,
+    "cognome": "Trigiani",
+    "nome": "Carlo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 202311,
+    "cognome": "Rud",
+    "nome": "Hlib",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 202552,
+    "cognome": "Di Sibio",
+    "nome": "Robert",
+    "ruolo": "Guardia",
+    "eta": 26,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 202831,
+    "cognome": "Akartuna",
+    "nome": "Burak",
+    "ruolo": "Play",
+    "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 203467,
+    "cognome": "Feliz Torres",
+    "nome": "Mathias",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 205798,
+    "cognome": "Percoco",
+    "nome": "Andrea",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 206742,
+    "cognome": "Rovera",
+    "nome": "Matteo",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 207297,
+    "cognome": "Puskas",
+    "nome": "Kadosa Kan",
+    "ruolo": "Play",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 208025,
+    "cognome": "Kangur",
+    "nome": "Robert",
+    "ruolo": "Guardia",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 208192,
+    "cognome": "Schembri",
+    "nome": "Pietro",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 209169,
+    "cognome": "Migliavacca",
+    "nome": "Federico",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 209191,
+    "cognome": "Cividati",
+    "nome": "Lorenzo",
+    "ruolo": "Play",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 209385,
+    "cognome": "Piccoli",
+    "nome": "Daniele",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 211871,
+    "cognome": "Cucco",
+    "nome": "Pietro",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U17",
+    "allenatore": false
+  },
+  {
+    "id": 211872,
+    "cognome": "Okadoh",
+    "nome": "Lewis Ofure",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U17",
+    "allenatore": false
+  },
+  {
+    "id": 212321,
+    "cognome": "Basualdo",
+    "nome": "Lautaro Gabriel",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U17",
+    "allenatore": false
+  },
+  {
+    "id": 212324,
+    "cognome": "Franceschet",
+    "nome": "Marco",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 212633,
+    "cognome": "Martinalli",
+    "nome": "Claudio",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 212657,
+    "cognome": "Sironi",
+    "nome": "Luca",
+    "ruolo": "Ala piccola",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 212658,
+    "cognome": "Tagliabue",
+    "nome": "Matteo",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 212659,
+    "cognome": "Canepa",
+    "nome": "Simone",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 212686,
+    "cognome": "Cislaghi",
+    "nome": "Davide",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 213164,
+    "cognome": "Rios",
+    "nome": "Eduardo Emanuel",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": "U17",
+    "allenatore": false
+  },
+  {
+    "id": 214741,
+    "cognome": "Gulic",
+    "nome": "Dorde",
+    "ruolo": "Ala forte",
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 214742,
+    "cognome": "Niang",
+    "nome": "Souleymane",
+    "ruolo": "Centro",
+    "eta": 19,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 215149,
+    "cognome": "Sarr",
+    "nome": "Elhadji Babacar",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 215380,
+    "cognome": "Porcu",
+    "nome": "Luca",
+    "ruolo": null,
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 216908,
+    "cognome": "Ring",
+    "nome": "Bol Lual Maluil",
+    "ruolo": "Ala forte",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 223555,
+    "cognome": "Ango",
+    "nome": "Georges Lotti",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": "U17",
+    "allenatore": false
+  },
+  {
+    "id": 224409,
+    "cognome": "Ravera",
+    "nome": "Leonardo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 224411,
+    "cognome": "Morino",
+    "nome": "Luca",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 227032,
+    "cognome": "Cozza",
+    "nome": "Gabriele",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 227247,
+    "cognome": "Dollberg",
+    "nome": "Juan Benicio",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": "U17",
+    "allenatore": false
+  },
+  {
+    "id": 227497,
+    "cognome": "Bottino",
+    "nome": "Leonardo",
+    "ruolo": "Ala forte",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 227595,
+    "cognome": "Conte",
+    "nome": "Daniele",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 228121,
+    "cognome": "Sartore",
+    "nome": "Federico",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 228766,
+    "cognome": "Buckner",
+    "nome": "Tyrus",
+    "ruolo": "Ala forte",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 229016,
+    "cognome": "Olgiati",
+    "nome": "Nicolò",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 229116,
+    "cognome": "Orlandi",
+    "nome": "Mattia",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 229648,
+    "cognome": "Lysek",
+    "nome": "Lucasz",
+    "ruolo": "Centro",
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 229714,
+    "cognome": "Mounbel",
+    "nome": "Denis",
+    "ruolo": null,
+    "eta": 18,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 229716,
+    "cognome": "Terzaghi",
+    "nome": "Ivan",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  },
+  {
+    "id": 229717,
+    "cognome": "Mammone",
+    "nome": "Andrea",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": "U19",
+    "allenatore": false
+  }
+]

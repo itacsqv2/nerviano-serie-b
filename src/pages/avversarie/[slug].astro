@@ -1,0 +1,170 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Badge from '../../components/Badge.astro';
+import Squadra from '../../components/Squadra.astro';
+import Esito from '../../components/Esito.astro';
+import CardGiocatore from '../../components/CardGiocatore.astro';
+import { dati } from '../../lib/data.ts';
+import { dataBreve, dataEstesa, f1, ordinale } from '../../lib/formato.ts';
+import { url, urlGiocatore, urlPartita } from '../../lib/url.ts';
+import { urlPbRosa } from '../../lib/fonti.ts';
+import { allenatori, campo, classificaCorrente, perMedia, rosa, sfideConRif } from '../../lib/viste.ts';
+
+export const getStaticPaths = (() => {
+  const d = dati();
+  return d.squadre.filter((s) => s.slug !== d.rif).map((s) => ({ params: { slug: s.slug } }));
+}) satisfies GetStaticPaths;
+
+const d = dati();
+const slug = Astro.params.slug!;
+const s = d.sq(slug);
+const nota = d.note.get(slug);
+const riga = classificaCorrente(d).find((r) => r.squadra === slug)!;
+const nomeRif = d.sq(d.rif).breve;
+const giocatori = d.playbasket ? rosa(d, slug) : [];
+const inCampo = giocatori.filter((p) => p.stagione.partite).sort(perMedia);
+const altri = giocatori.filter((p) => !p.stagione.partite).sort((a, b) => a.cognome.localeCompare(b.cognome, 'it'));
+const chiave = giocatori.filter((p) => p.scouting).sort((a, b) => (a.rango ?? 99) - (b.rango ?? 99) || a.cognome.localeCompare(b.cognome, 'it'));
+const ex = giocatori.filter((p) => p.exNerviano);
+const sfide = sfideConRif(d, slug);
+const partite = d.partite.filter((p) => p.casa === slug || p.ospite === slug).sort((a, b) => a.giornata - b.giornata);
+---
+<Base titolo={s.breve} sezione="avversarie" descrizione={`${s.nome}: rosa, giocatori chiave, partite e sfide con ${nomeRif} nella stagione ${d.stagione.stagione}.`}>
+  <nav class="briciole nota" aria-label="Percorso"><a href={url('/avversarie/')}>Avversarie</a> › {s.breve}</nav>
+  <header class="riga testa">
+    <Badge squadra={slug} grande />
+    <div>
+      <h1>{s.breve}</h1>
+      <p class="nota">{s.nome} · {s.societa} · {s.citta} ({s.provincia}), {s.regione}</p>
+      <p class="riga">
+        <span class:list={['zona', riga.zona ? `zona-${riga.zona.toLowerCase()}` : '']}>{ordinale(riga.posizione)} in classifica</span>
+        <span class="tabulare">{riga.v} vinte, {riga.p} perse · {riga.punti} punti</span>
+      </p>
+    </div>
+  </header>
+
+  <div class="griglia-larga sezione">
+    <section class="card" aria-labelledby="t-sfide">
+      <h2 id="t-sfide">Contro {nomeRif}</h2>
+      <ul class="sfide">
+        {sfide.map((g) => (
+          <li>
+            <p class="nota">{g.fase === 'andata' ? 'Andata' : 'Ritorno'} · G{g.giornata} · {dataBreve(g.partita!.data)}{g.partita!.ora && ` · ${g.partita!.ora}`}</p>
+            <p>{g.casa ? `A ${d.sq(d.rif).citta}` : `A ${s.citta}`}: {campo(g.partita!)}</p>
+            {g.esito ? <p><Esito esito={g.esito} /> <a href={urlPartita(g.partita!.id)}>{nomeRif} {g.fatti}-{g.subiti}</a>{g.partita!.stato === 'ufficioso' && ' (ufficioso)'}</p> : <p class="nota">Da giocare</p>}
+          </li>
+        ))}
+      </ul>
+      {ex.length > 0 && (
+        <>
+          <h3>Ex di turno</h3>
+          <ul>{ex.map((p) => <li><a href={urlGiocatore(p.slug)}>{p.nomeCompleto}</a>: {p.exNerviano}.</li>)}</ul>
+        </>
+      )}
+    </section>
+
+    <section class="card" aria-labelledby="t-sapere">
+      <h2 id="t-sapere">Da sapere</h2>
+      <dl class="kv">
+        {nota?.nota && <><dt>In breve</dt><dd>{nota.nota}</dd></>}
+        {nota?.stagione_precedente && <><dt>Stagione {d.storia.stagione}</dt><dd>{nota.stagione_precedente}</dd></>}
+        {d.playbasket && allenatori(d, slug).map((c) => <><dt>Allenatore</dt><dd><a href={urlGiocatore(c.slug)}>{c.nomeCompleto}</a></dd></>)}
+        <dt>Campo</dt><dd>{s.palestra}, {s.indirizzo}</dd>
+      </dl>
+    </section>
+  </div>
+
+  {d.playbasket && chiave.length > 0 && (
+    <section class="sezione" aria-labelledby="t-chiave">
+      <h2 id="t-chiave">Giocatori chiave</h2>
+      <p class="intro">I giocatori con la scheda di scouting.</p>
+      <ul class="griglia elenco">{chiave.map((p) => <CardGiocatore persona={p} />)}</ul>
+    </section>
+  )}
+
+  {d.playbasket && (
+    <section class="sezione" aria-labelledby="t-rosa">
+      <h2 id="t-rosa">La rosa di {s.breve}</h2>
+      <p class="intro">Tocca un giocatore per la sua scheda. Dati PlayBasket al {dataEstesa(d.meta.fonti.playbasket.aggiornato)}; <a href={urlPbRosa(d.stagione, s.pb_obj)}>la rosa su PlayBasket</a>.</p>
+      <div class="tabella-scorre" tabindex="0" role="region" aria-label={`Rosa di ${s.breve}`}>
+        <table data-ordinabile>
+          <caption class="sr-only">Rosa di {s.breve}: tocca le intestazioni per ordinare</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="num" data-tipo="num">#</th>
+              <th scope="col" data-tipo="testo">Giocatore</th>
+              <th scope="col" data-tipo="testo">Ruolo</th>
+              <th scope="col" class="num" data-tipo="num">Età</th>
+              <th scope="col" class="num" data-tipo="num">Partite</th>
+              <th scope="col" class="num" data-tipo="num">Punti</th>
+              <th scope="col" class="num" data-tipo="num">Media</th>
+              <th scope="col" data-tipo="testo">Stato</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...inCampo, ...altri].map((p) => (
+              <tr>
+                <td class="num" data-valore={p.numero ?? ''}>{p.numero ?? '–'}</td>
+                <th scope="row" data-valore={`${p.cognome} ${p.nome}`}><a href={urlGiocatore(p.slug)}>{p.cognome} {p.nome}</a>{p.scouting && <span class="tag accento">Scheda</span>}</th>
+                <td>{p.ruolo ?? ''}</td>
+                <td class="num" data-valore={p.eta ?? ''}>{p.eta ?? p.etaFascia ?? ''}</td>
+                <td class="num">{p.stagione.partite ?? ''}</td>
+                <td class="num">{p.stagione.punti ?? ''}</td>
+                <td class="num" data-valore={p.stagione.media ?? ''}>{f1(p.stagione.media)}</td>
+                <td>{p.exNerviano ? 'Ex Nerviano' : p.stato ?? ''}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
+
+  <section class="sezione" aria-labelledby="t-partite">
+    <h2 id="t-partite">Le partite di {s.breve}</h2>
+    <div class="tabella-scorre" tabindex="0" role="region" aria-label={`Partite di ${s.breve}`}>
+      <table>
+        <caption class="sr-only">Partite di {s.breve}</caption>
+        <thead><tr><th scope="col" class="num">G</th><th scope="col">Data</th><th scope="col">Dove</th><th scope="col">Avversaria</th><th scope="col" class="num">Risultato</th><th scope="col">Esito</th></tr></thead>
+        <tbody>
+          {partite.map((p) => {
+            const casa = p.casa === slug;
+            const avv = casa ? p.ospite : p.casa;
+            const f = casa ? p.pt_casa : p.pt_ospite;
+            const c = casa ? p.pt_ospite : p.pt_casa;
+            return (
+              <tr class:list={{ noi: avv === d.rif }}>
+                <td class="num">{p.giornata}</td>
+                <td class="nowrap">{dataBreve(p.data)}</td>
+                <td>{casa ? 'Casa' : 'Trasferta'}</td>
+                <th scope="row"><Squadra squadra={avv} /></th>
+                <td class="num">{f != null ? <a href={urlPartita(p.id)}>{f}-{c}{p.stato === 'ufficioso' && ' *'}</a> : ''}</td>
+                <td>{f != null ? <Esito esito={f > c! ? 'V' : 'P'} /> : ''}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .briciole { margin-bottom: 0.75rem; }
+  .testa { align-items: center; }
+  .testa p { margin: 0 0 0.25rem; }
+  h1 { margin: 0; }
+  .sfide { list-style: none; margin: 0; padding: 0; }
+  .sfide li { padding-block: 0.5rem; border-top: 1px solid var(--bordo); }
+  .sfide li:first-child { border-top: 0; }
+  .sfide p { margin: 0; }
+  .sfide .esito { width: 1.3rem; height: 1.3rem; font-size: 0.8rem; }
+  .kv { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; }
+  .kv dt { font-weight: 600; color: var(--testo-2); }
+  .kv dd { margin: 0; }
+  @media (max-width: 30rem) { .kv { grid-template-columns: 1fr; } .kv dd { margin-bottom: 0.4rem; } }
+  .elenco { list-style: none; margin: 0; padding: 0; }
+  .tag { margin-left: 0.4rem; }
+  .nowrap { white-space: nowrap; }
+</style>

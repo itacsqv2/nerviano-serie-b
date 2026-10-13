@@ -1,0 +1,38 @@
+---
+/** Una partita del girone in forma di card: data, squadre, risultato, campo. */
+import type { PartitaSito } from '../lib/dataset.ts';
+import { dati } from '../lib/data.ts';
+import { dataBreve } from '../lib/formato.ts';
+import { urlPartita } from '../lib/url.ts';
+import { campo } from '../lib/viste.ts';
+import Squadra from './Squadra.astro';
+
+interface Props { p: PartitaSito }
+const { p } = Astro.props;
+const d = dati();
+const giocata = p.pt_casa != null && p.pt_ospite != null;
+const vinceCasa = giocata && p.pt_casa! > p.pt_ospite!;
+---
+<li class:list={['card', 'partita', { noi: p.casa === d.rif || p.ospite === d.rif }]}>
+  <p class="nota">{dataBreve(p.data)}{p.ora && ` · ${p.ora}`}{p.stato === 'ufficioso' && ' · risultato ufficioso'}</p>
+  <p class="sfida">
+    <span class:list={{ vinta: giocata && vinceCasa, persa: giocata && !vinceCasa }}><Squadra squadra={p.casa} /></span>
+    {giocata
+      ? <a class="ris" href={urlPartita(p.id)}>{p.pt_casa} - {p.pt_ospite}{p.stato === 'ufficioso' && '*'}<span class="sr-only">, dettagli della partita</span></a>
+      : <span class="ris vs">vs</span>}
+    <span class:list={['ospite', { vinta: giocata && !vinceCasa, persa: giocata && vinceCasa }]}><Squadra squadra={p.ospite} /></span>
+  </p>
+  <p class="nota">{campo(p)}{p.nota && ` · ${p.nota}`}</p>
+</li>
+
+<style>
+  .partita { padding: 0.75rem 1rem; }
+  .partita.noi { border: 2px solid var(--accento); }
+  .partita p { margin: 0; }
+  .partita .sfida { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0.5rem; margin-block: 0.3rem; }
+  .ospite { justify-self: end; text-align: right; }
+  .vinta { font-weight: 700; }
+  .persa { color: var(--testo-2); }
+  .ris { font-family: var(--font-titoli); font-weight: 700; font-size: 1.25rem; color: var(--inchiostro); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .vs { color: var(--testo-2); font-weight: 600; }
+</style>

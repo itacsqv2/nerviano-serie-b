@@ -1,0 +1,108 @@
+/*
+ * Token di design di Nerviano Basket: tutti i colori, i font e le misure del sito stanno qui.
+ * Identità del sito (non quella del club): blu notte da palazzetto, carta calda e un solo accento arancio pallone.
+ * Per cambiare i colori modifica i valori qui sotto, poi lancia `npm test`: il test di contrasto
+ * (tests/contrasto.test.ts) verifica che ogni coppia testo/sfondo resti leggibile (WCAG AA).
+ */
+:root {
+  color-scheme: light dark;
+
+  /* superfici */
+  --sfondo: #f6f3ec;
+  --superficie: #ffffff;
+  --superficie-2: #efeae0;
+  --bordo: #d9d2c4;
+  --bordo-forte: #857c6a;
+
+  /* testo */
+  --inchiostro: #12203a;
+  --testo: #23304a;
+  --testo-2: #4e596b;
+
+  /* testata */
+  --testata-sfondo: #12203a;
+  --testata-testo: #f6f3ec;
+  --testata-testo-2: #b9c3d6;
+
+  /* accento: --accento per riempimenti e grafici, --accento-testo per testo e link */
+  --accento: #d9561d;
+  --accento-testo: #a8420c;
+
+  /* stati */
+  --vittoria: #1d7348;
+  --sconfitta: #b3261e;
+  --avviso: #8a5a00;
+  --avviso-sfondo: #fbf0d9;
+
+  /* zone di classifica */
+  --zona-playoff: #1d7348;
+  --zona-salvezza: #4e596b;
+  --zona-playout: #8a5a00;
+  --zona-retrocessione: #b3261e;
+
+  /* grafici: rampa ordinale dei livelli di carriera (dal più basso al più alto), validata per i due temi */
+  --livello-c: #86b6ef;
+  --livello-bi: #5598e7;
+  --livello-b: #2a78d6;
+  --livello-a2: #1c5cab;
+  --livello-a: #104281;
+  --livello-giovanili: #b9b2a3;
+  --grafico-griglia: #e7e1d5;
+  --grafico-asse: #8b8474;
+  --grafico-punto: #8f9aad;
+
+  --focus: #a8420c;
+
+  /* tipografia */
+  --font-titoli: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --font-testo: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* misure */
+  --raggio: 0.5rem;
+  --raggio-piccolo: 0.25rem;
+  --spazio: 1rem;
+  --larghezza: 72rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sfondo: #0e1626;
+    --superficie: #172238;
+    --superficie-2: #1f2c46;
+    --bordo: #2e3c5a;
+    --bordo-forte: #7383aa;
+
+    --inchiostro: #f6f3ec;
+    --testo: #e3e7ef;
+    --testo-2: #aab5c8;
+
+    --testata-sfondo: #080e1a;
+    --testata-testo: #f6f3ec;
+    --testata-testo-2: #aab5c8;
+
+    --accento: #f07a45;
+    --accento-testo: #f59a6e;
+
+    --vittoria: #52c48c;
+    --sconfitta: #f2786e;
+    --avviso: #e8b65c;
+    --avviso-sfondo: #2f2814;
+
+    --zona-playoff: #52c48c;
+    --zona-salvezza: #aab5c8;
+    --zona-playout: #e8b65c;
+    --zona-retrocessione: #f2786e;
+
+    --livello-c: #256abf;
+    --livello-bi: #3987e5;
+    --livello-b: #6da7ec;
+    --livello-a2: #9ec5f4;
+    --livello-a: #cde2fb;
+    --livello-giovanili: #5b6680;
+    --grafico-griglia: #26334f;
+    --grafico-asse: #7d89a3;
+    --grafico-punto: #6d7a96;
+
+    --focus: #f59a6e;
+  }
+}

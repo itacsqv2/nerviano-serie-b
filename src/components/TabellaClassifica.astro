@@ -1,0 +1,68 @@
+---
+/** Tabella di classifica, completa o «in breve» (le squadre intorno a Nerviano). */
+import type { RigaClassifica } from '../lib/classifica.ts';
+import { dati } from '../lib/data.ts';
+import { segno } from '../lib/formato.ts';
+import Squadra from './Squadra.astro';
+
+interface Props {
+  righe: RigaClassifica[];
+  titolo: string;
+  nota?: string;
+  breve?: boolean;
+}
+const { righe, titolo, nota, breve = false } = Astro.props;
+const d = dati();
+const zonaCls = (z: string | null) => (z ? `zona-${z.toLowerCase()}` : '');
+---
+<div class="tabella-scorre" tabindex="0" role="region" aria-label={titolo}>
+  <table>
+    <caption>{titolo}{nota && <span class="nota">{nota}</span>}</caption>
+    <thead>
+      <tr>
+        <th scope="col" class="num"><abbr title="Posizione">Pos</abbr></th>
+        <th scope="col">Squadra</th>
+        <th scope="col" class="num"><abbr title="Punti in classifica">Pt</abbr></th>
+        {!breve && <th scope="col" class="num"><abbr title="Partite giocate">G</abbr></th>}
+        <th scope="col" class="num"><abbr title="Vinte">V</abbr></th>
+        <th scope="col" class="num"><abbr title="Perse">P</abbr></th>
+        {!breve && <th scope="col" class="num"><abbr title="Punti fatti">PF</abbr></th>}
+        {!breve && <th scope="col" class="num"><abbr title="Punti subiti">PS</abbr></th>}
+        <th scope="col" class="num"><abbr title="Differenza canestri">+/−</abbr></th>
+        {!breve && <th scope="col">Ultime</th>}
+      </tr>
+    </thead>
+    <tbody>
+      {righe.map((r) => (
+        <tr class:list={{ noi: r.squadra === d.rif }}>
+          <td class:list={['num', 'pos', zonaCls(r.zona)]}>
+            {r.posizione}<span class="sr-only">{r.zona ? `, zona ${r.zona.toLowerCase()}` : ''}</span>
+          </td>
+          <th scope="row"><Squadra squadra={r.squadra} />{r.squadra === d.rif && <span class="tag accento">Noi</span>}</th>
+          <td class="num"><strong>{r.punti}</strong></td>
+          {!breve && <td class="num">{r.g}</td>}
+          <td class="num">{r.v}</td>
+          <td class="num">{r.p}</td>
+          {!breve && <td class="num">{r.pf}</td>}
+          {!breve && <td class="num">{r.ps}</td>}
+          <td class:list={['num', r.diff > 0 ? 'pos-diff' : r.diff < 0 ? 'neg-diff' : '']}>{segno(r.diff)}</td>
+          {!breve && (
+            <td>
+              <span class="forma" role="img" aria-label={r.forma ? `Ultime partite: ${r.forma.split('').map((x) => (x === 'V' ? 'vinta' : 'persa')).join(', ')}` : 'Nessuna partita'}>
+                {r.forma.split('').map((x) => <span class:list={['esito', x === 'V' ? 'v' : 'p']} aria-hidden="true">{x}</span>)}
+              </span>
+            </td>
+          )}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  th[scope='row'] { white-space: nowrap; }
+  th[scope='row'] .tag { margin-left: 0.4rem; }
+  .pos-diff { color: var(--vittoria); }
+  .neg-diff { color: var(--sconfitta); }
+  abbr { text-decoration: none; }
+</style>

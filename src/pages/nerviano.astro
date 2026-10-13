@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import CardGiocatore from '../components/CardGiocatore.astro';
+import Badge from '../components/Badge.astro';
+import { dati } from '../lib/data.ts';
+import { dataEstesa } from '../lib/formato.ts';
+import { urlGiocatore } from '../lib/url.ts';
+import { urlPbRosa } from '../lib/fonti.ts';
+import { allenatori, perMedia, rosa } from '../lib/viste.ts';
+
+const d = dati();
+const s = d.sq(d.rif);
+const nota = d.note.get(d.rif);
+const giocatori = rosa(d, d.rif);
+const inCampo = giocatori.filter((p) => p.stagione.partite).sort(perMedia);
+const altri = giocatori.filter((p) => !p.stagione.partite).sort((a, b) => Number(a.numero ?? 999) - Number(b.numero ?? 999));
+const coach = allenatori(d, d.rif);
+const m = nota?.mercato;
+---
+<Base titolo={s.breve} sezione="nerviano" descrizione={`La rosa di ${s.nome} ${d.stagione.stagione}: giocatori, allenatore e mercato.`}>
+  <div class="riga">
+    <Badge squadra={d.rif} grande />
+    <div>
+      <h1>{s.nome}</h1>
+      <p class="nota">{s.societa} · {s.palestra}, {s.indirizzo}</p>
+    </div>
+  </div>
+
+  {d.playbasket ? (
+    <>
+      <section class="sezione" aria-labelledby="t-roster">
+        <h2 id="t-roster">Il roster</h2>
+        <p class="intro">Tocca un giocatore per la sua scheda: numeri, carriera e scheda di scouting. Dati PlayBasket al {dataEstesa(d.meta.fonti.playbasket.aggiornato)}.</p>
+        <h3>Già in campo in questa stagione</h3>
+        <ul class="griglia elenco">{inCampo.map((p) => <CardGiocatore persona={p} />)}</ul>
+        {altri.length > 0 && (
+          <>
+            <h3>Giovani in rosa, non ancora a referto</h3>
+            <ul class="griglia elenco">{altri.map((p) => <CardGiocatore persona={p} />)}</ul>
+          </>
+        )}
+        <p class="nota"><a href={urlPbRosa(d.stagione, s.pb_obj)}>La rosa su PlayBasket</a></p>
+      </section>
+
+      {coach.map((c) => (
+        <section class="sezione card" aria-labelledby={`t-coach-${c.id}`}>
+          <p class="etichetta">{c.scouting?.tag ?? 'Allenatore'}</p>
+          <h2 id={`t-coach-${c.id}`}>L'allenatore: <a href={urlGiocatore(c.slug)}>{c.nomeCompleto}</a></h2>
+          {c.scouting && (
+            <>
+              <p class="lead">{c.scouting.profilo}</p>
+              <p>{c.scouting.percorso}</p>
+              <p>{c.scouting.lettura}</p>
+              <p><strong>Da guardare:</strong> {c.scouting.da_guardare}</p>
+              <p class="ai"><span aria-hidden="true">✦</span><span><strong>Scheda scritta con AI (Claude)</strong> a partire dai dati PlayBasket, senza aver visto le partite dal vivo. Dati al {dataEstesa(c.scouting.dati_al)}.</span></p>
+            </>
+          )}
+        </section>
+      ))}
+    </>
+  ) : (
+    <p class="intro">Rose e statistiche dei giocatori non sono disponibili su questo sito.</p>
+  )}
+
+  {m && (
+    <section class="sezione card" aria-labelledby="t-mercato">
+      <p class="etichetta">{m.tag}</p>
+      <h2 id="t-mercato">{m.titolo}</h2>
+      <p class="lead">{m.profilo}</p>
+      <p>{m.percorso}</p>
+      <p>{m.lettura}</p>
+      <p><strong>Da guardare:</strong> {m.da_guardare}</p>
+      {m.autore === 'Claude' && <p class="ai"><span aria-hidden="true">✦</span><span><strong>Testo scritto con AI (Claude)</strong> a partire dai dati PlayBasket. Dati al {dataEstesa(m.dati_al)}.</span></p>}
+    </section>
+  )}
+
+  {(nota?.stagione_precedente || nota?.nota) && (
+    <section class="sezione" aria-labelledby="t-note">
+      <h2 id="t-note">Da sapere</h2>
+      {nota?.nota && <p>{nota.nota}</p>}
+      {nota?.stagione_precedente && <p><strong>Stagione {d.storia.stagione}:</strong> {nota.stagione_precedente}.</p>}
+    </section>
+  )}
+</Base>
+
+<style>
+  .elenco { list-style: none; margin: 0 0 1.25rem; padding: 0; }
+  h1 { font-size: clamp(1.6rem, 5vw, 2.6rem); margin: 0; }
+  .lead { font-size: 1.08rem; color: var(--inchiostro); }
+</style>
