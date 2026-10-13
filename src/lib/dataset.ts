@@ -8,7 +8,7 @@ import {
   arricchisciRiga, doppioTesseramento, exNerviano, livello, ranghi, rigaCorrente, sintesi, statoEProvenienza,
   type RigaCarrieraCalc, type Stato,
 } from './giocatori.ts';
-import { slugGiocatore, stagionePrecedente } from './nomi.ts';
+import { capitalizza, normalizzaNome, slugGiocatore, stagionePrecedente } from './nomi.ts';
 
 export interface PartitaSito extends Partita {
   nota: string | null;
@@ -97,12 +97,30 @@ export function costruisciDataset(d: DatiGrezzi) {
 
   // ---------------------------------------------------------------- partite con le correzioni
   const corrP = new Map(d.correzioni.partite.map((c) => [c.partita, c]));
+  // Il campo «abituale» di una squadra è quello che FIP indica più spesso per le sue partite in casa:
+  // lì si mostrano nome e città curati in squadre.json; altrove (campo diverso) il nome FIP.
+  const chiaveCampo = (p: Partita) => (p.palestra ? `${normalizzaNome(p.palestra)}|${normalizzaNome(p.citta ?? '')}` : '');
+  const abituale = new Map<string, string>();
+  for (const s of d.squadre) {
+    const conta = new Map<string, number>();
+    for (const p of d.partite) if (p.casa === s.slug && chiaveCampo(p)) conta.set(chiaveCampo(p), (conta.get(chiaveCampo(p)) ?? 0) + 1);
+    const top = [...conta].sort((a, b) => b[1] - a[1])[0];
+    if (top) abituale.set(s.slug, top[0]);
+  }
+  const campoPartita = (p: Partita) => {
+    const casa = sq(p.casa);
+    // la città del campo è quella dell'indirizzo («Via Giulini 22, Boffalora sopra Ticino (MI)»), non sempre quella della squadra
+    const cittaCampo = casa.indirizzo.split(',').at(-1)!.replace(/\s*\([A-Z]{2}\)\s*$/, '').trim() || casa.citta;
+    if (!p.palestra || chiaveCampo(p) === abituale.get(p.casa)) return { palestra: casa.palestra, citta: cittaCampo };
+    return { palestra: /[a-z]/.test(p.palestra) ? p.palestra : capitalizza(p.palestra), citta: p.citta };
+  };
   const partite: PartitaSito[] = d.partite.map((p) => {
     const c = corrP.get(p.id);
+    const campo = campoPartita(p);
     return {
       ...p,
-      palestra: c?.palestra ?? p.palestra,
-      citta: c?.citta ?? p.citta,
+      palestra: c?.palestra ?? campo.palestra,
+      citta: c?.citta ?? campo.citta,
       nota: c?.nota ?? null,
       escludi_medie: c?.escludi_medie ?? false,
     };

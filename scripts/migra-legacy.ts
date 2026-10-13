@@ -85,7 +85,6 @@ const squadre: Squadra[] = sqLegacy.map((s) => ({
   colori: null,
   maglia_fip: null,
 }));
-const SQ = new Map(squadre.map((s) => [s.slug, s]));
 
 const sito = {
   titolo: 'Nerviano Basket',

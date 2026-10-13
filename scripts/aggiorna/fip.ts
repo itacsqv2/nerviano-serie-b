@@ -5,7 +5,9 @@
  */
 import * as cheerio from 'cheerio';
 import { dataDaItaliano } from '../../src/lib/formato.ts';
-import { pulisci } from '../../src/lib/nomi.ts';
+import { capitalizza, pulisci } from '../../src/lib/nomi.ts';
+
+export { capitalizza };
 import { ErroreFonte } from './http.ts';
 
 export interface PartitaFip {
@@ -40,23 +42,14 @@ const STATI_NOTI: Record<string, string> = {
   'non-designata': 'da_giocare',
 };
 
-const PICCOLE = new Set(['di', 'del', 'della', 'de', 'sopra', 'sotto', 'sul', 'al', 'in', 'e']);
-/** «GAZZADA SCHIANNO» → «Gazzada Schianno», «BOFFALORA SOPRA TICINO» → «Boffalora sopra Ticino». */
-export function capitalizza(s: string): string {
-  return pulisci(s)
-    .toLowerCase()
-    .split(' ')
-    .map((w, i) => (i > 0 && PICCOLE.has(w) ? w : w.replace(/(^|[-'’])(\p{L})/gu, (_, a: string, b: string) => a + b.toUpperCase())))
-    .join(' ');
-}
-
 /** «Bocconi Sport Center, Viale Toscana 30 20136 MILANO ( MI)» → palestra e città. */
 export function leggiCampo(testo: string): { palestra: string | null; citta: string | null } {
   const t = pulisci(testo);
   if (!t) return { palestra: null, citta: null };
   const palestra = pulisci(t.split(',')[0] ?? '') || null;
   const m = /(?:\d{5}\s+)?([^\d,()]+?)\s*\(\s*[A-Z]{2}\s*\)\s*$/.exec(t);
-  return { palestra, citta: m ? capitalizza(m[1]!) : null };
+  const citta = m ? m[1]!.replace(/^[\s\-–]+/, '') : '';
+  return { palestra, citta: citta ? capitalizza(citta) : null };
 }
 
 const numero = (s: string): number | null => {

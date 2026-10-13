@@ -85,3 +85,13 @@ export function distanza(a: string, b: string): number {
   }
   return d[b.length]!;
 }
+
+const PICCOLE = new Set(['di', 'del', 'della', 'de', 'sopra', 'sotto', 'sul', 'al', 'in', 'e']);
+/** «GAZZADA SCHIANNO» → «Gazzada Schianno», «BOFFALORA SOPRA TICINO» → «Boffalora sopra Ticino». */
+export function capitalizza(s: string): string {
+  return pulisci(s)
+    .toLowerCase()
+    .split(' ')
+    .map((w, i) => (i > 0 && PICCOLE.has(w) ? w : w.replace(/(^|[-'’])(\p{L})/gu, (_, a: string, b: string) => a + b.toUpperCase())))
+    .join(' ');
+}
