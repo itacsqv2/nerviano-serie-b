@@ -9,7 +9,7 @@ import { dati } from '../../lib/data.ts';
 import { dataBreve, dataEstesa, f1, ordinale } from '../../lib/formato.ts';
 import { url, urlGiocatore, urlPartita } from '../../lib/url.ts';
 import { urlPbRosa } from '../../lib/fonti.ts';
-import { campo, classificaCorrente, perMedia, rosa, sfideConRif } from '../../lib/viste.ts';
+import { allenatori, campo, classificaCorrente, perMedia, rosa, sfideConRif } from '../../lib/viste.ts';
 
 export const getStaticPaths = (() => {
   const d = dati();
@@ -69,6 +69,7 @@ const partite = d.partite.filter((p) => p.casa === slug || p.ospite === slug).so
       <dl class="kv">
         {nota?.nota && <><dt>In breve</dt><dd>{nota.nota}</dd></>}
         {nota?.stagione_precedente && <><dt>Stagione {d.storia.stagione}</dt><dd>{nota.stagione_precedente}</dd></>}
+        {d.playbasket && allenatori(d, slug).map((c) => <><dt>Allenatore</dt><dd><a href={urlGiocatore(c.slug)}>{c.nomeCompleto}</a></dd></>)}
         <dt>Campo</dt><dd>{s.palestra}, {s.indirizzo}</dd>
       </dl>
     </section>

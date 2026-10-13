@@ -33,7 +33,7 @@ const s = p.scouting;
     <>
       <h2 id={`scheda-${p.id}`}>In breve</h2>
       <p class="lead">{p.sintesi}</p>
-      <p class="nota">Sintesi automatica dei numeri PlayBasket.</p>
+      {!p.allenatore && <p class="nota">Sintesi automatica dei numeri PlayBasket.</p>}
     </>
   )}
 </section>

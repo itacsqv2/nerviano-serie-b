@@ -260,7 +260,7 @@ export function costruisciDataset(d: DatiGrezzi) {
   }
   for (const p of persone) {
     const x = perSintesi.get(p.id)!;
-    p.sintesi = p.allenatore ? '' : sintesi({
+    p.sintesi = p.allenatore ? `Allenatore di ${sq(p.squadra).breve} nella stagione ${stagione}.` : sintesi({
       ruolo: p.ruolo, eta: p.eta, eta_fascia: p.etaFascia, stato: p.stato, prev: x.prev, stagioniQui: x.stagioniQui,
       stagioni: p.carriera.stagioni, livello: p.livello, partite: p.stagione.partite, punti: p.stagione.punti,
       media: p.stagione.media, rango: p.rango, ptsVsNerviano: p.ptsVsNerviano, exNerviano: p.exNerviano,
