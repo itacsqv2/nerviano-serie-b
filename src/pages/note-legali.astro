@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import { dati } from '../lib/data.ts';
+import { dataEstesa } from '../lib/formato.ts';
+import { urlGiocatore } from '../lib/url.ts';
+
+const d = dati();
+const foto = d.persone.filter((p) => p.foto);
+---
+<Base titolo="Note legali e privacy" descrizione="Note legali, fonti dei dati, privacy e richieste di rettifica di Nerviano Basket, sito non ufficiale di tifosi.">
+  <h1>Note legali e privacy</h1>
+
+  <section class="sezione">
+    <h2>Un sito non ufficiale</h2>
+    <p>
+      {d.sito.titolo} è un sito curato da un tifoso. Non è collegato a U.S. Nervianese PuntoeBasket, alla Federazione Italiana Pallacanestro (FIP)
+      né a PlayBasket, e non parla a loro nome.
+    </p>
+  </section>
+
+  <section class="sezione">
+    <h2>Fonti dei dati</h2>
+    <ul>
+      <li><strong>FIP</strong> (<a href="https://fip.it/risultati/">fip.it/risultati</a>): calendario, orari, campi, risultati, stato delle gare e classifica ufficiale.</li>
+      {d.playbasket && <li><strong>PlayBasket</strong> (<a href="https://www.playbasket.it/">playbasket.it</a>): rose, punti dei giocatori nei tabellini e carriere. I contenuti di PlayBasket sono di PlayBasket, che ne riserva tutti i diritti.</li>}
+    </ul>
+    <p>
+      Ogni pagina di giocatore, squadra e partita indica la fonte e la data dell'ultimo aggiornamento.
+      Ultimo aggiornamento: FIP {dataEstesa(d.meta.fonti.fip.aggiornato)}{d.playbasket && `, PlayBasket ${dataEstesa(d.meta.fonti.playbasket.aggiornato)}`}.
+      I dati vengono letti con un programma che rispetta le regole dei siti (robots.txt), si identifica e fa poche richieste, lentamente.
+      Non vengono copiati articoli, cronache, foto o loghi.
+    </p>
+  </section>
+
+  {d.playbasket && (
+    <section class="sezione">
+      <h2>Schede di scouting</h2>
+      <p>
+        Le schede di scouting sono <strong>testi generati con AI (Claude) a partire dai dati, senza visione delle partite</strong>.
+        Ogni scheda lo indica, con la data dei dati usati. Possono contenere imprecisioni: per i dati fanno fede FIP e PlayBasket.
+        Per chi non ha una scheda c'è una sintesi automatica dei soli numeri.
+      </p>
+    </section>
+  )}
+
+  <section class="sezione">
+    <h2>Privacy</h2>
+    <ul>
+      <li>Il sito non usa cookie, non ha statistiche di visita né pubblicità, e non fa richieste a siti di terze parti: anche i caratteri tipografici sono ospitati qui.</li>
+      <li>Vengono pubblicati solo dati sportivi già pubblici e pertinenti: nome, squadra, numero di maglia, ruolo, età, punti e stagioni giocate.</li>
+      <li>Non vengono pubblicati date di nascita, recapiti, né dati di arbitri, ufficiali di campo o dirigenti.</li>
+      <li>Il sito è ospitato da Vercel, che come ogni hosting tratta i dati tecnici necessari a servire le pagine (per esempio l'indirizzo IP).</li>
+    </ul>
+  </section>
+
+  <section class="sezione">
+    <h2>Minorenni</h2>
+    <p>
+      Molti giocatori sono minorenni. I testi che li riguardano sono neutri e descrittivi, senza giudizi.
+      Le foto di minorenni compaiono solo con il consenso dei genitori raccolto dalla società; dove non c'è una foto autorizzata
+      si vede un segnaposto con le iniziali.
+    </p>
+  </section>
+
+  <section class="sezione" id="rettifiche">
+    <h2>Rettifiche e rimozioni</h2>
+    <p>
+      Per correggere un dato o chiedere di togliere un giocatore dal sito scrivi a <a href={`mailto:${d.sito.email}`}>{d.sito.email}</a>.
+      Un giocatore rimosso sparisce da tutto il sito (pagina personale, rose, tabellini, marcatori, ricerca e foto) dal successivo aggiornamento.
+    </p>
+  </section>
+
+  <section class="sezione">
+    <h2>Crediti delle foto</h2>
+    {foto.length ? (
+      <ul>{foto.map((p) => <li><a href={urlGiocatore(p.slug)}>{p.nomeCompleto}</a>: {p.foto!.credito} ({p.foto!.fonte}).</li>)}</ul>
+    ) : <p>Al momento il sito non pubblica foto di giocatori.</p>}
+  </section>
+</Base>

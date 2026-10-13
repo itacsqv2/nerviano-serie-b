@@ -1,0 +1,222 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import Avatar from '../../components/Avatar.astro';
+import Squadra from '../../components/Squadra.astro';
+import Esito from '../../components/Esito.astro';
+import Scouting from '../../components/Scouting.astro';
+import GraficoBarre, { type Barra } from '../../components/GraficoBarre.astro';
+import { dati } from '../../lib/data.ts';
+import type { Persona } from '../../lib/dataset.ts';
+import { GRUPPI } from '../../lib/categorie.ts';
+import { nomeCategoria } from '../../lib/categorie.ts';
+import { dataBreve, dataEstesa, f1, f0 } from '../../lib/formato.ts';
+import { url, urlPartita } from '../../lib/url.ts';
+import { urlPbAllenatore, urlPbGiocatore } from '../../lib/fonti.ts';
+import { sfideConRif } from '../../lib/viste.ts';
+
+export const getStaticPaths = (() => {
+  const d = dati();
+  if (!d.playbasket) return [];
+  return d.persone.map((p) => ({ params: { slug: p.slug }, props: { id: p.id } }));
+}) satisfies GetStaticPaths;
+
+const d = dati();
+const p = d.personaPerId.get(Astro.props.id) as Persona;
+const s = d.sq(p.squadra);
+const noi = p.squadra === d.rif;
+const nomeRif = d.sq(d.rif).breve;
+const eta = p.eta != null ? `${p.eta} anni` : p.etaFascia ? p.etaFascia.replace('U', 'Under ') : null;
+const meta = [p.allenatore ? 'Allenatore' : p.ruolo ?? 'Ruolo non indicato', eta, p.altezza ? `${p.altezza} cm` : null].filter(Boolean);
+const fonte = p.allenatore ? urlPbAllenatore(d.stagione, p.id, s.pb_obj) : urlPbGiocatore(d.stagione, p.id, s.pb_obj, true);
+
+const CLASSE: Record<string, string> = {
+  'Serie A': 'liv-a', 'Serie A2': 'liv-a2', 'Serie B e B Nazionale': 'liv-b', 'B Interregionale': 'liv-bi', 'Serie C e regionali': 'liv-c', Giovanili: 'liv-giovanili',
+};
+const righeGrafico = p.carriera.righe
+  .filter((r) => (r.presenze ?? 0) > 0 && r.media != null)
+  .sort((a, b) => a.stagione.localeCompare(b.stagione) || Number(a.senior) - Number(b.senior));
+const barreCarriera: Barra[] = righeGrafico.map((r) => ({
+  etichetta: r.stagione.slice(2),
+  valore: r.media!,
+  classe: CLASSE[r.gruppo],
+  titolo: `${r.stagione} · ${nomeCategoria(r.categoria)}\n${r.squadra}\n${f1(r.media)} punti di media\n${r.presenze} partite · massimo ${f0(r.best)}`,
+}));
+const gruppiPresenti = GRUPPI.filter((g) => righeGrafico.some((r) => r.gruppo === g));
+const carrieraOrdinata = [...p.carriera.righe].sort((a, b) => b.stagione.localeCompare(a.stagione) || Number(b.senior) - Number(a.senior));
+
+const maxPunti = Math.max(0, ...p.presenzePartite.map((x) => x.punti));
+const barrePartite: Barra[] = p.presenzePartite.map((x) => ({
+  etichetta: `G${x.partita.giornata}`,
+  valore: x.punti,
+  classe: noi || x.avversaria === d.rif ? undefined : 'tenue',
+  titolo: `G${x.partita.giornata} · ${dataBreve(x.partita.data)} · ${x.casa ? 'contro' : 'a'} ${d.sq(x.avversaria).breve}\n${x.punti} punti`,
+  sopra: x.punti === maxPunti && maxPunti > 0 ? String(x.punti) : undefined,
+}));
+const precedenti = noi || p.allenatore ? [] : sfideConRif(d, p.squadra);
+const oggetto = encodeURIComponent(`Segnalazione su ${p.nomeCompleto} (${p.id})`);
+---
+<Base titolo={p.nomeCompleto} descrizione={`${p.nomeCompleto}, ${meta.join(', ')}, ${s.breve}: numeri della stagione ${d.stagione.stagione}, carriera e scheda.`}>
+  <nav class="briciole nota" aria-label="Percorso"><a href={url(noi ? '/nerviano/' : '/avversarie/')}>{noi ? nomeRif : 'Avversarie'}</a>{!noi && <> › <a href={url(`/avversarie/${p.squadra}/`)}>{s.breve}</a></>} › {p.nomeCompleto}</nav>
+
+  <header class="intestazione">
+    <Avatar persona={p} grande credito />
+    <div>
+      {p.numero && <p class="maglia" aria-hidden="true">{p.numero}</p>}
+      <h1>{p.nomeCompleto}{p.numero && <span class="sr-only">, numero {p.numero}</span>}</h1>
+      <p class="squadra"><Squadra squadra={p.squadra} completo /></p>
+      <p class="meta">{meta.join(' · ')}</p>
+      {(p.stato || p.provenienza) && !p.allenatore && <p class="nota">{[p.stato, p.provenienza && (p.stato === 'Nuovo arrivo' ? `da ${p.provenienza}` : p.provenienza)].filter(Boolean).join(' ')}</p>}
+      {p.doppioTesseramento && <p class="nota">Quest'anno gioca anche con {p.doppioTesseramento}.</p>}
+      {p.exNerviano && <p class="nota"><span class="tag accento">Ex Nerviano</span> {p.exNerviano}.</p>}
+      {!p.inRosa && <p class="avviso">Non è più nella rosa attuale su PlayBasket.</p>}
+    </div>
+  </header>
+
+  {!p.allenatore && (
+    <section class="sezione" aria-labelledby="t-stagione">
+      <h2 id="t-stagione">Questa stagione</h2>
+      {p.stagione.partite ? (
+        <dl class="kpi">
+          <div class="card"><dt class="etichetta">Punti a partita</dt><dd class="valore">{f1(p.stagione.media)}</dd></div>
+          <div class="card"><dt class="etichetta">Punti</dt><dd class="valore">{f0(p.stagione.punti)}</dd></div>
+          <div class="card"><dt class="etichetta">Partite</dt><dd class="valore">{p.stagione.partite}</dd></div>
+          <div class="card"><dt class="etichetta">Massimo</dt><dd class="valore">{f0(p.stagione.best)}</dd></div>
+        </dl>
+      ) : <p>Non ancora a referto in B Interregionale.</p>}
+
+      {p.presenzePartite.length > 0 && (
+        <div class="card blocco">
+          <h3>Partita per partita</h3>
+          <GraficoBarre id={`pp-${p.id}`} barre={barrePartite} titolo={`Punti di ${p.nomeCompleto} partita per partita`} asseY="Punti">
+            {!noi && p.presenzePartite.some((x) => x.avversaria === d.rif) && (
+              <ul class="legenda" slot="legenda">
+                <li><svg viewBox="0 0 10 10" aria-hidden="true"><rect class="leg-tenue" width="10" height="10" rx="2" /></svg>Altre partite</li>
+                <li><svg viewBox="0 0 10 10" aria-hidden="true"><rect class="leg-noi" width="10" height="10" rx="2" /></svg>Contro {nomeRif}</li>
+              </ul>
+            )}
+            <div slot="dati" class="tabella-scorre">
+              <table>
+                <caption class="sr-only">Punti partita per partita</caption>
+                <thead><tr><th scope="col">G</th><th scope="col">Data</th><th scope="col">Avversaria</th><th scope="col">Esito</th><th scope="col" class="num">Risultato</th><th scope="col" class="num">Punti</th></tr></thead>
+                <tbody>
+                  {p.presenzePartite.map((x) => (
+                    <tr class:list={{ noi: x.avversaria === d.rif }}>
+                      <td>{x.partita.giornata}</td>
+                      <td class="nowrap">{dataBreve(x.partita.data)}</td>
+                      <th scope="row">{x.casa ? 'contro' : 'a'} <Squadra squadra={x.avversaria} /></th>
+                      <td><Esito esito={x.esito} /></td>
+                      <td class="num"><a href={urlPartita(x.partita.id)}>{x.fatti}-{x.subiti}</a></td>
+                      <td class="num"><strong>{x.punti}</strong></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </GraficoBarre>
+        </div>
+      )}
+    </section>
+  )}
+
+  <div class="griglia-larga">
+    <Scouting persona={p} />
+
+    {precedenti.length > 0 && (
+      <section class="card" aria-labelledby="t-precedenti">
+        <h2 id="t-precedenti">Contro {nomeRif}</h2>
+        <ul class="precedenti">
+          {precedenti.map((g) => {
+            const x = p.presenzePartite.find((y) => y.partita.id === g.partita!.id);
+            return (
+              <li>
+                <span class="nota">G{g.giornata} · {dataBreve(g.partita!.data)} · {g.casa ? `a ${d.sq(d.rif).citta}` : `a ${s.citta}`}</span>
+                {g.esito
+                  ? <span><Esito esito={g.esito === 'V' ? 'P' : 'V'} /> <a href={urlPartita(g.partita!.id)}>{nomeRif} {g.fatti}-{g.subiti}</a> · {x ? `${x.punti} punti` : 'senza tabellino'}</span>
+                  : <span>da giocare{g.partita!.ora && `, alle ${g.partita!.ora}`}</span>}
+              </li>
+            );
+          })}
+        </ul>
+        {p.ptsVsNerviano != null && <p class="nota">Esito dal punto di vista di {s.breve}.</p>}
+      </section>
+    )}
+  </div>
+
+  {!p.allenatore && (
+    <section class="sezione" aria-labelledby="t-carriera">
+      <h2 id="t-carriera">Carriera</h2>
+      {p.carriera.presenze ? (
+        <dl class="kpi">
+          <div class="card"><dt class="etichetta">Stagioni</dt><dd class="valore">{f0(p.carriera.stagioni)}</dd></div>
+          <div class="card"><dt class="etichetta">Partite</dt><dd class="valore">{f0(p.carriera.presenze)}</dd></div>
+          <div class="card"><dt class="etichetta">Punti</dt><dd class="valore">{f0(p.carriera.punti)}</dd></div>
+          <div class="card"><dt class="etichetta">Punti a partita</dt><dd class="valore">{f1(p.carriera.media)}</dd></div>
+        </dl>
+      ) : <p>Nessuna statistica di carriera su PlayBasket.</p>}
+
+      {barreCarriera.length > 0 && (
+        <div class="card blocco">
+          <h3>Media punti stagione per stagione</h3>
+          <p class="nota">Una barra per squadra e stagione, colorata per livello del campionato: più scura, più alto il livello.</p>
+          <GraficoBarre id={`car-${p.id}`} barre={barreCarriera} titolo={`Media punti per stagione di ${p.nomeCompleto}`} asseY="Punti a partita" decimali>
+            <ul class="legenda" slot="legenda">
+              {gruppiPresenti.map((g) => <li><svg class="grafico" viewBox="0 0 10 10" aria-hidden="true"><rect class={CLASSE[g]} width="10" height="10" rx="2" /></svg>{g}</li>)}
+            </ul>
+            <p slot="dati" class="nota">I dati sono nella tabella qui sotto.</p>
+          </GraficoBarre>
+        </div>
+      )}
+
+      {carrieraOrdinata.length > 0 && (
+        <div class="tabella-scorre carriera" tabindex="0" role="region" aria-label="Carriera">
+          <table>
+            <caption>Tutte le stagioni su PlayBasket</caption>
+            <thead><tr><th scope="col">Stagione</th><th scope="col">Squadra</th><th scope="col">Campionato</th><th scope="col" class="num">Partite</th><th scope="col" class="num">Punti</th><th scope="col" class="num">Media</th><th scope="col" class="num">Max</th></tr></thead>
+            <tbody>
+              {carrieraOrdinata.map((r) => (
+                <tr class:list={{ attenuata: !r.senior }}>
+                  <td class="nowrap">{r.stagione}</td>
+                  <th scope="row">{r.squadra}</th>
+                  <td>{nomeCategoria(r.categoria)}</td>
+                  <td class="num">{f0(r.presenze)}</td>
+                  <td class="num">{f0(r.punti)}</td>
+                  <td class="num">{f1(r.media)}</td>
+                  <td class="num">{f0(r.best)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  )}
+
+  <p class="nota fonti">
+    Fonte: <a href={fonte}>scheda su PlayBasket</a>, dati al {dataEstesa(d.meta.fonti.playbasket.aggiornato)}.
+    Hai visto un errore? <a href={`mailto:${d.sito.email}?subject=${oggetto}`}>Segnalalo</a>.
+  </p>
+</Base>
+
+<style>
+  .briciole { margin-bottom: 0.75rem; }
+  .intestazione { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: flex-start; }
+  .intestazione > div { flex: 1 1 16rem; }
+  .intestazione p { margin: 0 0 0.35rem; }
+  .maglia { font-family: var(--font-titoli); font-weight: 700; font-size: 3.2rem; line-height: 0.9; color: var(--accento-testo); }
+  h1 { font-size: clamp(1.9rem, 6vw, 3rem); margin-bottom: 0.4rem; }
+  .meta { font-size: 1.05rem; color: var(--inchiostro); }
+  .kpi { margin: 0 0 1rem; }
+  .kpi dd { margin: 0; }
+  .blocco { margin-bottom: 1rem; }
+  .nowrap { white-space: nowrap; }
+  .precedenti { list-style: none; margin: 0; padding: 0; }
+  .precedenti li { display: flex; flex-direction: column; gap: 0.2rem; padding-block: 0.5rem; border-top: 1px solid var(--bordo); }
+  .precedenti li:first-child { border-top: 0; }
+  .precedenti .esito { width: 1.3rem; height: 1.3rem; font-size: 0.8rem; }
+  .carriera { max-height: 34rem; overflow-y: auto; }
+  .carriera thead th { position: sticky; top: 0; }
+  .leg-tenue { fill: var(--grafico-punto); }
+  .leg-noi { fill: var(--accento); }
+  .fonti { margin-top: 2rem; }
+</style>

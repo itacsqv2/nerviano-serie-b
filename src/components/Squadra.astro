@@ -1,0 +1,20 @@
+---
+/** Nome di una squadra con badge e link alla sua pagina. */
+import { dati } from '../lib/data.ts';
+import { url, urlSquadra } from '../lib/url.ts';
+import Badge from './Badge.astro';
+
+interface Props { squadra: string; completo?: boolean; link?: boolean }
+const { squadra, completo = false, link = true } = Astro.props;
+const d = dati();
+const s = d.sq(squadra);
+const href = squadra === d.rif ? url('/nerviano/') : urlSquadra(squadra);
+const nome = completo ? s.nome : s.breve;
+---
+<span class="squadra"><Badge squadra={squadra} />{link ? <a href={href}>{nome}</a> : <span>{nome}</span>}</span>
+
+<style>
+  .squadra { display: inline-flex; align-items: center; gap: 0.45rem; min-width: 0; }
+  a { color: inherit; text-decoration-color: var(--bordo-forte); }
+  a:hover { color: var(--accento-testo); }
+</style>

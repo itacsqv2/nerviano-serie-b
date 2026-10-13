@@ -1,0 +1,44 @@
+---
+/** Scheda di scouting (testo scritto con AI, sempre con l'avviso) oppure sintesi automatica dei numeri. */
+import type { Persona } from '../lib/dataset.ts';
+import { dataEstesa } from '../lib/formato.ts';
+
+interface Props { persona: Persona }
+const { persona: p } = Astro.props;
+const s = p.scouting;
+---
+<section class="card scheda" aria-labelledby={`scheda-${p.id}`}>
+  {s ? (
+    <>
+      <p class="etichetta">{s.tag}</p>
+      <h2 id={`scheda-${p.id}`}>La scheda</h2>
+      <p class="lead">{s.profilo}</p>
+      <h3>Il percorso</h3>
+      <p>{s.percorso}</p>
+      <h3>La lettura</h3>
+      <p>{s.lettura}</p>
+      <h3>Da tenere d'occhio</h3>
+      <p>{s.da_guardare}</p>
+      <p class="ai">
+        <span aria-hidden="true">✦</span>
+        <span>
+          {s.autore === 'Claude'
+            ? <><strong>Scheda scritta con AI (Claude)</strong> a partire dai dati PlayBasket, senza aver visto le partite dal vivo.</>
+            : <><strong>Scheda scritta da {s.autore}</strong> a partire dai dati PlayBasket.</>}
+          {' '}Scritta il {dataEstesa(s.scritta_il)}, con i dati al {dataEstesa(s.dati_al)}.
+        </span>
+      </p>
+    </>
+  ) : (
+    <>
+      <h2 id={`scheda-${p.id}`}>In breve</h2>
+      <p class="lead">{p.sintesi}</p>
+      <p class="nota">Sintesi automatica dei numeri PlayBasket.</p>
+    </>
+  )}
+</section>
+
+<style>
+  .lead { font-size: 1.08rem; color: var(--inchiostro); }
+  h3 { margin-top: 1rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.03em; }
+</style>

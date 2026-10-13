@@ -1,0 +1,80 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../layouts/Base.astro';
+import Squadra from '../components/Squadra.astro';
+import { dati } from '../lib/data.ts';
+import { dataEstesa, f1 } from '../lib/formato.ts';
+import { urlGiocatore } from '../lib/url.ts';
+import { urlPbLega } from '../lib/fonti.ts';
+import { marcatori } from '../lib/viste.ts';
+
+// /marcatori/ esiste solo con i dati PlayBasket attivi (fonti.playbasket): per questo è una rotta dinamica
+export const getStaticPaths = (() => (dati().playbasket ? [{ params: { marcatori: 'marcatori' } }] : [])) satisfies GetStaticPaths;
+const d = dati();
+const elenco = marcatori(d);
+const squadre = [...d.squadre].sort((a, b) => a.breve.localeCompare(b.breve, 'it'));
+const ruoli = ['Play', 'Guardia', 'Ala piccola', 'Ala forte', 'Centro'];
+---
+<Base titolo="Marcatori" sezione="marcatori" descrizione={`Migliori realizzatori del Girone A di Serie B Interregionale ${d.stagione.stagione}.`}>
+  <h1>Marcatori del girone</h1>
+  <p class="intro">
+    Tutti i giocatori scesi in campo, per media punti. I giocatori di {d.sq(d.rif).breve} sono evidenziati. Tocca le intestazioni per ordinare.
+    Dati <a href={urlPbLega(d.stagione, 'sc')}>PlayBasket</a> al {dataEstesa(d.meta.fonti.playbasket.aggiornato)}: contano le partite con il tabellino caricato.
+  </p>
+  <div class="filtri solo-js">
+    <label class="sr-only" for="f-squadra">Squadra</label>
+    <select id="f-squadra" data-filtro="mar" data-campo="squadra">
+      <option value="tutte">Tutte le squadre</option>
+      {squadre.map((s) => <option value={s.slug}>{s.breve}</option>)}
+    </select>
+    <label class="sr-only" for="f-ruolo">Ruolo</label>
+    <select id="f-ruolo" data-filtro="mar" data-campo="ruolo">
+      <option value="tutte">Tutti i ruoli</option>
+      {ruoli.map((r) => <option value={r.replace(' ', '-').toLowerCase()}>{r}</option>)}
+    </select>
+    <div class="segmenti" data-filtro="mar" data-campo="minimo" role="group" aria-label="Partite giocate">
+      <button type="button" data-valore="tutte" aria-pressed="false">Tutti</button>
+      <button type="button" data-valore="2" aria-pressed="true">Almeno 2 partite</button>
+    </div>
+  </div>
+  <div class="tabella-scorre" tabindex="0" role="region" aria-label="Marcatori del girone">
+    <table data-ordinabile>
+      <caption class="sr-only">Marcatori del girone per media punti</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="num" data-tipo="num">#</th>
+          <th scope="col" data-tipo="testo">Giocatore</th>
+          <th scope="col" data-tipo="testo">Squadra</th>
+          <th scope="col" data-tipo="testo">Ruolo</th>
+          <th scope="col" class="num" data-tipo="num">Età</th>
+          <th scope="col" class="num" data-tipo="num">Partite</th>
+          <th scope="col" class="num" data-tipo="num">Punti</th>
+          <th scope="col" class="num" data-tipo="num" aria-sort="descending">Media</th>
+          <th scope="col" class="num" data-tipo="num">Max</th>
+        </tr>
+      </thead>
+      <tbody>
+        {elenco.map((p, i) => (
+          <tr
+            class:list={{ noi: p.squadra === d.rif }}
+            data-gruppo="mar"
+            data-squadra={`tutte ${p.squadra}`}
+            data-ruolo={`tutte ${(p.ruolo ?? '').replace(' ', '-').toLowerCase()}`}
+            data-minimo={`tutte${(p.stagione.partite ?? 0) >= 2 ? ' 2' : ''}`}
+          >
+            <td class="num">{i + 1}</td>
+            <th scope="row" data-valore={`${p.cognome} ${p.nome}`}><a href={urlGiocatore(p.slug)}>{p.cognome} {p.nome}</a></th>
+            <td data-valore={d.sq(p.squadra).breve}><Squadra squadra={p.squadra} /></td>
+            <td>{p.ruolo ?? ''}</td>
+            <td class="num" data-valore={p.eta ?? ''}>{p.eta ?? p.etaFascia ?? ''}</td>
+            <td class="num">{p.stagione.partite}</td>
+            <td class="num">{p.stagione.punti}</td>
+            <td class="num" data-valore={p.stagione.media}><strong>{f1(p.stagione.media)}</strong></td>
+            <td class="num">{p.stagione.best ?? ''}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <p class="nota" data-vuoto="mar" hidden>Nessun giocatore con questi filtri.</p>
+</Base>

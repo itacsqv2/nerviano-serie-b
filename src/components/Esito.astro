@@ -1,0 +1,9 @@
+---
+/** Chip vittoria/sconfitta: la lettera è sempre presente, il colore non è l'unica informazione. */
+interface Props { esito: 'V' | 'P' | null }
+const { esito } = Astro.props;
+const testo = esito === 'V' ? 'Vinta' : esito === 'P' ? 'Persa' : 'Da giocare';
+---
+<span class:list={['esito', esito === 'V' ? 'v' : esito === 'P' ? 'p' : 'n']} title={testo}>
+  <span aria-hidden="true">{esito ?? '–'}</span><span class="sr-only">{testo}</span>
+</span>

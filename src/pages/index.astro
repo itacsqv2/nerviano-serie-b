@@ -1,16 +1,192 @@
 ---
+import Base from '../layouts/Base.astro';
+import Esito from '../components/Esito.astro';
+import ProssimaPartita from '../components/ProssimaPartita.astro';
+import TabellaClassifica from '../components/TabellaClassifica.astro';
+import CardPartita from '../components/CardPartita.astro';
 import { dati } from '../lib/data.ts';
+import { dataBreve, dataEstesa, dataGiorno, dataLunga, f1, ordinale, plurale } from '../lib/formato.ts';
+import { url, urlGiocatore, urlPartita } from '../lib/url.ts';
+import { classificaCorrente, migliorRealizzatore, partiteGiornata, perMedia, riepilogoRif, rosa, ultimaGiornata } from '../lib/viste.ts';
+
 const d = dati();
+const r = riepilogoRif(d);
+const cl = classificaCorrente(d);
+const pos = r.riga.posizione;
+const da = Math.max(1, Math.min(pos - 3, cl.length - 6));
+const breve = cl.slice(da - 1, da + 6);
+const ultimi = d.calendarioRif.filter((g) => g.esito).slice(-3).reverse();
+const ug = ultimaGiornata(d);
+const risultatiUg = ug ? partiteGiornata(d, ug) : [];
+const marcatori = d.playbasket ? rosa(d, d.rif).filter((p) => p.stagione.partite).sort(perMedia) : [];
+const maxMedia = Math.max(1, ...marcatori.map((p) => p.stagione.media ?? 0));
+const ufficiosiRif = d.ufficiosi.length > 0;
+const prossime = r.daGiocare.map((g) => ({ data: g.partita!.data, modello: `prossima-g${g.giornata}` }));
+const aggiornato = [d.meta.fonti.fip.aggiornato, d.meta.fonti.playbasket.aggiornato].sort().at(-1)!;
+const nomeRif = d.sq(d.rif).breve;
 ---
-<html lang="it">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>{d.sito.titolo}</title>
-  </head>
-  <body>
-    <h1>{d.sito.titolo}</h1>
-    <p>Nuovo sito in costruzione: {d.partite.length} partite, {d.persone.length} giocatori e allenatori.</p>
-  </body>
-</html>
+<Base titolo="Home" sezione="home">
+  <section class="apertura">
+    <p class="etichetta">Serie B Interregionale · Conference Nord · Girone A · {d.stagione.stagione}</p>
+    <h1>Forza {nomeRif}</h1>
+    <p class="sintesi">
+      {nomeRif} è <strong>{ordinale(pos)}</strong> con {r.riga.v} {plurale(r.riga.v, 'vittoria', 'vittorie')} e {r.riga.p} {plurale(r.riga.p, 'sconfitta', 'sconfitte')}.
+      {r.prossima?.partita && r.prossima.avversaria
+        ? <> Prossima partita {dataLunga(r.prossima.partita.data)}{r.prossima.partita.ora && ` alle ${r.prossima.partita.ora}`}, {r.prossima.casa ? 'in casa' : 'in trasferta'} contro {d.sq(r.prossima.avversaria).breve}.</>
+        : <> La prima fase è conclusa.</>}
+    </p>
+    <p class="nota">Dati aggiornati al <time datetime={aggiornato}>{dataEstesa(aggiornato)}</time>{ufficiosiRif && ', compresi i risultati non ancora omologati (*)'}.</p>
+  </section>
+
+  <section class="kpi" aria-label="Numeri chiave">
+    <div class="card">
+      <span class="etichetta">Posizione in classifica</span>
+      <span class="valore">{ordinale(pos)}</span>
+      <span class="sotto">{r.riga.zona && <span class:list={['zona', `zona-${r.riga.zona.toLowerCase()}`]}>{r.riga.zona}</span>} su {r.squadre} squadre</span>
+    </div>
+    <div class="card">
+      <span class="etichetta">Vinte e perse</span>
+      <span class="valore">{r.riga.v}–{r.riga.p}</span>
+      <span class="sotto">{r.riga.punti} punti in classifica · {r.giocate} {plurale(r.giocate, 'partita giocata', 'partite giocate')}</span>
+    </div>
+    <div class="card">
+      <span class="etichetta">Punti segnati a partita</span>
+      <span class="valore">{f1(r.mediaFatti)}</span>
+      <span class="sotto">{f1(r.mediaSubiti)} subiti a partita</span>
+    </div>
+    <div class="card" data-prossima={r.prossima ? `prossima-g${r.prossima.giornata}` : ''}>
+      <ProssimaPartita g={r.prossima} />
+    </div>
+  </section>
+  {r.daGiocare.map((g) => <template id={`prossima-g${g.giornata}`}><ProssimaPartita g={g} /></template>)}
+  <script type="application/json" id="calendario-rif" set:html={JSON.stringify(prossime)} />
+
+  <section class="sezione" aria-labelledby="t-stagione">
+    <h2 id="t-stagione">La stagione partita per partita</h2>
+    <p class="intro">Tutte le giornate della prima fase, in ordine. Il punteggio è sempre quello di {nomeRif} prima dell'avversario.</p>
+    <ol class="striscia" data-evidenzia-prossima>
+      {d.calendarioRif.map((g) => (
+        <li
+          class:list={['cella', g.esito === 'V' ? 'v' : g.esito === 'P' ? 'p' : g.riposo ? 'riposo' : 'futura', { prossima: g === r.prossima }]}
+          data-data={g.riposo ? undefined : g.partita!.data}
+          data-giocata={g.esito ? '1' : undefined}
+        >
+          <span class="g">G{g.giornata} · {g.riposo ? 'riposo' : g.casa ? 'casa' : 'fuori'}</span>
+          {g.riposo
+            ? <span class="avv">Turno di riposo</span>
+            : <span class="avv">{d.sq(g.avversaria!).breve}</span>}
+          {g.esito && g.partita
+            ? <a class="ris" href={urlPartita(g.partita.id)}><span class="sr-only">{g.esito === 'V' ? 'Vinta' : 'Persa'} </span>{g.fatti}-{g.subiti}{g.partita.stato === 'ufficioso' && '*'}</a>
+            : <span class="ris quando">{g.riposo ? `${dataGiorno(g.dal)}–${dataGiorno(g.al)}` : dataBreve(g.partita!.data)}</span>}
+        </li>
+      ))}
+    </ol>
+    <ul class="legenda">
+      <li><span class="esito v" aria-hidden="true">V</span> Vinta</li>
+      <li><span class="esito p" aria-hidden="true">P</span> Persa</li>
+      <li><span class="campione prossima" aria-hidden="true"></span> Prossima</li>
+      <li><span class="campione" aria-hidden="true"></span> Da giocare o riposo</li>
+      {ufficiosiRif && <li>* risultato ufficioso</li>}
+    </ul>
+  </section>
+
+  <div class="griglia-larga">
+    <section class="card" aria-labelledby="t-ultimi">
+      <h2 id="t-ultimi">Ultimi risultati</h2>
+      <p class="intro">Con il miglior realizzatore di {nomeRif}, quando il tabellino è su PlayBasket.</p>
+      {ultimi.length ? (
+        <ul class="elenco">
+          {ultimi.map((g) => {
+            const m = d.playbasket ? migliorRealizzatore(d, g.partita!.id, d.rif) : null;
+            return (
+              <li class="ultimo">
+                <Esito esito={g.esito} />
+                <div>
+                  <p class="nota">G{g.giornata} · {dataBreve(g.partita!.data)} · {g.casa ? 'in casa' : 'in trasferta'}</p>
+                  <p class="punteggio"><a href={urlPartita(g.partita!.id)}>{nomeRif} {g.fatti} – {g.subiti} {d.sq(g.avversaria!).breve}</a></p>
+                  {d.playbasket && (m
+                    ? <p class="nota">Miglior realizzatore: <a href={urlGiocatore(m.persona.slug)}>{m.persona.nomeCompleto}</a>, {m.punti} punti</p>
+                    : <p class="nota">Tabellino non ancora disponibile su PlayBasket.</p>)}
+                  {g.partita!.stato === 'ufficioso' && <p class="nota">Risultato ufficioso, in attesa di omologazione.</p>}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      ) : <p>Nessuna partita giocata finora.</p>}
+    </section>
+
+    {d.playbasket && (
+      <section class="card" aria-labelledby="t-segna">
+        <h2 id="t-segna">Chi segna di più</h2>
+        <p class="intro">Media punti nelle partite con tabellino su PlayBasket.</p>
+        {marcatori.length ? (
+          <ol class="barre">
+            {marcatori.map((p) => (
+              <li>
+                <a href={urlGiocatore(p.slug)}>{p.nomeCompleto}</a>
+                <svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><rect class="barra-o" width={(100 * (p.stagione.media ?? 0)) / maxMedia} height="10" rx="2" /></svg>
+                <span class="tabulare">{f1(p.stagione.media)}</span>
+              </li>
+            ))}
+          </ol>
+        ) : <p>Nessun tabellino ancora caricato.</p>}
+      </section>
+    )}
+  </div>
+
+  {ug > 0 && (
+    <section class="sezione" aria-labelledby="t-giornata">
+      <h2 id="t-giornata">Risultati della {ug}ª giornata</h2>
+      <p class="intro">Tutte le partite del girone. <a href={url('/calendario/#giornate')}>Calendario completo</a></p>
+      <ul class="partite">
+        {risultatiUg.map((p) => <CardPartita p={p} />)}
+      </ul>
+    </section>
+  )}
+
+  <section class="sezione" aria-labelledby="t-classifica">
+    <h2 id="t-classifica">Classifica in breve</h2>
+    <p class="intro">Le squadre intorno a {nomeRif}. <a href={url('/classifica/')}>Classifica completa</a></p>
+    <TabellaClassifica righe={breve} titolo={d.ufficiosi.length ? 'Classifica provvisoria' : 'Classifica'} breve nota={d.ufficiosi.length ? 'Comprende i risultati non ancora omologati.' : undefined} />
+  </section>
+</Base>
+
+<style>
+  .apertura { margin-bottom: 1.25rem; }
+  .apertura h1 { margin: 0.25rem 0 0.5rem; }
+  .sintesi { font-size: 1.15rem; max-width: 46rem; color: var(--inchiostro); }
+  .kpi { margin-bottom: 1.5rem; }
+
+  .striscia { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; grid-template-columns: repeat(auto-fill, minmax(6.4rem, 1fr)); }
+  .cella {
+    display: flex; flex-direction: column; gap: 0.1rem; padding: 0.45rem 0.55rem; border-radius: var(--raggio-piccolo);
+    background: var(--superficie); border: 1px solid var(--bordo); border-top: 4px solid var(--bordo); font-size: 0.85rem; min-width: 0;
+  }
+  .cella.v { border-top-color: var(--vittoria); }
+  .cella.p { border-top-color: var(--sconfitta); }
+  .cella.riposo { background: transparent; border-style: dashed; color: var(--testo-2); }
+  .cella.prossima { border-color: var(--accento); border-top-color: var(--accento); box-shadow: 0 0 0 1px var(--accento); }
+  .cella .g { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--testo-2); }
+  .cella .avv { font-weight: 600; color: var(--inchiostro); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cella .ris { font-family: var(--font-titoli); font-weight: 700; font-size: 1.1rem; color: var(--inchiostro); font-variant-numeric: tabular-nums; }
+  .cella .quando { font-family: var(--font-testo); font-weight: 400; font-size: 0.8rem; color: var(--testo-2); }
+  .campione { display: inline-block; width: 1rem; height: 0.8rem; border: 1px solid var(--bordo-forte); border-radius: 2px; }
+  .campione.prossima { border: 2px solid var(--accento); }
+  .legenda .esito { width: 1.2rem; height: 1.2rem; font-size: 0.75rem; }
+
+  .elenco { list-style: none; margin: 0; padding: 0; }
+  .ultimo { display: flex; gap: 0.75rem; align-items: flex-start; padding-block: 0.6rem; border-top: 1px solid var(--bordo); }
+  .ultimo:first-child { border-top: 0; }
+  .ultimo p { margin: 0; }
+  .punteggio { font-family: var(--font-titoli); font-size: 1.3rem; font-weight: 700; }
+  .punteggio a { color: var(--inchiostro); }
+
+  .barre { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+  .barre li { display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr 2.5rem; gap: 0.6rem; align-items: center; font-size: 0.95rem; }
+  .barre a { color: var(--testo); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .barre svg { width: 100%; height: 0.7rem; }
+  .barra-o { fill: var(--accento); }
+  .barre span { text-align: right; font-weight: 600; }
+
+</style>
