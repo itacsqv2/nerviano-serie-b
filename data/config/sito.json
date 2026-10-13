@@ -1,0 +1,10 @@
+{
+  "titolo": "Nerviano Basket",
+  "url": "https://nerviano-basket.example.invalid",
+  "email": "contatti@example.invalid",
+  "indicizzabile": false,
+  "fonti": {
+    "playbasket": true
+  },
+  "user_agent": "NervianoBasketFan/1.0 (+{url}/note-legali/; {email})"
+}

@@ -1,0 +1,302 @@
+[
+  {
+    "slug": "nerviano",
+    "nome": "Invalves PeB Nerviano",
+    "breve": "Nerviano",
+    "sigla": "NER",
+    "citta": "Nerviano",
+    "provincia": "MI",
+    "regione": "Lombardia",
+    "societa": "U.S. Nervianese PuntoeBasket",
+    "codice_fip": "023196",
+    "nome_fip": null,
+    "pb_obj": 2574,
+    "nomi_pb": [
+      "Pallacanestro Nervianese 1919"
+    ],
+    "palestra": "Palestra Scuole Elementari",
+    "indirizzo": "Via Roma / Via L. da Vinci, Nerviano (MI)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "saronno",
+    "nome": "Robur Basket Saronno",
+    "breve": "Saronno",
+    "sigla": "SAR",
+    "citta": "Saronno",
+    "provincia": "VA",
+    "regione": "Lombardia",
+    "societa": "Robur Basket Saronno",
+    "codice_fip": "001121",
+    "nome_fip": null,
+    "pb_obj": 537,
+    "nomi_pb": [
+      "Robur Saronno"
+    ],
+    "palestra": "C.G. Mons. U. Ronchi",
+    "indirizzo": "Via Cristoforo Colombo 44, Saronno (VA)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "bocconi",
+    "nome": "Bocconi Milano",
+    "breve": "Bocconi",
+    "sigla": "BOC",
+    "citta": "Milano",
+    "provincia": "MI",
+    "regione": "Lombardia",
+    "societa": "Bocconi Sport Team",
+    "codice_fip": "050046",
+    "nome_fip": null,
+    "pb_obj": 2861,
+    "nomi_pb": [
+      "Bocconi Team Milano"
+    ],
+    "palestra": "Bocconi Sport Center",
+    "indirizzo": "Viale Toscana 30, Milano (MI)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "pavia",
+    "nome": "Riso Scotti Pavia",
+    "breve": "Pavia",
+    "sigla": "PAV",
+    "citta": "Pavia",
+    "provincia": "PV",
+    "regione": "Lombardia",
+    "societa": "Pallacanestro Pavia 1933",
+    "codice_fip": "020614",
+    "nome_fip": null,
+    "pb_obj": 15262,
+    "nomi_pb": [
+      "Pallacanestro Pavia 1933"
+    ],
+    "palestra": "PalaRavizza",
+    "indirizzo": "Via Treves, Pavia (PV)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "cagliari",
+    "nome": "Esperia Cagliari",
+    "breve": "Cagliari",
+    "sigla": "CAG",
+    "citta": "Cagliari",
+    "provincia": "CA",
+    "regione": "Sardegna",
+    "societa": "Esperia",
+    "codice_fip": "042132",
+    "nome_fip": null,
+    "pb_obj": 3883,
+    "nomi_pb": [
+      "Esperia Cagliari"
+    ],
+    "palestra": "PalaPirastu",
+    "indirizzo": "Via Rockefeller, Cagliari (CA)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "college",
+    "nome": "Hedessent College Basketball",
+    "breve": "College Borgomanero",
+    "sigla": "COL",
+    "citta": "Borgomanero",
+    "provincia": "NO",
+    "regione": "Piemonte",
+    "societa": "College Basketball",
+    "codice_fip": "002237",
+    "nome_fip": null,
+    "pb_obj": 3777,
+    "nomi_pb": [
+      "College Basket Borgomanero"
+    ],
+    "palestra": "PalaDonBosco",
+    "indirizzo": "Via S. Domenico Savio 1, Borgomanero (NO)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "campus",
+    "nome": "Campus Varese",
+    "breve": "Campus Varese",
+    "sigla": "CAM",
+    "citta": "Varese",
+    "provincia": "VA",
+    "regione": "Lombardia",
+    "societa": "Campus Varese",
+    "codice_fip": "034338",
+    "nome_fip": null,
+    "pb_obj": 904,
+    "nomi_pb": [
+      "Campus Varese"
+    ],
+    "palestra": "C.S. Campus",
+    "indirizzo": "Via Pirandello 31, Varese (VA)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "crocetta",
+    "nome": "Don Bosco Crocetta Torino",
+    "breve": "Don Bosco Crocetta",
+    "sigla": "CRO",
+    "citta": "Torino",
+    "provincia": "TO",
+    "regione": "Piemonte",
+    "societa": "PGS Don Bosco Crocetta",
+    "codice_fip": "000471",
+    "nome_fip": null,
+    "pb_obj": 897,
+    "nomi_pb": [
+      "Don Bosco Crocetta"
+    ],
+    "palestra": "Pala Ballin",
+    "indirizzo": "Via Piazzi 25, Torino (TO)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "sennori",
+    "nome": "Pallacanestro Sennori",
+    "breve": "Sennori",
+    "sigla": "SEN",
+    "citta": "Sennori",
+    "provincia": "SS",
+    "regione": "Sardegna",
+    "societa": "Pallacanestro Sennori",
+    "codice_fip": "055415",
+    "nome_fip": null,
+    "pb_obj": 3593,
+    "nomi_pb": [
+      "Pallacanestro Sennori"
+    ],
+    "palestra": "Palestra Montigeddu",
+    "indirizzo": "Via Massarenti, Sennori (SS)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "gallarate",
+    "nome": "Aeres Aviation Gallaratese",
+    "breve": "Gallaratese",
+    "sigla": "GAL",
+    "citta": "Gallarate",
+    "provincia": "VA",
+    "regione": "Lombardia",
+    "societa": "Basket Gallarate",
+    "codice_fip": "000857",
+    "nome_fip": null,
+    "pb_obj": 2563,
+    "nomi_pb": [
+      "BasketBall Gallarate"
+    ],
+    "palestra": "Palestra Comunale",
+    "indirizzo": "Via Sottocosta, Gallarate (VA)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "academy",
+    "nome": "Varese Academy",
+    "breve": "Varese Academy",
+    "sigla": "VAC",
+    "citta": "Arcisate",
+    "provincia": "VA",
+    "regione": "Lombardia",
+    "societa": "Varese Academy",
+    "codice_fip": "054681",
+    "nome_fip": null,
+    "pb_obj": 12833,
+    "nomi_pb": [
+      "Varese Academy"
+    ],
+    "palestra": "Palazzetto di Arcisate",
+    "indirizzo": "Via Cavour, Arcisate (VA)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "7laghi",
+    "nome": "Coelsanus Basket 7 Laghi",
+    "breve": "7 Laghi",
+    "sigla": "7LA",
+    "citta": "Gazzada Schianno",
+    "provincia": "VA",
+    "regione": "Lombardia",
+    "societa": "Basket 7 Laghi",
+    "codice_fip": "025666",
+    "nome_fip": null,
+    "pb_obj": 903,
+    "nomi_pb": [
+      "Basket 7 Laghi Gazzada"
+    ],
+    "palestra": "Palestra Comunale",
+    "indirizzo": "Via Matteotti 13, Gazzada Schianno (VA)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "monferrato",
+    "nome": "Novipiù Monferrato Basket",
+    "breve": "Monferrato",
+    "sigla": "MON",
+    "citta": "Casale Monferrato",
+    "provincia": "AL",
+    "regione": "Piemonte",
+    "societa": "J Basket Monferrato",
+    "codice_fip": "055503",
+    "nome_fip": null,
+    "pb_obj": 12820,
+    "nomi_pb": [
+      "Monferrato Basket"
+    ],
+    "palestra": "PalaFerraris",
+    "indirizzo": "Via Visconti 16, Casale Monferrato (AL)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "oleggio",
+    "nome": "Oleggio Magic Basket",
+    "breve": "Oleggio",
+    "sigla": "OLE",
+    "citta": "Oleggio",
+    "provincia": "NO",
+    "regione": "Piemonte",
+    "societa": "Oleggio Magic Basket",
+    "codice_fip": "034253",
+    "nome_fip": null,
+    "pb_obj": 3780,
+    "nomi_pb": [
+      "Oleggio Magic Basket"
+    ],
+    "palestra": "Palazzetto di Boffalora",
+    "indirizzo": "Via Giulini 22, Boffalora sopra Ticino (MI)",
+    "colori": null,
+    "maglia_fip": null
+  },
+  {
+    "slug": "cermenate",
+    "nome": "Virtus Pallacanestro Cermenate",
+    "breve": "Cermenate",
+    "sigla": "CER",
+    "citta": "Cermenate",
+    "provincia": "CO",
+    "regione": "Lombardia",
+    "societa": "Virtus Pallacanestro Cermenate",
+    "codice_fip": "002406",
+    "nome_fip": null,
+    "pb_obj": 2553,
+    "nomi_pb": [
+      "Virtus Cermenate"
+    ],
+    "palestra": "Palestra R. Malacarne",
+    "indirizzo": "Via Montale 1, Cermenate (CO)",
+    "colori": null,
+    "maglia_fip": null
+  }
+]

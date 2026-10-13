@@ -1,0 +1,26 @@
+{
+  "partite": [
+    {
+      "partita": "000518",
+      "nota": "Risultato a tavolino",
+      "escludi_medie": true,
+      "motivo": "Gallarate–Oleggio 0-20 assegnata a tavolino: conta in classifica ma non nelle medie punti e nel grafico attacco/difesa."
+    },
+    {
+      "partita": "000535",
+      "palestra": "Centro Polifunzionale",
+      "citta": "Sorso",
+      "motivo": "Sennori ha giocato questa gara in casa a Sorso (dato FIP del 2026-10-12)."
+    }
+  ],
+  "giocatori": [],
+  "carriere": [],
+  "penalizzazioni": [],
+  "eccezioni_controlli": [
+    {
+      "controllo": "tabellino",
+      "chiave": "000518",
+      "motivo": "Gara assegnata a tavolino (0-20): PlayBasket conserva i punti segnati in campo."
+    }
+  ]
+}
