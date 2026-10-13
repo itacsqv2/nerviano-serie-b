@@ -40,12 +40,12 @@ Il nuovo sito si sta costruendo sul branch `rebuild`. Finché non viene unito a 
 | 1 | Progetto Astro, schemi dei dati, migrazione dal vecchio sito, `npm run valida` | ✅ fatto |
 | 2 | Tutte le pagine (home, calendario, classifica, Nerviano, avversarie, giocatori, partite, marcatori, guida, note legali) | ✅ fatto |
 | 3 | Grafica: palette, caratteri, tema chiaro e scuro, badge e avatar | ✅ fatto |
-| 4 | Pipeline di aggiornamento da FIP e PlayBasket (`npm run aggiorna`) | 🚧 in corso |
-| 5 | Foto dei giocatori (`npm run foto`) | ⏳ da fare |
-| 6 | Controlli automatici su GitHub, header di sicurezza, `CLAUDE.md` | ⏳ da fare |
+| 4 | Pipeline di aggiornamento da FIP e PlayBasket (`npm run aggiorna`) | ✅ scritta e testata; manca la prima prova sui siti veri (servono email e URL in `sito.json`) |
+| 5 | Foto dei giocatori (`npm run foto`) | ✅ fatto |
+| 6 | Controlli automatici su GitHub, header di sicurezza, `CLAUDE.md` | ✅ fatto (da provare su GitHub dopo il push) |
 | 7 | Prima prova di «Aggiorna dati» da GitHub, dopo il merge | ⏳ da fare |
 
-Le sezioni di questo README segnate con 🚧 descrivono come funzionerà la parte ancora in costruzione.
+Le parti segnate con 🚧 sono pronte ma non ancora provate sui siti veri o su GitHub.
 
 ---
 
@@ -74,7 +74,9 @@ PlayBasket (rose, tabellini, carriere)   ─┘                                 
 | `src/` | Il sito: pagine, componenti, stili, calcoli |
 | `src/styles/tokens.css` | **Tutti** i colori e i caratteri del sito |
 | `scripts/` | Pipeline di aggiornamento, validazione, migrazione, foto |
-| `tests/` | Test automatici |
+| `tests/` | Test automatici (le pagine di esempio di FIP e PlayBasket sono in `tests/fixtures/`, senza dati personali) |
+| `.github/workflows/` | `ci.yml` (controlli a ogni push) e `aggiorna-dati.yml` (il pulsante «Aggiorna dati») |
+| `CLAUDE.md` | Le regole del progetto per Claude Code |
 | `legacy/` | Copia del vecchio progetto, solo sul PC (non va su GitHub) |
 
 ---
@@ -107,7 +109,7 @@ Per fermare il sito premi `Ctrl+C` nel terminale.
 | `npm test` | Lancia i test automatici |
 | `npm run check` | Controlla i tipi del codice |
 | `npm run aggiorna` 🚧 | Legge FIP e PlayBasket e aggiorna `data/auto/` |
-| `npm run foto` ⏳ | Prepara le foto dei giocatori |
+| `npm run foto` | Prepara le foto dei giocatori |
 | `npm run migra` | Una tantum, già fatto: ricreava i dati dal vecchio progetto in `legacy/`. Si rifiuta di partire se `data/manuale/` esiste (con `-- --force` lo sovrascrive: non farlo) |
 
 ### Che cosa controlla `npm run valida`
@@ -161,7 +163,9 @@ sintesi automatica dei giocatori…) **non** è salvato: lo calcola il sito a og
 
 ### Aggiornare i dati
 
-🚧 *La pipeline è in costruzione (fase 4): questa è la procedura prevista.*
+🚧 *La pipeline è pronta ma non è ancora stata provata sui siti veri: prima vanno compilati `url` ed `email` in `data/config/sito.json`.*
+
+**Una volta sola, prima della GitHub Action:** nelle impostazioni del repository (Settings → Actions → General) attiva «Allow GitHub Actions to create and approve pull requests».
 
 **Da GitHub (consigliato):**
 
@@ -253,8 +257,6 @@ In `data/manuale/correzioni.json`. Ogni voce ha un `motivo`, per ricordarsi perc
 - **`eccezioni_controlli`** zittiscono un avviso già noto e accettato (`controllo` può essere `tabellino`, `classifica`, `carriera`, `punti_rosa`).
 
 ### Aggiungere una foto
-
-⏳ *`npm run foto` arriva nella fase 5: questa è la procedura prevista.*
 
 Le foto **non** si scaricano da internet: le fornisci tu, solo con il permesso del club o del fotografo.
 Per i minorenni serve il consenso dei genitori raccolto dalla società. Senza foto il sito mostra un riquadro con iniziali e numero.
