@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  controlli:
+    name: Controlli e build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Tipi (astro check)
+        run: npm run check
+      - name: Test
+        run: npm test
+      - name: Validazione dei dati
+        run: npm run valida
+      - name: Build
+        run: npm run build
+      - name: Build senza dati PlayBasket (fonti.playbasket = false)
+        run: |
+          FONTI_PLAYBASKET=false npx astro build --outDir dist-senza-pb
+          test ! -e dist-senza-pb/giocatori
+          test ! -e dist-senza-pb/marcatori
+          test "$(cat dist-senza-pb/cerca.json)" = "[]"
+          echo "Build senza PlayBasket: niente pagine giocatori, marcatori né ricerca."

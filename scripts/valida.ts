@@ -22,9 +22,14 @@ function main(): number {
   for (const f of fileFoto) if (!voci.has(f)) errori.push(`foto ${f} senza voce in data/manuale/foto.json`);
   for (const f of dati.foto) if (!f.nascosta && !fileFoto.includes(f.file)) errori.push(`foto.json: manca il file src/assets/giocatori/${f.file} (lancia npm run foto)`);
 
-  if (/\.invalid/.test(`${dati.sito.url} ${dati.sito.email}`)) {
+  if (/\.invalid\b/.test(`${dati.sito.url} ${dati.sito.email}`)) {
     avvisi.push('data/config/sito.json: url ed email sono ancora segnaposto; compilali prima di pubblicare il sito e di lanciare la pipeline');
   }
+  // l'header X-Robots-Tag di vercel.json deve seguire sito.indicizzabile
+  const vercel = fs.readFileSync(path.join(RADICE, 'vercel.json'), 'utf8');
+  const noindexHeader = /"X-Robots-Tag"/.test(vercel);
+  if (dati.sito.indicizzabile && noindexHeader) errori.push('sito.indicizzabile è true ma vercel.json manda ancora «X-Robots-Tag: noindex»: togli quell\'header');
+  if (!dati.sito.indicizzabile && !noindexHeader) avvisi.push('vercel.json non manda «X-Robots-Tag: noindex» anche se il sito non è indicizzabile');
   for (const a of avvisi) console.log(`avviso: ${a}`);
   if (errori.length) {
     for (const e of errori) console.error(`ERRORE: ${e}`);
