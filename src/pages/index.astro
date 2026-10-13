@@ -1,0 +1,16 @@
+---
+import { dati } from '../lib/data.ts';
+const d = dati();
+---
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{d.sito.titolo}</title>
+  </head>
+  <body>
+    <h1>{d.sito.titolo}</h1>
+    <p>Nuovo sito in costruzione: {d.partite.length} partite, {d.persone.length} giocatori e allenatori.</p>
+  </body>
+</html>
