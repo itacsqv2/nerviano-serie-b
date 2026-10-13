@@ -55,7 +55,12 @@ export class ClientHttp {
 
   private leggiCache(url: string): VoceCache | null {
     const f = this.fileCache(url);
-    return fs.existsSync(f) ? (JSON.parse(fs.readFileSync(f, 'utf8')) as VoceCache) : null;
+    if (!fs.existsSync(f)) return null;
+    try {
+      return JSON.parse(fs.readFileSync(f, 'utf8')) as VoceCache;
+    } catch {
+      return null; // file di cache rovinato (scrittura interrotta): si riscarica
+    }
   }
 
   /** Una sola coda per sito: le richieste allo stesso host non si sovrappongono mai. */
@@ -91,6 +96,17 @@ export class ClientHttp {
     return this.scarica(url, { robots: false });
   }
 
+  /** Controlla un URL di destinazione di un redirect: stesso elenco di siti, robots.txt, niente pagine di errore. */
+  private async controllaRedirect(da: string, verso: string, robots: boolean): Promise<void> {
+    const u = new URL(verso);
+    if (!HOST_CONSENTITI.has(u.hostname)) throw new ErroreFonte(`${da} rimanda a un altro sito (${u.hostname}): la pipeline non segue link esterni.`);
+    if (/\/(error|denied|db_error)\.(php|htm)$/.test(u.pathname)) throw new ErroreFonte(`${u.hostname} ha rimandato a ${u.pathname}: possibile blocco, la pipeline si ferma.`);
+    if (!robots) {
+      const r = await this.robotsDi(u.origin);
+      if (r.isAllowed(verso, this.o.userAgent) === false) throw new ErroreFonte(`${da} rimanda a ${verso}, che robots.txt non consente: la pipeline si ferma.`);
+    }
+  }
+
   private scarica(url: string, { robots }: { robots: boolean }): Promise<string> {
     const host = new URL(url).hostname;
     const cache = this.leggiCache(url);
@@ -100,6 +116,8 @@ export class ClientHttp {
       return Promise.resolve(cache.corpo);
     }
     return this.inCoda(host, async () => {
+      let attuale = url;
+      let salti = 0;
       for (let tentativo = 1; ; tentativo++) {
         if (this.statistiche.richieste >= this.o.massimoRichieste) {
           throw new ErroreFonte(`Raggiunto il tetto di ${this.o.massimoRichieste} richieste per esecuzione: la pipeline si ferma.`);
@@ -112,15 +130,22 @@ export class ClientHttp {
         if (cache?.lastModified) headers['If-Modified-Since'] = cache.lastModified;
         let risposta: Response;
         try {
-          risposta = await (this.o.fetch ?? fetch)(url, { headers, redirect: 'follow', signal: AbortSignal.timeout(this.o.timeout) });
+          // i redirect si seguono a mano, per controllare host e robots.txt prima di ogni nuova richiesta
+          risposta = await (this.o.fetch ?? fetch)(attuale, { headers, redirect: 'manual', signal: AbortSignal.timeout(this.o.timeout) });
         } catch (e) {
           if (tentativo >= this.o.tentativi) throw new ErroreFonte(`Errore di rete su ${url} dopo ${tentativo} tentativi: ${(e as Error).message}`);
           await this.attendi(2 ** tentativo * 1000);
           continue;
         }
-        const finale = new URL(risposta.url || url);
-        if (!HOST_CONSENTITI.has(finale.hostname)) throw new ErroreFonte(`${url} rimanda a un altro sito (${finale.hostname}): la pipeline non segue link esterni.`);
-        if (/\/(error|denied|db_error)\.(php|htm)/.test(finale.pathname)) throw new ErroreFonte(`${host} ha rimandato a ${finale.pathname}: possibile blocco, la pipeline si ferma.`);
+        const location = risposta.headers.get('location');
+        if (risposta.status >= 300 && risposta.status < 400 && risposta.status !== 304 && location) {
+          if (++salti > 5) throw new ErroreFonte(`Troppi redirect su ${url}.`);
+          const verso = new URL(location, attuale).toString();
+          await this.controllaRedirect(attuale, verso, robots);
+          attuale = verso;
+          tentativo = 0;
+          continue;
+        }
         if (risposta.status === 304 && cache) {
           this.statistiche.nonModificate++;
           return cache.corpo;
@@ -136,8 +161,7 @@ export class ClientHttp {
         if (!risposta.ok) throw new ErroreFonte(`${host} ha risposto ${risposta.status} su ${url}.`);
         const buf = Buffer.from(await risposta.arrayBuffer());
         this.statistiche.byte += buf.length;
-        const charset = /charset=([\w-]+)/i.exec(risposta.headers.get('content-type') ?? '')?.[1] ?? 'utf-8';
-        const corpo = new TextDecoder(charset.toLowerCase() === 'iso-8859-1' ? 'windows-1252' : charset).decode(buf);
+        const corpo = decodifica(buf, risposta.headers.get('content-type'));
         if (!robots && ANTI_BOT.some((r) => r.test(corpo.slice(0, 5000))) && !/<table/i.test(corpo)) {
           throw new ErroreFonte(`${host} ha mostrato una pagina di verifica anti-bot su ${url}: la pipeline si ferma e non prova ad aggirarla.`);
         }
@@ -146,7 +170,10 @@ export class ClientHttp {
         const lm = risposta.headers.get('last-modified');
         if (etag) voce.etag = etag;
         if (lm) voce.lastModified = lm;
-        fs.writeFileSync(this.fileCache(url), JSON.stringify(voce));
+        // scrittura atomica: un'interruzione non lascia file di cache troncati
+        const f = this.fileCache(url);
+        fs.writeFileSync(`${f}.tmp`, JSON.stringify(voce));
+        fs.renameSync(`${f}.tmp`, f);
         return corpo;
       }
     });
@@ -156,6 +183,20 @@ export class ClientHttp {
     const s = this.statistiche;
     const sec = Math.round((Date.now() - s.inizio) / 1000);
     return `${s.richieste} richieste (${s.nonModificate} non modificate, ${s.daCache} dalla cache), ${(s.byte / 1024 / 1024).toFixed(1)} MB scaricati, ${Math.floor(sec / 60)} min ${sec % 60} s`;
+  }
+}
+
+/** Decodifica secondo il charset dell'header (anche tra virgolette) o, in mancanza, del <meta charset> della pagina. */
+export function decodifica(buf: Buffer, contentType: string | null): string {
+  const daHeader = /charset\s*=\s*["']?([\w-]+)/i.exec(contentType ?? '')?.[1];
+  const testa = buf.subarray(0, 4096).toString('latin1');
+  const daMeta = /<meta[^>]+charset\s*=\s*["']?([\w-]+)/i.exec(testa)?.[1];
+  let charset = (daHeader ?? daMeta ?? 'utf-8').toLowerCase();
+  if (charset === 'iso-8859-1' || charset === 'latin1') charset = 'windows-1252';
+  try {
+    return new TextDecoder(charset).decode(buf);
+  } catch {
+    return new TextDecoder('utf-8').decode(buf);
   }
 }
 

@@ -133,8 +133,9 @@ export function leggiClassifica(html: string): RigaClassificaFip[] {
     }
     const td = r.children('td').toArray().map((x) => pulisci($(x).text()));
     if (td.length < 8) continue;
+    const celle = [td[0]!, ...td.slice(2, 8)];
+    if (celle.some((x) => !/^\d+$/.test(x))) throw new ErroreFonte(`FIP: riga di classifica vuota o non numerica (${td.join(' | ')})`);
     const n = td.slice(2, 8).map(Number);
-    if (n.some((x) => !Number.isInteger(x))) throw new ErroreFonte(`FIP: riga di classifica non numerica (${td.join(' | ')})`);
     righe.push({
       posizione: Number(td[0]),
       nome: pulisci(r.find('.team__name').text()),
