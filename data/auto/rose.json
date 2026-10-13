@@ -112,6 +112,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 14416,
+    "squadra": "7laghi",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 153146,
     "squadra": "academy",
     "numero": "0",
@@ -272,11 +280,19 @@
     "in_rosa": true
   },
   {
+    "giocatore": 28480,
+    "squadra": "academy",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 149897,
     "squadra": "bocconi",
     "numero": "1",
     "punti": 8,
-    "media": 4,
+    "media": 2.7,
     "in_rosa": true
   },
   {
@@ -292,15 +308,15 @@
     "squadra": "bocconi",
     "numero": "5",
     "punti": 2,
-    "media": 1,
+    "media": 0.7,
     "in_rosa": true
   },
   {
     "giocatore": 98379,
     "squadra": "bocconi",
     "numero": "6",
-    "punti": null,
-    "media": null,
+    "punti": 11,
+    "media": 11,
     "in_rosa": true
   },
   {
@@ -308,15 +324,15 @@
     "squadra": "bocconi",
     "numero": "7",
     "punti": 12,
-    "media": 12,
+    "media": 6,
     "in_rosa": true
   },
   {
     "giocatore": 120439,
     "squadra": "bocconi",
     "numero": "8",
-    "punti": 28,
-    "media": 14,
+    "punti": 34,
+    "media": 11.3,
     "in_rosa": true
   },
   {
@@ -324,15 +340,15 @@
     "squadra": "bocconi",
     "numero": "9",
     "punti": 5,
-    "media": 5,
+    "media": 2.5,
     "in_rosa": true
   },
   {
     "giocatore": 68302,
     "squadra": "bocconi",
     "numero": "10",
-    "punti": 9,
-    "media": 4.5,
+    "punti": 17,
+    "media": 5.7,
     "in_rosa": true
   },
   {
@@ -355,8 +371,8 @@
     "giocatore": 59584,
     "squadra": "bocconi",
     "numero": "13",
-    "punti": 0,
-    "media": 0,
+    "punti": 2,
+    "media": 0.7,
     "in_rosa": true
   },
   {
@@ -371,16 +387,16 @@
     "giocatore": 100039,
     "squadra": "bocconi",
     "numero": "20",
-    "punti": 20,
-    "media": 10,
+    "punti": 25,
+    "media": 8.3,
     "in_rosa": true
   },
   {
     "giocatore": 202552,
     "squadra": "bocconi",
     "numero": "33",
-    "punti": 18,
-    "media": 18,
+    "punti": 64,
+    "media": 32,
     "in_rosa": true
   },
   {
@@ -397,6 +413,14 @@
     "numero": "41",
     "punti": 24,
     "media": 12,
+    "in_rosa": true
+  },
+  {
+    "giocatore": 27525,
+    "squadra": "bocconi",
+    "numero": null,
+    "punti": null,
+    "media": null,
     "in_rosa": true
   },
   {
@@ -496,6 +520,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 11863,
+    "squadra": "cagliari",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 212321,
     "squadra": "campus",
     "numero": "1",
@@ -589,6 +621,14 @@
     "numero": "38",
     "punti": 3,
     "media": 3,
+    "in_rosa": true
+  },
+  {
+    "giocatore": 125335,
+    "squadra": "campus",
+    "numero": null,
+    "punti": null,
+    "media": null,
     "in_rosa": true
   },
   {
@@ -696,6 +736,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 52147,
+    "squadra": "cermenate",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 153108,
     "squadra": "cermenate",
     "numero": null,
@@ -704,7 +752,7 @@
     "in_rosa": true
   },
   {
-    "giocatore": 229717,
+    "giocatore": 229716,
     "squadra": "cermenate",
     "numero": null,
     "punti": null,
@@ -712,7 +760,7 @@
     "in_rosa": true
   },
   {
-    "giocatore": 229716,
+    "giocatore": 229717,
     "squadra": "cermenate",
     "numero": null,
     "punti": null,
@@ -845,6 +893,14 @@
     "numero": "66",
     "punti": 2,
     "media": 0.7,
+    "in_rosa": true
+  },
+  {
+    "giocatore": 30115,
+    "squadra": "college",
+    "numero": null,
+    "punti": null,
+    "media": null,
     "in_rosa": true
   },
   {
@@ -984,6 +1040,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 69713,
+    "squadra": "crocetta",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 209191,
     "squadra": "gallarate",
     "numero": "1",
@@ -1069,6 +1133,14 @@
     "numero": "88",
     "punti": 1,
     "media": 1,
+    "in_rosa": true
+  },
+  {
+    "giocatore": 14324,
+    "squadra": "gallarate",
+    "numero": null,
+    "punti": null,
+    "media": null,
     "in_rosa": true
   },
   {
@@ -1184,6 +1256,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 70487,
+    "squadra": "monferrato",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 175524,
     "squadra": "nerviano",
     "numero": "1",
@@ -1196,23 +1276,23 @@
     "squadra": "nerviano",
     "numero": "2",
     "punti": 6,
-    "media": 3,
+    "media": 2,
     "in_rosa": true
   },
   {
     "giocatore": 191406,
     "squadra": "nerviano",
     "numero": "3",
-    "punti": 4,
-    "media": 2,
+    "punti": 16,
+    "media": 5.3,
     "in_rosa": true
   },
   {
     "giocatore": 153410,
     "squadra": "nerviano",
     "numero": "4",
-    "punti": 10,
-    "media": 5,
+    "punti": 16,
+    "media": 5.3,
     "in_rosa": true
   },
   {
@@ -1235,8 +1315,8 @@
     "giocatore": 144077,
     "squadra": "nerviano",
     "numero": "8",
-    "punti": 22,
-    "media": 11,
+    "punti": 42,
+    "media": 14,
     "in_rosa": true
   },
   {
@@ -1251,56 +1331,56 @@
     "giocatore": 212658,
     "squadra": "nerviano",
     "numero": "12",
-    "punti": null,
-    "media": null,
+    "punti": 0,
+    "media": 0,
     "in_rosa": true
   },
   {
     "giocatore": 193991,
     "squadra": "nerviano",
     "numero": "13",
-    "punti": null,
-    "media": null,
+    "punti": 0,
+    "media": 0,
     "in_rosa": true
   },
   {
     "giocatore": 153281,
     "squadra": "nerviano",
     "numero": "17",
-    "punti": 17,
-    "media": 8.5,
+    "punti": 25,
+    "media": 8.3,
     "in_rosa": true
   },
   {
     "giocatore": 14016,
     "squadra": "nerviano",
     "numero": "19",
-    "punti": 28,
-    "media": 14,
+    "punti": 39,
+    "media": 13,
     "in_rosa": true
   },
   {
     "giocatore": 175210,
     "squadra": "nerviano",
     "numero": "22",
-    "punti": 27,
-    "media": 13.5,
+    "punti": 33,
+    "media": 11,
     "in_rosa": true
   },
   {
     "giocatore": 151965,
     "squadra": "nerviano",
     "numero": "24",
-    "punti": 1,
-    "media": 0.5,
+    "punti": 5,
+    "media": 1.7,
     "in_rosa": true
   },
   {
     "giocatore": 187485,
     "squadra": "nerviano",
     "numero": "34",
-    "punti": null,
-    "media": null,
+    "punti": 0,
+    "media": 0,
     "in_rosa": true
   },
   {
@@ -1316,7 +1396,7 @@
     "squadra": "nerviano",
     "numero": "74",
     "punti": 8,
-    "media": 4,
+    "media": 2.7,
     "in_rosa": true
   },
   {
@@ -1464,6 +1544,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 34538,
+    "squadra": "oleggio",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 127345,
     "squadra": "pavia",
     "numero": "0",
@@ -1552,6 +1640,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 69716,
+    "squadra": "pavia",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 209169,
     "squadra": "pavia",
     "numero": null,
@@ -1562,7 +1658,7 @@
   {
     "giocatore": 153104,
     "squadra": "saronno",
-    "numero": "00",
+    "numero": "0",
     "punti": 14,
     "media": 4.7,
     "in_rosa": true
@@ -1664,6 +1760,14 @@
     "in_rosa": true
   },
   {
+    "giocatore": 43605,
+    "squadra": "saronno",
+    "numero": null,
+    "punti": null,
+    "media": null,
+    "in_rosa": true
+  },
+  {
     "giocatore": 191504,
     "squadra": "saronno",
     "numero": null,
@@ -1757,6 +1861,14 @@
     "numero": "45",
     "punti": 20,
     "media": 6.7,
+    "in_rosa": true
+  },
+  {
+    "giocatore": 16157,
+    "squadra": "sennori",
+    "numero": null,
+    "punti": null,
+    "media": null,
     "in_rosa": true
   },
   {

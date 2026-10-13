@@ -1,5 +1,14 @@
 [
   {
+    "id": 11863,
+    "cognome": "Manca",
+    "nome": "Federico",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
     "id": 14016,
     "cognome": "Maspero",
     "nome": "Giacomo",
@@ -18,6 +27,15 @@
     "allenatore": false
   },
   {
+    "id": 14324,
+    "cognome": "Allegretti",
+    "nome": "Marco",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
     "id": 14399,
     "cognome": "Portannese",
     "nome": "Marco",
@@ -25,6 +43,15 @@
     "eta": 37,
     "eta_fascia": null,
     "allenatore": false
+  },
+  {
+    "id": 14416,
+    "cognome": "Passera",
+    "nome": "Marco",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
   },
   {
     "id": 14509,
@@ -52,6 +79,15 @@
     "eta": 42,
     "eta_fascia": null,
     "allenatore": false
+  },
+  {
+    "id": 16157,
+    "cognome": "Longano",
+    "nome": "Fabrizio",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
   },
   {
     "id": 18719,
@@ -90,6 +126,24 @@
     "allenatore": false
   },
   {
+    "id": 27525,
+    "cognome": "Favero",
+    "nome": "Carlo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 28480,
+    "cognome": "Gardini",
+    "nome": "Andrea",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
     "id": 29130,
     "cognome": "Antonietti",
     "nome": "Luca",
@@ -99,6 +153,15 @@
     "allenatore": false
   },
   {
+    "id": 30115,
+    "cognome": "Di",
+    "nome": "Cerbo Stefano",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
     "id": 30873,
     "cognome": "Airaghi",
     "nome": "Matteo",
@@ -106,6 +169,15 @@
     "eta": 30,
     "eta_fascia": null,
     "allenatore": false
+  },
+  {
+    "id": 34538,
+    "cognome": "Catalani",
+    "nome": "Michele",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
   },
   {
     "id": 37782,
@@ -133,6 +205,15 @@
     "eta": 28,
     "eta_fascia": null,
     "allenatore": false
+  },
+  {
+    "id": 43605,
+    "cognome": "Bonassi",
+    "nome": "Matteo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
   },
   {
     "id": 45050,
@@ -178,6 +259,15 @@
     "eta": 29,
     "eta_fascia": null,
     "allenatore": false
+  },
+  {
+    "id": 52147,
+    "cognome": "Bianchi",
+    "nome": "Bruno",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
   },
   {
     "id": 52324,
@@ -241,6 +331,33 @@
     "eta": 26,
     "eta_fascia": null,
     "allenatore": false
+  },
+  {
+    "id": 69713,
+    "cognome": "Sacco",
+    "nome": "Luca",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 69716,
+    "cognome": "Zappi",
+    "nome": "Mauro",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
+  },
+  {
+    "id": 70487,
+    "cognome": "Imarisio",
+    "nome": "Simone",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
   },
   {
     "id": 74431,
@@ -547,6 +664,15 @@
     "eta": 23,
     "eta_fascia": null,
     "allenatore": false
+  },
+  {
+    "id": 125335,
+    "cognome": "Perrotta",
+    "nome": "Eduardo",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": true
   },
   {
     "id": 127345,

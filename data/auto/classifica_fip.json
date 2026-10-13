@@ -1,6 +1,16 @@
 [
   {
     "posizione": 1,
+    "squadra": "pavia",
+    "punti": 6,
+    "g": 3,
+    "v": 3,
+    "p": 0,
+    "pf": 292,
+    "ps": 208
+  },
+  {
+    "posizione": 2,
     "squadra": "monferrato",
     "punti": 6,
     "g": 3,
@@ -10,7 +20,7 @@
     "ps": 209
   },
   {
-    "posizione": 2,
+    "posizione": 3,
     "squadra": "academy",
     "punti": 6,
     "g": 3,
@@ -18,16 +28,6 @@
     "p": 0,
     "pf": 235,
     "ps": 211
-  },
-  {
-    "posizione": 3,
-    "squadra": "pavia",
-    "punti": 4,
-    "g": 2,
-    "v": 2,
-    "p": 0,
-    "pf": 200,
-    "ps": 141
   },
   {
     "posizione": 4,
@@ -83,11 +83,11 @@
     "posizione": 9,
     "squadra": "nerviano",
     "punti": 2,
-    "g": 2,
+    "g": 3,
     "v": 1,
-    "p": 1,
-    "pf": 148,
-    "ps": 151
+    "p": 2,
+    "pf": 215,
+    "ps": 243
   },
   {
     "posizione": 10,

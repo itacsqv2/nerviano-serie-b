@@ -11,9 +11,13 @@
     "pt_casa": 75,
     "pt_ospite": 96,
     "stato": "omologata",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": "completo"
   },
   {
@@ -30,7 +34,11 @@
     "stato": "omologata",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": "completo"
   },
   {
@@ -45,9 +53,13 @@
     "pt_casa": 83,
     "pt_ospite": 72,
     "stato": "omologata",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": "completo"
   },
   {
@@ -62,9 +74,13 @@
     "pt_casa": 77,
     "pt_ospite": 73,
     "stato": "omologata",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": "completo"
   },
   {
@@ -79,9 +95,13 @@
     "pt_casa": 78,
     "pt_ospite": 83,
     "stato": "omologata",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": "completo"
   },
   {
@@ -96,9 +116,13 @@
     "pt_casa": 79,
     "pt_ospite": 60,
     "stato": "omologata",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": "completo"
   },
   {
@@ -113,9 +137,13 @@
     "pt_casa": 0,
     "pt_ospite": 20,
     "stato": "omologata",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": "incongruente"
   },
   {
@@ -132,7 +160,11 @@
     "stato": "omologata",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": "completo"
   },
   {
@@ -147,9 +179,13 @@
     "pt_casa": 64,
     "pt_ospite": 75,
     "stato": "omologata",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": "completo"
   },
   {
@@ -164,9 +200,13 @@
     "pt_casa": 76,
     "pt_ospite": 78,
     "stato": "omologata",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": "completo"
   },
   {
@@ -181,9 +221,13 @@
     "pt_casa": 76,
     "pt_ospite": 77,
     "stato": "omologata",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": "completo"
   },
   {
@@ -198,9 +242,13 @@
     "pt_casa": 75,
     "pt_ospite": 74,
     "stato": "omologata",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": "completo"
   },
   {
@@ -215,9 +263,13 @@
     "pt_casa": 104,
     "pt_ospite": 66,
     "stato": "omologata",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": "completo"
   },
   {
@@ -232,9 +284,13 @@
     "pt_casa": 67,
     "pt_ospite": 94,
     "stato": "omologata",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": "completo"
   },
   {
@@ -249,9 +305,13 @@
     "pt_casa": 77,
     "pt_ospite": 75,
     "stato": "omologata",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": "incongruente"
   },
   {
@@ -268,8 +328,12 @@
     "stato": "omologata",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
-    "tabellino": "in_attesa"
+    "pb": {
+      "gtn": 3,
+      "gtt": 1,
+      "mn": 1
+    },
+    "tabellino": "parziale"
   },
   {
     "id": "000532",
@@ -285,7 +349,11 @@
     "stato": "omologata",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": "completo"
   },
   {
@@ -300,9 +368,13 @@
     "pt_casa": 87,
     "pt_ospite": 75,
     "stato": "omologata",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": "completo"
   },
   {
@@ -317,9 +389,13 @@
     "pt_casa": 63,
     "pt_ospite": 105,
     "stato": "omologata",
-    "palestra": "Centro Polifunzionale",
+    "palestra": "CENTRO POLIFUNZIONALE",
     "citta": "Sorso",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": "completo"
   },
   {
@@ -333,11 +409,15 @@
     "ospite": "pavia",
     "pt_casa": 67,
     "pt_ospite": 92,
-    "stato": "ufficioso",
-    "palestra": "Palestra Scuole Elementari",
+    "stato": "omologata",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
-    "tabellino": "parziale"
+    "pb": {
+      "gtn": 3,
+      "gtt": 1,
+      "mn": 6
+    },
+    "tabellino": "completo"
   },
   {
     "id": "000537",
@@ -351,9 +431,13 @@
     "pt_casa": 84,
     "pt_ospite": 73,
     "stato": "omologata",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": "completo"
   },
   {
@@ -368,9 +452,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -387,7 +475,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -402,9 +494,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -421,7 +517,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -436,9 +536,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -453,9 +557,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -470,9 +578,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -487,9 +599,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -504,9 +620,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -521,9 +641,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -540,7 +664,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -555,9 +683,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -572,9 +704,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -589,9 +725,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -606,9 +746,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -623,9 +767,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -642,7 +790,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -657,9 +809,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -674,9 +830,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -691,9 +851,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -710,7 +874,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -725,9 +893,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -744,7 +916,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -759,9 +935,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -776,9 +956,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -795,7 +979,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -810,9 +998,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -827,9 +1019,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -844,9 +1040,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -861,9 +1061,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -878,9 +1082,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -897,7 +1105,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -912,9 +1124,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -929,9 +1145,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -946,9 +1166,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -963,9 +1187,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -980,9 +1208,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -999,7 +1231,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1014,9 +1250,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1033,7 +1273,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1048,9 +1292,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1065,9 +1313,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1082,9 +1334,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1099,9 +1355,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1118,7 +1378,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1133,9 +1397,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1150,9 +1418,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1167,9 +1439,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1184,9 +1460,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1203,7 +1483,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1218,9 +1502,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1237,7 +1525,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1252,9 +1544,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1271,7 +1567,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1286,9 +1586,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1303,9 +1607,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1320,9 +1628,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1339,7 +1651,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1354,9 +1670,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1371,9 +1691,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1390,7 +1714,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1405,9 +1733,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1422,9 +1754,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1439,9 +1775,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1456,9 +1796,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1473,9 +1817,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1492,7 +1840,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1507,9 +1859,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1526,7 +1882,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1541,9 +1901,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1558,9 +1922,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1575,9 +1943,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1592,9 +1964,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1611,7 +1987,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1626,9 +2006,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1643,9 +2027,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1660,9 +2048,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1679,7 +2071,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 1,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1694,9 +2090,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 1,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1713,7 +2113,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 1,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1728,9 +2132,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 1,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1745,9 +2153,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 1,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1762,9 +2174,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 1,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1779,9 +2195,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 1,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1798,7 +2218,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1813,9 +2237,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1830,9 +2258,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1849,7 +2281,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1866,7 +2302,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -1881,9 +2321,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -1898,9 +2342,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 1,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -1917,7 +2365,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -1932,9 +2384,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -1951,7 +2407,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -1966,9 +2426,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -1983,9 +2447,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2002,7 +2470,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2017,9 +2489,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 2,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2034,9 +2510,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2053,7 +2533,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2068,9 +2552,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2085,9 +2573,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2102,9 +2594,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2119,9 +2615,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2136,9 +2636,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 3,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2155,7 +2659,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2170,9 +2678,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2187,9 +2699,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2204,9 +2720,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2223,7 +2743,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2238,9 +2762,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2255,9 +2783,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 4,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2272,9 +2804,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2289,9 +2825,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2306,9 +2846,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2325,7 +2869,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2340,9 +2888,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2357,9 +2909,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2376,7 +2932,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 5,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2391,9 +2951,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2408,9 +2972,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2427,7 +2995,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2442,9 +3014,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2459,9 +3035,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2478,7 +3058,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2493,9 +3077,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 6,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2512,7 +3100,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2529,7 +3121,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2544,9 +3140,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2561,9 +3161,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2578,9 +3182,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2595,9 +3203,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2612,9 +3224,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 7,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2629,9 +3245,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2646,9 +3266,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2663,9 +3287,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2682,7 +3310,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2697,9 +3329,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2714,9 +3350,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2733,7 +3373,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 8,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2750,7 +3394,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2765,9 +3413,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2782,9 +3434,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2799,9 +3455,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2816,9 +3476,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2835,7 +3499,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2850,9 +3518,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 9,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2867,9 +3539,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -2886,7 +3562,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -2901,9 +3581,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -2920,7 +3604,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -2935,9 +3623,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -2954,7 +3646,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -2969,9 +3665,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 10,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -2988,7 +3688,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -3003,9 +3707,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -3020,9 +3728,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -3037,9 +3749,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -3054,9 +3770,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -3071,9 +3791,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -3088,9 +3812,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 11,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -3105,9 +3833,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -3124,7 +3856,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -3139,9 +3875,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -3158,7 +3898,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -3173,9 +3917,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -3190,9 +3938,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -3207,9 +3959,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 12,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -3224,9 +3980,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaFerraris",
+    "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -3241,9 +4001,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Boffalora",
+    "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -3258,9 +4022,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -3275,9 +4043,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -3292,9 +4064,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Comunale",
+    "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -3311,7 +4087,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -3326,9 +4106,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 13,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -3343,9 +4127,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palazzetto di Arcisate",
+    "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -3362,7 +4150,11 @@
     "stato": "da_giocare",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -3377,9 +4169,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Pala Ballin",
+    "palestra": "PALA BALLIN",
     "citta": "Torino",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -3394,9 +4190,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -3413,7 +4213,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -3428,9 +4232,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -3445,9 +4253,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra Scuole Elementari",
+    "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
-    "pb": null,
+    "pb": {
+      "gtn": 14,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   },
   {
@@ -3462,9 +4274,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.G. Mons. U. Ronchi",
+    "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 2,
+      "mn": 3
+    },
     "tabellino": null
   },
   {
@@ -3481,7 +4297,11 @@
     "stato": "da_giocare",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 2,
+      "mn": 1
+    },
     "tabellino": null
   },
   {
@@ -3496,9 +4316,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "C.S. Campus",
+    "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 2,
+      "mn": 5
+    },
     "tabellino": null
   },
   {
@@ -3515,7 +4339,11 @@
     "stato": "da_giocare",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 2,
+      "mn": 2
+    },
     "tabellino": null
   },
   {
@@ -3530,9 +4358,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "Palestra R. Malacarne",
+    "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 2,
+      "mn": 4
+    },
     "tabellino": null
   },
   {
@@ -3547,9 +4379,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaDonBosco",
+    "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 2,
+      "mn": 6
+    },
     "tabellino": null
   },
   {
@@ -3564,9 +4400,13 @@
     "pt_casa": null,
     "pt_ospite": null,
     "stato": "da_giocare",
-    "palestra": "PalaRavizza",
+    "palestra": "PALARAVIZZA",
     "citta": "Pavia",
-    "pb": null,
+    "pb": {
+      "gtn": 15,
+      "gtt": 2,
+      "mn": 7
+    },
     "tabellino": null
   }
 ]
