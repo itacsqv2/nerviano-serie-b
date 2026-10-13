@@ -9,15 +9,18 @@
     "regione": "Lombardia",
     "societa": "U.S. Nervianese PuntoeBasket",
     "codice_fip": "023196",
-    "nome_fip": null,
+    "nome_fip": "INVALVES PeB NERVIANO",
     "pb_obj": 2574,
     "nomi_pb": [
       "Pallacanestro Nervianese 1919"
     ],
     "palestra": "Palestra Scuole Elementari",
     "indirizzo": "Via Roma / Via L. da Vinci, Nerviano (MI)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#111111",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - N Nero - Bia"
   },
   {
     "slug": "saronno",
@@ -29,15 +32,18 @@
     "regione": "Lombardia",
     "societa": "Robur Basket Saronno",
     "codice_fip": "001121",
-    "nome_fip": null,
+    "nome_fip": "ROBUR BASKET SARONNO",
     "pb_obj": 537,
     "nomi_pb": [
       "Robur Saronno"
     ],
     "palestra": "C.G. Mons. U. Ronchi",
     "indirizzo": "Via Cristoforo Colombo 44, Saronno (VA)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#2f80c8",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - A Azzurro -"
   },
   {
     "slug": "bocconi",
@@ -49,15 +55,18 @@
     "regione": "Lombardia",
     "societa": "Bocconi Sport Team",
     "codice_fip": "050046",
-    "nome_fip": null,
+    "nome_fip": "BOCCONI MILANO",
     "pb_obj": 2861,
     "nomi_pb": [
       "Bocconi Team Milano"
     ],
     "palestra": "Bocconi Sport Center",
     "indirizzo": "Viale Toscana 30, Milano (MI)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d3a8a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - B Blu - Bian"
   },
   {
     "slug": "pavia",
@@ -69,15 +78,18 @@
     "regione": "Lombardia",
     "societa": "Pallacanestro Pavia 1933",
     "codice_fip": "020614",
-    "nome_fip": null,
+    "nome_fip": "RISO SCOTTI PALL. PAVIA 1933",
     "pb_obj": 15262,
     "nomi_pb": [
       "Pallacanestro Pavia 1933"
     ],
     "palestra": "PalaRavizza",
     "indirizzo": "Via Treves, Pavia (PV)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d3a8a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - B Blu - Ross"
   },
   {
     "slug": "cagliari",
@@ -89,15 +101,18 @@
     "regione": "Sardegna",
     "societa": "Esperia",
     "codice_fip": "042132",
-    "nome_fip": null,
+    "nome_fip": "ESPERIA CAGLIARI",
     "pb_obj": 3883,
     "nomi_pb": [
       "Esperia Cagliari"
     ],
     "palestra": "PalaPirastu",
     "indirizzo": "Via Rockefeller, Cagliari (CA)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d3a8a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - B Blu - Ross"
   },
   {
     "slug": "college",
@@ -109,15 +124,18 @@
     "regione": "Piemonte",
     "societa": "College Basketball",
     "codice_fip": "002237",
-    "nome_fip": null,
+    "nome_fip": "HEDESSENT COLLEGE BASKETBALL",
     "pb_obj": 3777,
     "nomi_pb": [
       "College Basket Borgomanero"
     ],
     "palestra": "PalaDonBosco",
     "indirizzo": "Via S. Domenico Savio 1, Borgomanero (NO)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d3a8a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - B Blu - Bian"
   },
   {
     "slug": "campus",
@@ -129,15 +147,18 @@
     "regione": "Lombardia",
     "societa": "Campus Varese",
     "codice_fip": "034338",
-    "nome_fip": null,
+    "nome_fip": "CAMPUS VARESE",
     "pb_obj": 904,
     "nomi_pb": [
       "Campus Varese"
     ],
     "palestra": "C.S. Campus",
     "indirizzo": "Via Pirandello 31, Varese (VA)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#c8102e",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - R Rosso - Bi"
   },
   {
     "slug": "crocetta",
@@ -149,15 +170,18 @@
     "regione": "Piemonte",
     "societa": "PGS Don Bosco Crocetta",
     "codice_fip": "000471",
-    "nome_fip": null,
+    "nome_fip": "DON BOSCO CROCETTA TORINO",
     "pb_obj": 897,
     "nomi_pb": [
       "Don Bosco Crocetta"
     ],
     "palestra": "Pala Ballin",
     "indirizzo": "Via Piazzi 25, Torino (TO)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#111111",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - V Nero - Gia"
   },
   {
     "slug": "sennori",
@@ -169,15 +193,18 @@
     "regione": "Sardegna",
     "societa": "Pallacanestro Sennori",
     "codice_fip": "055415",
-    "nome_fip": null,
+    "nome_fip": "PALLACANESTRO SENNORI",
     "pb_obj": 3593,
     "nomi_pb": [
       "Pallacanestro Sennori"
     ],
     "palestra": "Palestra Montigeddu",
     "indirizzo": "Via Massarenti, Sennori (SS)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d7a3a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - V Verde - Bi"
   },
   {
     "slug": "gallarate",
@@ -189,15 +216,18 @@
     "regione": "Lombardia",
     "societa": "Basket Gallarate",
     "codice_fip": "000857",
-    "nome_fip": null,
+    "nome_fip": "AERES AVIATION GALLARATESE",
     "pb_obj": 2563,
     "nomi_pb": [
       "BasketBall Gallarate"
     ],
     "palestra": "Palestra Comunale",
     "indirizzo": "Via Sottocosta, Gallarate (VA)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#111111",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - R Nero - Ros"
   },
   {
     "slug": "academy",
@@ -209,15 +239,18 @@
     "regione": "Lombardia",
     "societa": "Varese Academy",
     "codice_fip": "054681",
-    "nome_fip": null,
+    "nome_fip": "VARESE ACADEMY",
     "pb_obj": 12833,
     "nomi_pb": [
       "Varese Academy"
     ],
     "palestra": "Palazzetto di Arcisate",
     "indirizzo": "Via Cavour, Arcisate (VA)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d3a8a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - B Blu - Bian"
   },
   {
     "slug": "7laghi",
@@ -229,15 +262,18 @@
     "regione": "Lombardia",
     "societa": "Basket 7 Laghi",
     "codice_fip": "025666",
-    "nome_fip": null,
+    "nome_fip": "COELSANUS BASKET 7 LAGHI",
     "pb_obj": 903,
     "nomi_pb": [
       "Basket 7 Laghi Gazzada"
     ],
     "palestra": "Palestra Comunale",
     "indirizzo": "Via Matteotti 13, Gazzada Schianno (VA)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#f2c200",
+      "secondario": "#1d3a8a"
+    },
+    "maglia_fip": "Giallo - B Blu - Gial"
   },
   {
     "slug": "monferrato",
@@ -249,15 +285,18 @@
     "regione": "Piemonte",
     "societa": "J Basket Monferrato",
     "codice_fip": "055503",
-    "nome_fip": null,
+    "nome_fip": "NOVIPIU’ MONFERRATO BASKET",
     "pb_obj": 12820,
     "nomi_pb": [
       "Monferrato Basket"
     ],
     "palestra": "PalaFerraris",
     "indirizzo": "Via Visconti 16, Casale Monferrato (AL)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d3a8a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - R Blu - Ross"
   },
   {
     "slug": "oleggio",
@@ -269,15 +308,18 @@
     "regione": "Piemonte",
     "societa": "Oleggio Magic Basket",
     "codice_fip": "034253",
-    "nome_fip": null,
+    "nome_fip": "OLEGGIO MAGIC BASKET",
     "pb_obj": 3780,
     "nomi_pb": [
       "Oleggio Magic Basket"
     ],
     "palestra": "Palazzetto di Boffalora",
     "indirizzo": "Via Giulini 22, Boffalora sopra Ticino (MI)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#c8102e",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - R Rosso - Bi"
   },
   {
     "slug": "cermenate",
@@ -289,14 +331,17 @@
     "regione": "Lombardia",
     "societa": "Virtus Pallacanestro Cermenate",
     "codice_fip": "002406",
-    "nome_fip": null,
+    "nome_fip": "VIRTUS PALLACANESTRO CERMENATE",
     "pb_obj": 2553,
     "nomi_pb": [
       "Virtus Cermenate"
     ],
     "palestra": "Palestra R. Malacarne",
     "indirizzo": "Via Montale 1, Cermenate (CO)",
-    "colori": null,
-    "maglia_fip": null
+    "colori": {
+      "primario": "#1d3a8a",
+      "secondario": "#ffffff"
+    },
+    "maglia_fip": "Bianco - B Blu - Bian"
   }
 ]

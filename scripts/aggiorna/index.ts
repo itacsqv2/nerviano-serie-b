@@ -81,7 +81,9 @@ async function main(): Promise<number> {
   if (usaFip || opz.proponi) {
     const perFase = S.turni_per_fase;
     const giornate = (() => {
-      if (opz.completo || opz.proponi) return range(1, S.giornate);
+      // per la proposta basta una giornata: la classifica in fondo alla pagina ha tutte le squadre
+      if (opz.proponi) return [1];
+      if (opz.completo) return range(1, S.giornate);
       const iniziate = range(1, S.giornate).filter((g) => partite.some((p) => p.giornata === g && p.data <= oggi));
       const conPendenti = iniziate.filter((g) => partite.some((p) => p.giornata === g && p.stato !== 'omologata'));
       const ultima = Math.max(0, ...iniziate);
