@@ -49,7 +49,7 @@ const aggiornato = [d.meta.fonti.fip.aggiornato, d.meta.fonti.playbasket.aggiorn
     <a class="salta" href="#contenuto">Vai al contenuto</a>
     <header class="testata">
       <div class="contenitore testata-riga">
-        <a class="marchio" href={url('/')} aria-label={`${d.sito.titolo}, pagina iniziale`}>
+        <a class="marchio" href={url('/')}>
           <Pallone />
           <span class="marchio-testo">
             <span class="marchio-nome">Nerviano Basket</span>
@@ -62,6 +62,8 @@ const aggiornato = [d.meta.fonti.fip.aggiornato, d.meta.fonti.playbasket.aggiorn
             <input
               id="cerca-giocatore"
               type="search"
+              role="combobox"
+              aria-autocomplete="list"
               placeholder="Cerca un giocatore"
               autocomplete="off"
               aria-controls="cerca-risultati"

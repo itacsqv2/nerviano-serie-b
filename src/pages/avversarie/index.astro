@@ -41,7 +41,7 @@ const tutti = d.playbasket ? marcatori(d) : [];
           <p class="riga">
             <span class:list={['zona', riga.zona ? `zona-${riga.zona.toLowerCase()}` : '']}>{ordinale(riga.posizione)} in classifica</span>
             <span class="tabulare">{riga.v}-{riga.p}</span>
-            <span class="forma" aria-label={`Ultime: ${riga.forma || 'nessuna partita'}`}>{riga.forma.split('').map((x) => <span class:list={['esito', x === 'V' ? 'v' : 'p']} aria-hidden="true">{x}</span>)}</span>
+            <span class="forma" role="img" aria-label={riga.forma ? `Ultime partite: ${riga.forma.split('').map((x) => (x === 'V' ? 'vinta' : 'persa')).join(', ')}` : 'Nessuna partita'}>{riga.forma.split('').map((x) => <span class:list={['esito', x === 'V' ? 'v' : 'p']} aria-hidden="true">{x}</span>)}</span>
           </p>
           <h3>Contro {nomeRif}</h3>
           <ul class="sfide">

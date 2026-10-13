@@ -3,7 +3,7 @@
  * quindi «prossima partita» e «tra N giorni» non possono essere fissati in build.
  *
  * - <script type="application/json" id="calendario-rif">: le partite di Nerviano non ancora giocate
- *   [{ data, ora, html }] (html = id di un <template> con la scheda della partita).
+ *   [{ data, modello }] (modello = id del <template> con la scheda della partita).
  * - [data-prossima]: contenitore della scheda «prossima partita», sostituita se la data di build è superata.
  * - [data-tra="AAAA-MM-GG"]: testo «oggi», «domani», «tra N giorni».
  * - tr[data-data] in [data-evidenzia-prossima]: riceve la classe «prossima» la prima riga futura.

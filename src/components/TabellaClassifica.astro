@@ -48,7 +48,7 @@ const zonaCls = (z: string | null) => (z ? `zona-${z.toLowerCase()}` : '');
           <td class:list={['num', r.diff > 0 ? 'pos-diff' : r.diff < 0 ? 'neg-diff' : '']}>{segno(r.diff)}</td>
           {!breve && (
             <td>
-              <span class="forma" aria-label={r.forma ? `Ultime partite: ${r.forma.split('').map((x) => (x === 'V' ? 'vinta' : 'persa')).join(', ')}` : 'Nessuna partita'}>
+              <span class="forma" role="img" aria-label={r.forma ? `Ultime partite: ${r.forma.split('').map((x) => (x === 'V' ? 'vinta' : 'persa')).join(', ')}` : 'Nessuna partita'}>
                 {r.forma.split('').map((x) => <span class:list={['esito', x === 'V' ? 'v' : 'p']} aria-hidden="true">{x}</span>)}
               </span>
             </td>
