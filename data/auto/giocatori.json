@@ -1998,6 +1998,15 @@
     "allenatore": false
   },
   {
+    "id": 224408,
+    "cognome": "giocatore",
+    "nome": "#11",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
     "id": 224409,
     "cognome": "Ravera",
     "nome": "Leonardo",
