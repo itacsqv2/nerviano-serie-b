@@ -204,10 +204,17 @@ async function main(): Promise<number> {
         const squadreConTabella = new Set<string>();
         const righe: Tabellino[] = [];
         t.squadre.forEach((tab, i) => {
-          const slug = i === 0 ? p.casa : p.ospite;
-          const atteso = perSlug.get(slug)!;
+          // la squadra si riconosce dall'obj dei giocatori: se una delle due non ha ancora il tabellino,
+          // PlayBasket mostra una sola tabella e l'ordine [casa, ospite] non vale più
           const obj = tab.righe.find((r) => r.squadra_obj != null)?.squadra_obj;
-          if (obj != null && obj !== atteso.pb_obj) throw new ErroreFonte(`PlayBasket: nel tabellino della gara ${p.id} la squadra ${i === 0 ? 'di casa' : 'ospite'} non è ${slug}`);
+          let slug: string;
+          if (obj == null) {
+            if (t.squadre.length !== 2) throw new ErroreFonte(`PlayBasket: nel tabellino della gara ${p.id} c'è una sola tabella e non si capisce di quale squadra sia`);
+            slug = i === 0 ? p.casa : p.ospite;
+          } else if (obj === perSlug.get(p.casa)!.pb_obj) slug = p.casa;
+          else if (obj === perSlug.get(p.ospite)!.pb_obj) slug = p.ospite;
+          else throw new ErroreFonte(`PlayBasket: nel tabellino della gara ${p.id} c'è una squadra (obj ${obj}) che non è né ${p.casa} né ${p.ospite}`);
+          if (squadreConTabella.has(slug)) throw new ErroreFonte(`PlayBasket: nel tabellino della gara ${p.id} ci sono due tabelle di ${slug}`);
           vedi(slug, tab.nome);
           squadreConTabella.add(slug);
           for (const r of tab.righe) {
