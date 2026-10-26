@@ -1782,6 +1782,15 @@
     "allenatore": false
   },
   {
+    "id": 203900,
+    "cognome": "giocatore",
+    "nome": "#10",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
     "id": 205798,
     "cognome": "Percoco",
     "nome": "Andrea",
@@ -2019,6 +2028,15 @@
     "id": 224411,
     "cognome": "Morino",
     "nome": "Luca",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 226527,
+    "cognome": "giocatore",
+    "nome": "#10",
     "ruolo": null,
     "eta": null,
     "eta_fascia": null,

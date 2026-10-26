@@ -459,7 +459,7 @@
       "gtt": 1,
       "mn": 7
     },
-    "tabellino": "parziale"
+    "tabellino": "completo"
   },
   {
     "id": "000541",
@@ -585,7 +585,7 @@
       "gtt": 1,
       "mn": 5
     },
-    "tabellino": "in_attesa"
+    "tabellino": "completo"
   },
   {
     "id": "000547",
@@ -596,9 +596,9 @@
     "ora": "18:00",
     "casa": "crocetta",
     "ospite": "campus",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 97,
+    "pt_ospite": 81,
+    "stato": "omologata",
     "palestra": "PALA BALLIN",
     "citta": "Torino",
     "pb": {
@@ -606,7 +606,7 @@
       "gtt": 1,
       "mn": 2
     },
-    "tabellino": null
+    "tabellino": "parziale"
   },
   {
     "id": "000548",
@@ -617,9 +617,9 @@
     "ora": "20:30",
     "casa": "academy",
     "ospite": "saronno",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 96,
+    "pt_ospite": 67,
+    "stato": "omologata",
     "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
     "pb": {
@@ -627,7 +627,7 @@
       "gtt": 1,
       "mn": 3
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000545",
@@ -638,9 +638,9 @@
     "ora": "21:00",
     "casa": "cermenate",
     "ospite": "oleggio",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 73,
+    "pt_ospite": 85,
+    "stato": "omologata",
     "palestra": "Palestra 'R. Malacarne'",
     "citta": "Cermenate",
     "pb": {
@@ -648,7 +648,7 @@
       "gtt": 1,
       "mn": 1
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000550",
@@ -659,9 +659,9 @@
     "ora": "17:00",
     "casa": "bocconi",
     "ospite": "sennori",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 70,
+    "pt_ospite": 46,
+    "stato": "omologata",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
     "pb": {
@@ -669,28 +669,7 @@
       "gtt": 1,
       "mn": 6
     },
-    "tabellino": null
-  },
-  {
-    "id": "000551",
-    "giornata": 5,
-    "fase": "andata",
-    "turno": 5,
-    "data": "2026-10-25",
-    "ora": "17:00",
-    "casa": "pavia",
-    "ospite": "cagliari",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
-    "palestra": "PALARAVIZZA",
-    "citta": "Pavia",
-    "pb": {
-      "gtn": 5,
-      "gtt": 1,
-      "mn": 7
-    },
-    "tabellino": null
+    "tabellino": "incongruente"
   },
   {
     "id": "000546",
@@ -701,9 +680,9 @@
     "ora": "18:00",
     "casa": "nerviano",
     "ospite": "college",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 77,
+    "pt_ospite": 90,
+    "stato": "omologata",
     "palestra": "PALESTRA SC.ELEMENTARI",
     "citta": "Nerviano",
     "pb": {
@@ -711,7 +690,7 @@
       "gtt": 1,
       "mn": 4
     },
-    "tabellino": null
+    "tabellino": "in_attesa"
   },
   {
     "id": "000549",
@@ -722,9 +701,9 @@
     "ora": "18:00",
     "casa": "monferrato",
     "ospite": "gallarate",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 81,
+    "pt_ospite": 62,
+    "stato": "omologata",
     "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
     "pb": {
@@ -732,7 +711,28 @@
       "gtt": 1,
       "mn": 5
     },
-    "tabellino": null
+    "tabellino": "completo"
+  },
+  {
+    "id": "000551",
+    "giornata": 5,
+    "fase": "andata",
+    "turno": 5,
+    "data": "2026-10-25",
+    "ora": "18:30",
+    "casa": "pavia",
+    "ospite": "cagliari",
+    "pt_casa": 94,
+    "pt_ospite": 86,
+    "stato": "ufficioso",
+    "palestra": "PALARAVIZZA",
+    "citta": "Pavia",
+    "pb": {
+      "gtn": 5,
+      "gtt": 1,
+      "mn": 7
+    },
+    "tabellino": "parziale"
   },
   {
     "id": "000556",
