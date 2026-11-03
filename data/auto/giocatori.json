@@ -486,6 +486,15 @@
     "allenatore": false
   },
   {
+    "id": 98388,
+    "cognome": "Caglio",
+    "nome": "Simone",
+    "ruolo": "Ala forte",
+    "eta": 24,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
     "id": 98403,
     "cognome": "Castellino",
     "nome": "Nicolò",
@@ -743,6 +752,15 @@
     "nome": "Filippo",
     "ruolo": "Guardia",
     "eta": 21,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 143937,
+    "cognome": "Ghidini",
+    "nome": "Gabriele",
+    "ruolo": "Play",
+    "eta": 20,
     "eta_fascia": null,
     "allenatore": false
   },

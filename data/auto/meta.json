@@ -1,18 +1,18 @@
 {
   "fonti": {
     "fip": {
-      "aggiornato": "2026-10-26"
+      "aggiornato": "2026-11-03"
     },
     "playbasket": {
-      "aggiornato": "2026-10-26"
+      "aggiornato": "2026-11-03"
     }
   },
   "conteggi": {
     "partite": 210,
     "classifica_fip": 15,
-    "giocatori": 239,
-    "rose": 239,
-    "tabellini": 752,
-    "carriere": 2164
+    "giocatori": 241,
+    "rose": 241,
+    "tabellini": 958,
+    "carriere": 2198
   }
 }

@@ -606,7 +606,7 @@
       "gtt": 1,
       "mn": 2
     },
-    "tabellino": "parziale"
+    "tabellino": "completo"
   },
   {
     "id": "000548",
@@ -669,7 +669,7 @@
       "gtt": 1,
       "mn": 6
     },
-    "tabellino": "incongruente"
+    "tabellino": "completo"
   },
   {
     "id": "000546",
@@ -690,7 +690,7 @@
       "gtt": 1,
       "mn": 4
     },
-    "tabellino": "in_attesa"
+    "tabellino": "completo"
   },
   {
     "id": "000549",
@@ -724,7 +724,7 @@
     "ospite": "cagliari",
     "pt_casa": 94,
     "pt_ospite": 86,
-    "stato": "ufficioso",
+    "stato": "omologata",
     "palestra": "PALARAVIZZA",
     "citta": "Pavia",
     "pb": {
@@ -732,7 +732,7 @@
       "gtt": 1,
       "mn": 7
     },
-    "tabellino": "parziale"
+    "tabellino": "completo"
   },
   {
     "id": "000556",
@@ -743,9 +743,9 @@
     "ora": "21:00",
     "casa": "oleggio",
     "ospite": "7laghi",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 71,
+    "pt_ospite": 97,
+    "stato": "omologata",
     "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
     "pb": {
@@ -753,7 +753,7 @@
       "gtt": 1,
       "mn": 1
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000555",
@@ -764,9 +764,9 @@
     "ora": "18:00",
     "casa": "campus",
     "ospite": "nerviano",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 85,
+    "pt_ospite": 89,
+    "stato": "omologata",
     "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
     "pb": {
@@ -774,7 +774,7 @@
       "gtt": 1,
       "mn": 3
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000558",
@@ -785,9 +785,9 @@
     "ora": "18:00",
     "casa": "cagliari",
     "ospite": "college",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 94,
+    "pt_ospite": 66,
+    "stato": "omologata",
     "palestra": "PalaPirastu",
     "citta": "Cagliari",
     "pb": {
@@ -795,7 +795,7 @@
       "gtt": 1,
       "mn": 4
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000554",
@@ -806,9 +806,9 @@
     "ora": "21:00",
     "casa": "saronno",
     "ospite": "bocconi",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 72,
+    "pt_ospite": 95,
+    "stato": "omologata",
     "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
     "pb": {
@@ -816,7 +816,7 @@
       "gtt": 1,
       "mn": 2
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000552",
@@ -827,9 +827,9 @@
     "ora": "18:00",
     "casa": "gallarate",
     "ospite": "crocetta",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 61,
+    "pt_ospite": 48,
+    "stato": "omologata",
     "palestra": "PALESTRA COMUNALE",
     "citta": "Gallarate",
     "pb": {
@@ -837,7 +837,7 @@
       "gtt": 1,
       "mn": 5
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000553",
@@ -848,9 +848,9 @@
     "ora": "18:00",
     "casa": "monferrato",
     "ospite": "academy",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 93,
+    "pt_ospite": 75,
+    "stato": "omologata",
     "palestra": "PALAFERRARIS",
     "citta": "Casale Monferrato",
     "pb": {
@@ -858,7 +858,7 @@
       "gtt": 1,
       "mn": 6
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000557",
@@ -869,9 +869,9 @@
     "ora": "19:00",
     "casa": "sennori",
     "ospite": "cermenate",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 95,
+    "pt_ospite": 74,
+    "stato": "omologata",
     "palestra": "Palestra Montigeddu",
     "citta": "Sennori",
     "pb": {
@@ -879,7 +879,7 @@
       "gtt": 1,
       "mn": 7
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000561",
