@@ -890,9 +890,9 @@
     "ora": "17:00",
     "casa": "campus",
     "ospite": "sennori",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 93,
+    "pt_ospite": 77,
+    "stato": "omologata",
     "palestra": "C.S. Campus - centrale",
     "citta": "Varese",
     "pb": {
@@ -900,7 +900,7 @@
       "gtt": 1,
       "mn": 3
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000559",
@@ -911,9 +911,9 @@
     "ora": "18:00",
     "casa": "bocconi",
     "ospite": "monferrato",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 67,
+    "pt_ospite": 58,
+    "stato": "omologata",
     "palestra": "Bocconi Sport Center",
     "citta": "Milano",
     "pb": {
@@ -921,7 +921,7 @@
       "gtt": 1,
       "mn": 1
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000564",
@@ -932,9 +932,9 @@
     "ora": "18:00",
     "casa": "crocetta",
     "ospite": "saronno",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 81,
+    "pt_ospite": 73,
+    "stato": "omologata",
     "palestra": "PALA BALLIN",
     "citta": "Torino",
     "pb": {
@@ -942,7 +942,7 @@
       "gtt": 1,
       "mn": 5
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000562",
@@ -953,9 +953,9 @@
     "ora": "20:30",
     "casa": "academy",
     "ospite": "gallarate",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 64,
+    "pt_ospite": 87,
+    "stato": "omologata",
     "palestra": "PALAZZETTO ARCISATE",
     "citta": "Arcisate",
     "pb": {
@@ -963,7 +963,7 @@
       "gtt": 1,
       "mn": 4
     },
-    "tabellino": null
+    "tabellino": "parziale"
   },
   {
     "id": "000565",
@@ -974,9 +974,9 @@
     "ora": "21:00",
     "casa": "7laghi",
     "ospite": "pavia",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 70,
+    "pt_ospite": 73,
+    "stato": "omologata",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
     "pb": {
@@ -984,28 +984,7 @@
       "gtt": 1,
       "mn": 6
     },
-    "tabellino": null
-  },
-  {
-    "id": "000560",
-    "giornata": 7,
-    "fase": "andata",
-    "turno": 7,
-    "data": "2026-11-08",
-    "ora": "17:00",
-    "casa": "cermenate",
-    "ospite": "cagliari",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
-    "palestra": "Palestra 'R. Malacarne'",
-    "citta": "Cermenate",
-    "pb": {
-      "gtn": 7,
-      "gtt": 1,
-      "mn": 2
-    },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000563",
@@ -1016,9 +995,9 @@
     "ora": "18:00",
     "casa": "college",
     "ospite": "oleggio",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 83,
+    "pt_ospite": 87,
+    "stato": "omologata",
     "palestra": "PALADONBOSCO",
     "citta": "Borgomanero",
     "pb": {
@@ -1026,7 +1005,28 @@
       "gtt": 1,
       "mn": 7
     },
-    "tabellino": null
+    "tabellino": "completo"
+  },
+  {
+    "id": "000560",
+    "giornata": 7,
+    "fase": "andata",
+    "turno": 7,
+    "data": "2026-11-08",
+    "ora": "18:30",
+    "casa": "cermenate",
+    "ospite": "cagliari",
+    "pt_casa": 63,
+    "pt_ospite": 84,
+    "stato": "omologata",
+    "palestra": "Palestra 'R. Malacarne'",
+    "citta": "Cermenate",
+    "pb": {
+      "gtn": 7,
+      "gtt": 1,
+      "mn": 2
+    },
+    "tabellino": "parziale"
   },
   {
     "id": "000570",
@@ -1046,27 +1046,6 @@
       "gtn": 8,
       "gtt": 1,
       "mn": 3
-    },
-    "tabellino": null
-  },
-  {
-    "id": "000566",
-    "giornata": 8,
-    "fase": "andata",
-    "turno": 8,
-    "data": "2026-11-14",
-    "ora": "20:30",
-    "casa": "academy",
-    "ospite": "campus",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
-    "palestra": "PALAZZETTO ARCISATE",
-    "citta": "Arcisate",
-    "pb": {
-      "gtn": 8,
-      "gtt": 1,
-      "mn": 1
     },
     "tabellino": null
   },
@@ -1172,6 +1151,27 @@
       "gtn": 8,
       "gtt": 1,
       "mn": 6
+    },
+    "tabellino": null
+  },
+  {
+    "id": "000566",
+    "giornata": 8,
+    "fase": "andata",
+    "turno": 8,
+    "data": "2026-11-15",
+    "ora": "20:30",
+    "casa": "academy",
+    "ospite": "campus",
+    "pt_casa": null,
+    "pt_ospite": null,
+    "stato": "da_giocare",
+    "palestra": "PALAZZETTO ARCISATE",
+    "citta": "Arcisate",
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 1
     },
     "tabellino": null
   },

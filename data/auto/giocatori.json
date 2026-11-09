@@ -1116,6 +1116,15 @@
     "allenatore": false
   },
   {
+    "id": 153934,
+    "cognome": "giocatore",
+    "nome": "#10",
+    "ruolo": null,
+    "eta": null,
+    "eta_fascia": null,
+    "allenatore": false
+  },
+  {
     "id": 153941,
     "cognome": "Karem",
     "nome": "Omar",
@@ -1743,6 +1752,15 @@
     "ruolo": "Ala forte",
     "eta": 19,
     "eta_fascia": null,
+    "allenatore": false
+  },
+  {
+    "id": 195967,
+    "cognome": "giocatore",
+    "nome": "#8 ala piccolaU19",
+    "ruolo": "Ala piccola",
+    "eta": null,
+    "eta_fascia": "U19",
     "allenatore": false
   },
   {

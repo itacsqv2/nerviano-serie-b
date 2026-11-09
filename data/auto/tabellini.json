@@ -5746,5 +5746,827 @@
     "giocatore": 211872,
     "squadra": "college",
     "punti": 4
+  },
+  {
+    "partita": "000559",
+    "giocatore": 41531,
+    "squadra": "bocconi",
+    "punti": 13
+  },
+  {
+    "partita": "000559",
+    "giocatore": 59584,
+    "squadra": "bocconi",
+    "punti": 3
+  },
+  {
+    "partita": "000559",
+    "giocatore": 68302,
+    "squadra": "bocconi",
+    "punti": 4
+  },
+  {
+    "partita": "000559",
+    "giocatore": 98379,
+    "squadra": "bocconi",
+    "punti": 8
+  },
+  {
+    "partita": "000559",
+    "giocatore": 100039,
+    "squadra": "bocconi",
+    "punti": 16
+  },
+  {
+    "partita": "000559",
+    "giocatore": 120439,
+    "squadra": "bocconi",
+    "punti": 2
+  },
+  {
+    "partita": "000559",
+    "giocatore": 120532,
+    "squadra": "bocconi",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 147271,
+    "squadra": "bocconi",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 149897,
+    "squadra": "bocconi",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 150037,
+    "squadra": "bocconi",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 202552,
+    "squadra": "bocconi",
+    "punti": 21
+  },
+  {
+    "partita": "000559",
+    "giocatore": 24913,
+    "squadra": "monferrato",
+    "punti": 23
+  },
+  {
+    "partita": "000559",
+    "giocatore": 98403,
+    "squadra": "monferrato",
+    "punti": 8
+  },
+  {
+    "partita": "000559",
+    "giocatore": 98405,
+    "squadra": "monferrato",
+    "punti": 2
+  },
+  {
+    "partita": "000559",
+    "giocatore": 98748,
+    "squadra": "monferrato",
+    "punti": 8
+  },
+  {
+    "partita": "000559",
+    "giocatore": 115867,
+    "squadra": "monferrato",
+    "punti": 2
+  },
+  {
+    "partita": "000559",
+    "giocatore": 143937,
+    "squadra": "monferrato",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 146697,
+    "squadra": "monferrato",
+    "punti": 11
+  },
+  {
+    "partita": "000559",
+    "giocatore": 150411,
+    "squadra": "monferrato",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 153408,
+    "squadra": "monferrato",
+    "punti": 3
+  },
+  {
+    "partita": "000559",
+    "giocatore": 163062,
+    "squadra": "monferrato",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 164981,
+    "squadra": "monferrato",
+    "punti": 0
+  },
+  {
+    "partita": "000559",
+    "giocatore": 170964,
+    "squadra": "monferrato",
+    "punti": 1
+  },
+  {
+    "partita": "000560",
+    "giocatore": 51615,
+    "squadra": "cermenate",
+    "punti": 0
+  },
+  {
+    "partita": "000560",
+    "giocatore": 67882,
+    "squadra": "cermenate",
+    "punti": 4
+  },
+  {
+    "partita": "000560",
+    "giocatore": 88896,
+    "squadra": "cermenate",
+    "punti": 21
+  },
+  {
+    "partita": "000560",
+    "giocatore": 120523,
+    "squadra": "cermenate",
+    "punti": 9
+  },
+  {
+    "partita": "000560",
+    "giocatore": 132525,
+    "squadra": "cermenate",
+    "punti": 6
+  },
+  {
+    "partita": "000560",
+    "giocatore": 132976,
+    "squadra": "cermenate",
+    "punti": 5
+  },
+  {
+    "partita": "000560",
+    "giocatore": 144482,
+    "squadra": "cermenate",
+    "punti": 5
+  },
+  {
+    "partita": "000560",
+    "giocatore": 151878,
+    "squadra": "cermenate",
+    "punti": 0
+  },
+  {
+    "partita": "000560",
+    "giocatore": 153934,
+    "squadra": "cermenate",
+    "punti": 0
+  },
+  {
+    "partita": "000560",
+    "giocatore": 165362,
+    "squadra": "cermenate",
+    "punti": 10
+  },
+  {
+    "partita": "000560",
+    "giocatore": 172846,
+    "squadra": "cermenate",
+    "punti": 3
+  },
+  {
+    "partita": "000560",
+    "giocatore": 229717,
+    "squadra": "cermenate",
+    "punti": 0
+  },
+  {
+    "partita": "000561",
+    "giocatore": 45050,
+    "squadra": "campus",
+    "punti": 0
+  },
+  {
+    "partita": "000561",
+    "giocatore": 150443,
+    "squadra": "campus",
+    "punti": 3
+  },
+  {
+    "partita": "000561",
+    "giocatore": 178673,
+    "squadra": "campus",
+    "punti": 7
+  },
+  {
+    "partita": "000561",
+    "giocatore": 190099,
+    "squadra": "campus",
+    "punti": 7
+  },
+  {
+    "partita": "000561",
+    "giocatore": 191416,
+    "squadra": "campus",
+    "punti": 17
+  },
+  {
+    "partita": "000561",
+    "giocatore": 191417,
+    "squadra": "campus",
+    "punti": 0
+  },
+  {
+    "partita": "000561",
+    "giocatore": 192748,
+    "squadra": "campus",
+    "punti": 24
+  },
+  {
+    "partita": "000561",
+    "giocatore": 194023,
+    "squadra": "campus",
+    "punti": 18
+  },
+  {
+    "partita": "000561",
+    "giocatore": 208025,
+    "squadra": "campus",
+    "punti": 15
+  },
+  {
+    "partita": "000561",
+    "giocatore": 212321,
+    "squadra": "campus",
+    "punti": 2
+  },
+  {
+    "partita": "000561",
+    "giocatore": 15299,
+    "squadra": "sennori",
+    "punti": 7
+  },
+  {
+    "partita": "000561",
+    "giocatore": 37782,
+    "squadra": "sennori",
+    "punti": 5
+  },
+  {
+    "partita": "000561",
+    "giocatore": 119706,
+    "squadra": "sennori",
+    "punti": 6
+  },
+  {
+    "partita": "000561",
+    "giocatore": 130824,
+    "squadra": "sennori",
+    "punti": 17
+  },
+  {
+    "partita": "000561",
+    "giocatore": 131124,
+    "squadra": "sennori",
+    "punti": 8
+  },
+  {
+    "partita": "000561",
+    "giocatore": 146921,
+    "squadra": "sennori",
+    "punti": 12
+  },
+  {
+    "partita": "000561",
+    "giocatore": 148104,
+    "squadra": "sennori",
+    "punti": 10
+  },
+  {
+    "partita": "000561",
+    "giocatore": 181588,
+    "squadra": "sennori",
+    "punti": 8
+  },
+  {
+    "partita": "000561",
+    "giocatore": 195967,
+    "squadra": "sennori",
+    "punti": 0
+  },
+  {
+    "partita": "000561",
+    "giocatore": 202311,
+    "squadra": "sennori",
+    "punti": 4
+  },
+  {
+    "partita": "000562",
+    "giocatore": 116017,
+    "squadra": "academy",
+    "punti": 2
+  },
+  {
+    "partita": "000562",
+    "giocatore": 152888,
+    "squadra": "academy",
+    "punti": 0
+  },
+  {
+    "partita": "000562",
+    "giocatore": 153146,
+    "squadra": "academy",
+    "punti": 0
+  },
+  {
+    "partita": "000562",
+    "giocatore": 158911,
+    "squadra": "academy",
+    "punti": 6
+  },
+  {
+    "partita": "000562",
+    "giocatore": 162139,
+    "squadra": "academy",
+    "punti": 11
+  },
+  {
+    "partita": "000562",
+    "giocatore": 182043,
+    "squadra": "academy",
+    "punti": 2
+  },
+  {
+    "partita": "000562",
+    "giocatore": 187328,
+    "squadra": "academy",
+    "punti": 13
+  },
+  {
+    "partita": "000562",
+    "giocatore": 196737,
+    "squadra": "academy",
+    "punti": 0
+  },
+  {
+    "partita": "000562",
+    "giocatore": 209385,
+    "squadra": "academy",
+    "punti": 11
+  },
+  {
+    "partita": "000562",
+    "giocatore": 212324,
+    "squadra": "academy",
+    "punti": 0
+  },
+  {
+    "partita": "000562",
+    "giocatore": 215149,
+    "squadra": "academy",
+    "punti": 5
+  },
+  {
+    "partita": "000562",
+    "giocatore": 229714,
+    "squadra": "academy",
+    "punti": 14
+  },
+  {
+    "partita": "000563",
+    "giocatore": 14962,
+    "squadra": "college",
+    "punti": 7
+  },
+  {
+    "partita": "000563",
+    "giocatore": 147524,
+    "squadra": "college",
+    "punti": 13
+  },
+  {
+    "partita": "000563",
+    "giocatore": 150437,
+    "squadra": "college",
+    "punti": 16
+  },
+  {
+    "partita": "000563",
+    "giocatore": 157833,
+    "squadra": "college",
+    "punti": 0
+  },
+  {
+    "partita": "000563",
+    "giocatore": 166855,
+    "squadra": "college",
+    "punti": 32
+  },
+  {
+    "partita": "000563",
+    "giocatore": 176079,
+    "squadra": "college",
+    "punti": 2
+  },
+  {
+    "partita": "000563",
+    "giocatore": 176606,
+    "squadra": "college",
+    "punti": 0
+  },
+  {
+    "partita": "000563",
+    "giocatore": 181313,
+    "squadra": "college",
+    "punti": 0
+  },
+  {
+    "partita": "000563",
+    "giocatore": 185392,
+    "squadra": "college",
+    "punti": 0
+  },
+  {
+    "partita": "000563",
+    "giocatore": 191926,
+    "squadra": "college",
+    "punti": 3
+  },
+  {
+    "partita": "000563",
+    "giocatore": 211871,
+    "squadra": "college",
+    "punti": 0
+  },
+  {
+    "partita": "000563",
+    "giocatore": 211872,
+    "squadra": "college",
+    "punti": 10
+  },
+  {
+    "partita": "000563",
+    "giocatore": 42656,
+    "squadra": "oleggio",
+    "punti": 11
+  },
+  {
+    "partita": "000563",
+    "giocatore": 45474,
+    "squadra": "oleggio",
+    "punti": 15
+  },
+  {
+    "partita": "000563",
+    "giocatore": 153941,
+    "squadra": "oleggio",
+    "punti": 15
+  },
+  {
+    "partita": "000563",
+    "giocatore": 175521,
+    "squadra": "oleggio",
+    "punti": 0
+  },
+  {
+    "partita": "000563",
+    "giocatore": 178855,
+    "squadra": "oleggio",
+    "punti": 4
+  },
+  {
+    "partita": "000563",
+    "giocatore": 185766,
+    "squadra": "oleggio",
+    "punti": 8
+  },
+  {
+    "partita": "000563",
+    "giocatore": 191286,
+    "squadra": "oleggio",
+    "punti": 7
+  },
+  {
+    "partita": "000563",
+    "giocatore": 194083,
+    "squadra": "oleggio",
+    "punti": 3
+  },
+  {
+    "partita": "000563",
+    "giocatore": 194084,
+    "squadra": "oleggio",
+    "punti": 0
+  },
+  {
+    "partita": "000563",
+    "giocatore": 194085,
+    "squadra": "oleggio",
+    "punti": 9
+  },
+  {
+    "partita": "000563",
+    "giocatore": 194172,
+    "squadra": "oleggio",
+    "punti": 5
+  },
+  {
+    "partita": "000563",
+    "giocatore": 214742,
+    "squadra": "oleggio",
+    "punti": 10
+  },
+  {
+    "partita": "000564",
+    "giocatore": 14399,
+    "squadra": "crocetta",
+    "punti": 9
+  },
+  {
+    "partita": "000564",
+    "giocatore": 29130,
+    "squadra": "crocetta",
+    "punti": 27
+  },
+  {
+    "partita": "000564",
+    "giocatore": 52091,
+    "squadra": "crocetta",
+    "punti": 2
+  },
+  {
+    "partita": "000564",
+    "giocatore": 89978,
+    "squadra": "crocetta",
+    "punti": 2
+  },
+  {
+    "partita": "000564",
+    "giocatore": 147634,
+    "squadra": "crocetta",
+    "punti": 1
+  },
+  {
+    "partita": "000564",
+    "giocatore": 153318,
+    "squadra": "crocetta",
+    "punti": 14
+  },
+  {
+    "partita": "000564",
+    "giocatore": 154632,
+    "squadra": "crocetta",
+    "punti": 0
+  },
+  {
+    "partita": "000564",
+    "giocatore": 191917,
+    "squadra": "crocetta",
+    "punti": 12
+  },
+  {
+    "partita": "000564",
+    "giocatore": 202086,
+    "squadra": "crocetta",
+    "punti": 9
+  },
+  {
+    "partita": "000564",
+    "giocatore": 205798,
+    "squadra": "crocetta",
+    "punti": 5
+  },
+  {
+    "partita": "000564",
+    "giocatore": 224411,
+    "squadra": "crocetta",
+    "punti": 0
+  },
+  {
+    "partita": "000564",
+    "giocatore": 228121,
+    "squadra": "crocetta",
+    "punti": 0
+  },
+  {
+    "partita": "000564",
+    "giocatore": 98388,
+    "squadra": "saronno",
+    "punti": 6
+  },
+  {
+    "partita": "000564",
+    "giocatore": 153104,
+    "squadra": "saronno",
+    "punti": 0
+  },
+  {
+    "partita": "000564",
+    "giocatore": 153107,
+    "squadra": "saronno",
+    "punti": 10
+  },
+  {
+    "partita": "000564",
+    "giocatore": 153116,
+    "squadra": "saronno",
+    "punti": 0
+  },
+  {
+    "partita": "000564",
+    "giocatore": 163063,
+    "squadra": "saronno",
+    "punti": 10
+  },
+  {
+    "partita": "000564",
+    "giocatore": 178698,
+    "squadra": "saronno",
+    "punti": 0
+  },
+  {
+    "partita": "000564",
+    "giocatore": 181332,
+    "squadra": "saronno",
+    "punti": 9
+  },
+  {
+    "partita": "000564",
+    "giocatore": 184249,
+    "squadra": "saronno",
+    "punti": 12
+  },
+  {
+    "partita": "000564",
+    "giocatore": 191504,
+    "squadra": "saronno",
+    "punti": 7
+  },
+  {
+    "partita": "000564",
+    "giocatore": 194063,
+    "squadra": "saronno",
+    "punti": 4
+  },
+  {
+    "partita": "000564",
+    "giocatore": 216908,
+    "squadra": "saronno",
+    "punti": 15
+  },
+  {
+    "partita": "000564",
+    "giocatore": 227032,
+    "squadra": "saronno",
+    "punti": 0
+  },
+  {
+    "partita": "000565",
+    "giocatore": 22313,
+    "squadra": "7laghi",
+    "punti": 0
+  },
+  {
+    "partita": "000565",
+    "giocatore": 30873,
+    "squadra": "7laghi",
+    "punti": 18
+  },
+  {
+    "partita": "000565",
+    "giocatore": 74431,
+    "squadra": "7laghi",
+    "punti": 12
+  },
+  {
+    "partita": "000565",
+    "giocatore": 80854,
+    "squadra": "7laghi",
+    "punti": 2
+  },
+  {
+    "partita": "000565",
+    "giocatore": 98021,
+    "squadra": "7laghi",
+    "punti": 7
+  },
+  {
+    "partita": "000565",
+    "giocatore": 114718,
+    "squadra": "7laghi",
+    "punti": 0
+  },
+  {
+    "partita": "000565",
+    "giocatore": 115869,
+    "squadra": "7laghi",
+    "punti": 3
+  },
+  {
+    "partita": "000565",
+    "giocatore": 119867,
+    "squadra": "7laghi",
+    "punti": 2
+  },
+  {
+    "partita": "000565",
+    "giocatore": 148561,
+    "squadra": "7laghi",
+    "punti": 0
+  },
+  {
+    "partita": "000565",
+    "giocatore": 153674,
+    "squadra": "7laghi",
+    "punti": 7
+  },
+  {
+    "partita": "000565",
+    "giocatore": 174319,
+    "squadra": "7laghi",
+    "punti": 19
+  },
+  {
+    "partita": "000565",
+    "giocatore": 229116,
+    "squadra": "7laghi",
+    "punti": 0
+  },
+  {
+    "partita": "000565",
+    "giocatore": 14509,
+    "squadra": "pavia",
+    "punti": 8
+  },
+  {
+    "partita": "000565",
+    "giocatore": 83321,
+    "squadra": "pavia",
+    "punti": 1
+  },
+  {
+    "partita": "000565",
+    "giocatore": 90211,
+    "squadra": "pavia",
+    "punti": 11
+  },
+  {
+    "partita": "000565",
+    "giocatore": 97696,
+    "squadra": "pavia",
+    "punti": 10
+  },
+  {
+    "partita": "000565",
+    "giocatore": 108238,
+    "squadra": "pavia",
+    "punti": 11
+  },
+  {
+    "partita": "000565",
+    "giocatore": 113105,
+    "squadra": "pavia",
+    "punti": 6
+  },
+  {
+    "partita": "000565",
+    "giocatore": 114682,
+    "squadra": "pavia",
+    "punti": 11
+  },
+  {
+    "partita": "000565",
+    "giocatore": 127345,
+    "squadra": "pavia",
+    "punti": 7
+  },
+  {
+    "partita": "000565",
+    "giocatore": 155392,
+    "squadra": "pavia",
+    "punti": 3
+  },
+  {
+    "partita": "000565",
+    "giocatore": 170363,
+    "squadra": "pavia",
+    "punti": 5
   }
 ]
