@@ -963,7 +963,7 @@
       "gtt": 1,
       "mn": 4
     },
-    "tabellino": "parziale"
+    "tabellino": "completo"
   },
   {
     "id": "000565",
@@ -1026,7 +1026,7 @@
       "gtt": 1,
       "mn": 2
     },
-    "tabellino": "parziale"
+    "tabellino": "completo"
   },
   {
     "id": "000570",
@@ -1037,9 +1037,9 @@
     "ora": "16:30",
     "casa": "saronno",
     "ospite": "cagliari",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 93,
+    "pt_ospite": 83,
+    "stato": "ufficioso",
     "palestra": "C.G. mons. 'U. RONCHI'",
     "citta": "Saronno",
     "pb": {
@@ -1047,7 +1047,7 @@
       "gtt": 1,
       "mn": 3
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000571",
@@ -1058,9 +1058,9 @@
     "ora": "20:30",
     "casa": "oleggio",
     "ospite": "monferrato",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 79,
+    "pt_ospite": 86,
+    "stato": "omologata",
     "palestra": "Palazzetto",
     "citta": "Boffalora sopra Ticino",
     "pb": {
@@ -1068,7 +1068,7 @@
       "gtt": 1,
       "mn": 4
     },
-    "tabellino": null
+    "tabellino": "completo"
   },
   {
     "id": "000569",
@@ -1079,9 +1079,9 @@
     "ora": "21:00",
     "casa": "7laghi",
     "ospite": "gallarate",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
+    "pt_casa": 74,
+    "pt_ospite": 70,
+    "stato": "omologata",
     "palestra": "Palestra Comunale",
     "citta": "Gazzada Schianno",
     "pb": {
@@ -1089,70 +1089,7 @@
       "gtt": 1,
       "mn": 2
     },
-    "tabellino": null
-  },
-  {
-    "id": "000572",
-    "giornata": 8,
-    "fase": "andata",
-    "turno": 8,
-    "data": "2026-11-15",
-    "ora": "17:00",
-    "casa": "pavia",
-    "ospite": "sennori",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
-    "palestra": "PALARAVIZZA",
-    "citta": "Pavia",
-    "pb": {
-      "gtn": 8,
-      "gtt": 1,
-      "mn": 7
-    },
-    "tabellino": null
-  },
-  {
-    "id": "000567",
-    "giornata": 8,
-    "fase": "andata",
-    "turno": 8,
-    "data": "2026-11-15",
-    "ora": "18:00",
-    "casa": "college",
-    "ospite": "cermenate",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
-    "palestra": "PALADONBOSCO",
-    "citta": "Borgomanero",
-    "pb": {
-      "gtn": 8,
-      "gtt": 1,
-      "mn": 5
-    },
-    "tabellino": null
-  },
-  {
-    "id": "000568",
-    "giornata": 8,
-    "fase": "andata",
-    "turno": 8,
-    "data": "2026-11-15",
-    "ora": "18:00",
-    "casa": "nerviano",
-    "ospite": "crocetta",
-    "pt_casa": null,
-    "pt_ospite": null,
-    "stato": "da_giocare",
-    "palestra": "PALESTRA SC.ELEMENTARI",
-    "citta": "Nerviano",
-    "pb": {
-      "gtn": 8,
-      "gtt": 1,
-      "mn": 6
-    },
-    "tabellino": null
+    "tabellino": "parziale"
   },
   {
     "id": "000566",
@@ -1160,7 +1097,7 @@
     "fase": "andata",
     "turno": 8,
     "data": "2026-11-15",
-    "ora": "20:30",
+    "ora": "00:00",
     "casa": "academy",
     "ospite": "campus",
     "pt_casa": null,
@@ -1174,6 +1111,69 @@
       "mn": 1
     },
     "tabellino": null
+  },
+  {
+    "id": "000572",
+    "giornata": 8,
+    "fase": "andata",
+    "turno": 8,
+    "data": "2026-11-15",
+    "ora": "17:00",
+    "casa": "pavia",
+    "ospite": "sennori",
+    "pt_casa": 84,
+    "pt_ospite": 82,
+    "stato": "ufficioso",
+    "palestra": "PALARAVIZZA",
+    "citta": "Pavia",
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 7
+    },
+    "tabellino": "completo"
+  },
+  {
+    "id": "000567",
+    "giornata": 8,
+    "fase": "andata",
+    "turno": 8,
+    "data": "2026-11-15",
+    "ora": "18:00",
+    "casa": "college",
+    "ospite": "cermenate",
+    "pt_casa": 89,
+    "pt_ospite": 74,
+    "stato": "omologata",
+    "palestra": "PALADONBOSCO",
+    "citta": "Borgomanero",
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 5
+    },
+    "tabellino": "in_attesa"
+  },
+  {
+    "id": "000568",
+    "giornata": 8,
+    "fase": "andata",
+    "turno": 8,
+    "data": "2026-11-15",
+    "ora": "18:00",
+    "casa": "nerviano",
+    "ospite": "crocetta",
+    "pt_casa": 93,
+    "pt_ospite": 64,
+    "stato": "omologata",
+    "palestra": "PALESTRA SC.ELEMENTARI",
+    "citta": "Nerviano",
+    "pb": {
+      "gtn": 8,
+      "gtt": 1,
+      "mn": 6
+    },
+    "tabellino": "completo"
   },
   {
     "id": "000573",

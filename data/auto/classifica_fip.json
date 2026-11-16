@@ -2,12 +2,12 @@
   {
     "posizione": 1,
     "squadra": "monferrato",
-    "punti": 12,
-    "g": 7,
-    "v": 6,
+    "punti": 14,
+    "g": 8,
+    "v": 7,
     "p": 1,
-    "pf": 550,
-    "ps": 486
+    "pf": 636,
+    "ps": 565
   },
   {
     "posizione": 2,
@@ -23,14 +23,24 @@
     "posizione": 3,
     "squadra": "gallarate",
     "punti": 8,
-    "g": 6,
+    "g": 7,
     "v": 4,
-    "p": 2,
-    "pf": 423,
-    "ps": 409
+    "p": 3,
+    "pf": 493,
+    "ps": 483
   },
   {
     "posizione": 4,
+    "squadra": "7laghi",
+    "punti": 8,
+    "g": 7,
+    "v": 4,
+    "p": 3,
+    "pf": 546,
+    "ps": 487
+  },
+  {
+    "posizione": 5,
     "squadra": "academy",
     "punti": 8,
     "g": 6,
@@ -40,7 +50,17 @@
     "ps": 458
   },
   {
-    "posizione": 5,
+    "posizione": 6,
+    "squadra": "crocetta",
+    "punti": 8,
+    "g": 7,
+    "v": 4,
+    "p": 3,
+    "pf": 548,
+    "ps": 544
+  },
+  {
+    "posizione": 7,
     "squadra": "cagliari",
     "punti": 8,
     "g": 7,
@@ -50,17 +70,7 @@
     "ps": 509
   },
   {
-    "posizione": 6,
-    "squadra": "crocetta",
-    "punti": 8,
-    "g": 6,
-    "v": 4,
-    "p": 2,
-    "pf": 484,
-    "ps": 451
-  },
-  {
-    "posizione": 7,
+    "posizione": 8,
     "squadra": "bocconi",
     "punti": 8,
     "g": 7,
@@ -70,24 +80,14 @@
     "ps": 495
   },
   {
-    "posizione": 8,
+    "posizione": 9,
     "squadra": "oleggio",
     "punti": 8,
-    "g": 7,
+    "g": 8,
     "v": 4,
-    "p": 3,
-    "pf": 560,
-    "ps": 533
-  },
-  {
-    "posizione": 9,
-    "squadra": "7laghi",
-    "punti": 6,
-    "g": 6,
-    "v": 3,
-    "p": 3,
-    "pf": 472,
-    "ps": 417
+    "p": 4,
+    "pf": 639,
+    "ps": 619
   },
   {
     "posizione": 10,
@@ -101,6 +101,16 @@
   },
   {
     "posizione": 11,
+    "squadra": "nerviano",
+    "punti": 6,
+    "g": 7,
+    "v": 3,
+    "p": 4,
+    "pf": 545,
+    "ps": 565
+  },
+  {
+    "posizione": 12,
     "squadra": "sennori",
     "punti": 6,
     "g": 7,
@@ -110,17 +120,17 @@
     "ps": 580
   },
   {
-    "posizione": 12,
-    "squadra": "nerviano",
+    "posizione": 13,
+    "squadra": "college",
     "punti": 4,
-    "g": 6,
+    "g": 8,
     "v": 2,
-    "p": 4,
-    "pf": 452,
-    "ps": 501
+    "p": 6,
+    "pf": 628,
+    "ps": 684
   },
   {
-    "posizione": 13,
+    "posizione": 14,
     "squadra": "campus",
     "punti": 2,
     "g": 6,
@@ -130,23 +140,13 @@
     "ps": 539
   },
   {
-    "posizione": 14,
+    "posizione": 15,
     "squadra": "cermenate",
     "punti": 2,
-    "g": 7,
+    "g": 8,
     "v": 1,
-    "p": 6,
-    "pf": 520,
-    "ps": 585
-  },
-  {
-    "posizione": 15,
-    "squadra": "college",
-    "punti": 2,
-    "g": 7,
-    "v": 1,
-    "p": 6,
-    "pf": 539,
-    "ps": 610
+    "p": 7,
+    "pf": 594,
+    "ps": 674
   }
 ]
